@@ -31,11 +31,10 @@
                             <td style="width: 96px">
                                 Personal :</td>
                             <td style="width: 109px">
-                                <asp:TextBox ID="txtIdPersona" runat="server" Width="62px"></asp:TextBox>
+                                <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
                                 </td>
-                            <td style="width: 96px">
-                            <input type="button" name="btnPersona"  value="..." onclick="ObtPersonal()"/>
-                             </td>
+                            <td style="width: 96px; text-align: center;">
+                                <asp:Button ID="Button3" runat="server" Text="Button" /></td>
                             <td>
                                 <asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
                         </tr>
