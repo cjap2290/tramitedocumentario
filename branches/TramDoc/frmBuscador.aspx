@@ -12,34 +12,37 @@
         <table style="width: 100%; height: 100%">
             <tr>
                 <td colspan="6" style="height: 6px">
-                    Buscar Por : <br />
-                    <hr id="HR2" style="height: 2px; width: 474px;" />
+                    Buscar Personal : <br />
+                    <hr id="HR2" style="height: 2px; width: 663px;" />
                  </td>              
             </tr>
             <tr>
-                <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                <td style="width: 15%">
+                    <asp:DropDownList ID="cboOpcion" runat="server" Width="157px">
+                        <asp:ListItem>Apellidos y Nombres</asp:ListItem>
                     </asp:DropDownList></td>
-                <td colspan = "5" style="width: 70%">
-                </td>
+                <td colspan = "5" style="width: 85%">
+                    <asp:TextBox ID="TextBox1" runat="server" Width="545px"></asp:TextBox></td>
                 
             </tr>
             <tr>
                 <td colspan="6" style="width: 100%">
+                    <asp:GridView ID="GridView1" runat="server">
+                    </asp:GridView>
                 </td>                
             </tr>
             <tr>
-                <td style="height: 64px">
+                <td style="height: 56px; width: 67px;">
                 </td>
-                <td style="width: 272px; height: 64px;">
+                <td style="width: 272px; height: 56px;">
                 </td>
-                <td style="width: 18px; height: 64px;">
+                <td style="width: 18px; height: 56px;">
                 </td>
-                <td style="width: 27px; height: 64px;">
+                <td style="width: 27px; height: 56px;">
                 </td>
-                <td style="width: 101px; height: 64px;">
+                <td style="width: 101px; height: 56px;">
                 </td>
-                <td style="width: 17px; height: 64px;">
+                <td style="width: 17px; height: 56px;">
                 </td>
             </tr>
         </table>
