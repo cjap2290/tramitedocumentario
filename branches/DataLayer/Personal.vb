@@ -38,7 +38,7 @@ Imports System.Collections.Specialized
 Imports MyGeneration.dOOdads
 
 Public MustInherit Class _Personal
-	Inherits OleDbEntity
+    Inherits OleDbEntity
 
 		Public Sub New() 
 			Me.QuerySource = "Personal"
