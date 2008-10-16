@@ -35,7 +35,7 @@
                 <td style="height: 56px; width: 67px;">
                 </td>
                 <td style="width: 272px; height: 56px;">
-                </td>
+                    <asp:Button ID="Button1" runat="server" Text="Button" /></td>
                 <td style="width: 18px; height: 56px;">
                 </td>
                 <td style="width: 27px; height: 56px;">
