@@ -1,0 +1,15 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\CapaLogicaNegocio.Resources.resources
+obj\Debug\CapaLogicaNegocio.vbproj.GenerateResource.Cache
+bin\Debug\CapaLogicaNegocio.dll
+bin\Debug\CapaLogicaNegocio.pdb
+bin\Debug\CapaLogicaNegocio.xml
+bin\Debug\CapaAccesoDatos.dll
+bin\Debug\MyGeneration.dOOdads.dll
+bin\Debug\MyGeneration.dOOdads.pdb
+bin\Debug\MyGeneration.dOOdads.xml
+bin\Debug\CapaAccesoDatos.pdb
+bin\Debug\CapaAccesoDatos.xml
+obj\Debug\CapaLogicaNegocio.dll
+obj\Debug\CapaLogicaNegocio.xml
+obj\Debug\CapaLogicaNegocio.pdb
