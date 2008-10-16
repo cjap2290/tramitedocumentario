@@ -1,0 +1,12 @@
+bin\Debug\CapaAccesoDatos.dll
+bin\Debug\CapaAccesoDatos.pdb
+bin\Debug\CapaAccesoDatos.xml
+bin\Debug\MyGeneration.dOOdads.dll
+bin\Debug\MyGeneration.dOOdads.pdb
+bin\Debug\MyGeneration.dOOdads.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\CapaAccesoDatos.Resources.resources
+obj\Debug\CapaAccesoDatos.vbproj.GenerateResource.Cache
+obj\Debug\CapaAccesoDatos.dll
+obj\Debug\CapaAccesoDatos.xml
+obj\Debug\CapaAccesoDatos.pdb
