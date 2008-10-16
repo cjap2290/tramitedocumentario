@@ -80,6 +80,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\Archivos de programa\MyGeneration13\Architectures\dOOdads\VB.NET\MyGeneration.dOOdads\MyGeneration.dOOdads_2005.vbproj">
+      <Project>{D8DFD338-036C-4472-8611-59566F4E37FB}</Project>
+      <Name>MyGeneration.dOOdads_2005</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
