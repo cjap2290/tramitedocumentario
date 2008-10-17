@@ -1,0 +1,9 @@
+bin\MyGeneration.dOOdads.dll
+bin\MyGeneration.dOOdads.pdb
+bin\MyGeneration.dOOdads.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Resources.resources
+obj\Debug\MyGeneration.dOOdads_2005.vbproj.GenerateResource.Cache
+obj\Debug\MyGeneration.dOOdads.dll
+obj\Debug\MyGeneration.dOOdads.xml
+obj\Debug\MyGeneration.dOOdads.pdb

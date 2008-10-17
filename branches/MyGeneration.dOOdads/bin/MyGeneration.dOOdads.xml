@@ -2,20 +2,20 @@
 <doc>
 <assembly>
 <name>
-BusinessLayer
+MyGeneration.dOOdads
 </name>
 </assembly>
 <members>
-<member name="P:BusinessLayer.My.Resources.Resources.ResourceManager">
+<member name="P:My.Resources.Resources.ResourceManager">
 	<summary>
   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
 </summary>
-</member><member name="P:BusinessLayer.My.Resources.Resources.Culture">
+</member><member name="P:My.Resources.Resources.Culture">
 	<summary>
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
 </summary>
-</member><member name="T:BusinessLayer.My.Resources.Resources">
+</member><member name="T:My.Resources.Resources">
 	<summary>
   Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
 </summary>

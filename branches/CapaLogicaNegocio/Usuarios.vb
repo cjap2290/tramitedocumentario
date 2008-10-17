@@ -17,7 +17,7 @@ Public Class Usuarios
             rs = Usuarios.ColumnNames.IdPersona
             b = Me.cuentafilas
         End If
-        dt = Me.retornaUser
+        'dt = Me.retornaUser
         Return b
     End Function
 End Class

@@ -1181,10 +1181,11 @@ Public MustInherit Class _Usuarios
     Public Function cuentafilas()
         Return Me.RowCount
     End Function
-    Public Function retornaUser() As DataTable
-        Me.Where.IdUser.Value = "%A%"
-        Me.Query.Load()
-        Return Me.DataTable
-    End Function
+    'Public Function retornaUser() As DataTable
+    '    Me.Where.IdUser.Value = "A%"
+    '    Me.Where.IdUser.Operator = WhereParameter.Operand.Like_
+    '    Me.Query.Load()
+    '    Return Me.DataTable
+    'End Function
 End Class
 
