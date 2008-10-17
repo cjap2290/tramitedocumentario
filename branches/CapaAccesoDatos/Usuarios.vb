@@ -42,7 +42,7 @@ Public MustInherit Class _Usuarios
 
 		Public Sub New() 
 			Me.QuerySource = "Usuarios"
-			Me.MappingName = "Usuarios"
+        Me.MappingName = "Usuarios"
 		End Sub
 
 	'=================================================================
@@ -1178,6 +1178,13 @@ Public MustInherit Class _Usuarios
 
 
 	End Sub	
-
+    Public Function cuentafilas()
+        Return Me.RowCount
+    End Function
+    Public Function retornaUser() As DataTable
+        Me.Where.IdUser.Value = "%A%"
+        Me.Query.Load()
+        Return Me.DataTable
+    End Function
 End Class
 
