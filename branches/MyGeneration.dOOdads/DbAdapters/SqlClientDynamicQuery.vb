@@ -278,9 +278,11 @@ Namespace MyGeneration.dOOdads
 							End Select
 
 							If requiresParam Then
-								Dim dbCmd As IDbCommand = CType(cmd, IDbCommand)
-								cmd.Parameters.Add(wItem.Param)
-								wItem.Param.Value = wItem.Value
+                                Dim dbCmd As IDbCommand = CType(cmd, IDbCommand)
+                                cmd.Parameters.Add(wItem.Param)
+                                wItem.Param.Value = wItem.Value
+
+
 								p += 1
 							End If
 
