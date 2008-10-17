@@ -10,7 +10,6 @@ Partial Class frmBuscador
         Dim dt As DataTable
         With cboOpcion
 
-            .DataSource = a.DefaultView
             .DataTextField = a.ListarDepartment
             .DataBind()
 
