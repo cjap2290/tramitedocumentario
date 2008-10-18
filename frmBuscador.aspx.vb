@@ -7,13 +7,15 @@ Partial Class frmBuscador
 
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim dt As DataTable
+        'Dim dt As DataTable
+        Dim ousuario As New Usuarios
         With cboOpcion
 
             .DataTextField = a.ListarDepartment
             .DataBind()
 
         End With
+       
 
     End Sub
 End Class
