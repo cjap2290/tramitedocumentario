@@ -154,7 +154,7 @@ Namespace MyGeneration.dOOdads
 
 				For Each obj In _aggregateParameters
 
-					wItem = CType(obj, AggregateParameter)
+                    wItem = CType(obj, AggregateParameter)
 
 					If wItem.IsDirty Then
 
