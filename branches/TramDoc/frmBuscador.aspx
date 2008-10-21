@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td colspan="6" style="width: 100%">
-                    <asp:GridView ID="gdVer" runat="server" AllowPaging="True">
+                    <asp:GridView ID="gdListado" runat="server" AllowPaging="True">
                         <Columns>
                             <asp:BoundField />
                         </Columns>

@@ -1182,19 +1182,26 @@ Public MustInherit Class _Usuarios
         Return Me.RowCount
     End Function
     Public Function retornaUser() As DataTable
-        'Me.Where.IdUser.Value = "'A%'"
-        'Me.Where.IdUser.Operator = WhereParameter.Operand.Like_
-        Me.Where.FecProR.BetweenBeginValue = "'01/01/2002'"
-        Me.Where.FecProR.BetweenEndValue = "'12/31/2006'"
-        Me.Where.FecProR.Operator = WhereParameter.Operand.Between
+        Dim Parms As ListDictionary = New ListDictionary
+        Me.Where.IdUser.Value = "A%"
+        Me.Where.IdUser.Operator = WhereParameter.Operand.Like_
+        'Me.Where.FecProR.BetweenBeginValue = "'01/01/2002'"
+        'Me.Where.FecProR.BetweenEndValue = "'12/31/2006'"
+        'Me.Where.FecProR.Operator = WhereParameter.Operand.Between
         'me.LoadFromSql("select * from usuarios where iduser like '%A%'",
-        Dim query = Me.Query.GenerateSQL
-
-        If (Me.Query.Load()) Then
+        'Dim query = Me.Query.GenerateSQL
+        Parms.Add("param", "A%")
+        Parms.Add("campo", "[IdUser]")
+        Parms.Add("tabla", "[Usuarios]")
+        If (Me.LoadFromSql("paBuscador", Parms)) Then
 
         End If
-        Dim query1 = Me.Query.GenerateSQL
+        '--If (Me.Query.Load()) Then
+
+        ' End If
+        'Dim query1 = Me.Query.GenerateSQL
         Return Me.DataTable
+
     End Function
 End Class
 
