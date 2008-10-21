@@ -10,12 +10,15 @@ Partial Class frmBuscador
         'Dim dt As DataTable
         Dim ousuario As New Usuarios
         With cboOpcion
-
-            .DataTextField = a.ListarDepartment
+            .DataSource = a.ListarDepartment.DefaultView
+            .DataTextField = a.NombreColumna
             .DataBind()
-
         End With
        
+        'With gdListado
+        '    .DataSource = a.ListarDepartment.DefaultView
 
+        '    .DataBind()
+        'End With
     End Sub
 End Class
