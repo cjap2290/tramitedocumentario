@@ -390,59 +390,59 @@ Namespace MyGeneration.dOOdads
 
 #Region "SQL Methods -- LoadFromSql, AddNew, MarkAsDeleted, Save"
 
-		Protected Function LoadFromSql(ByVal sp As String, _
-		  Optional ByRef Parameters As Specialized.ListDictionary = Nothing, _
-		  Optional ByVal commandType As CommandType = CommandType.StoredProcedure) As Boolean
+        Protected Function LoadFromSql(ByVal sp As String, _
+          Optional ByRef Parameters As Specialized.ListDictionary = Nothing, _
+          Optional ByVal commandType As CommandType = CommandType.StoredProcedure) As Boolean
 
-			Dim dataTable As dataTable = Nothing
-			Dim loaded As Boolean = False
+            Dim dataTable As DataTable = Nothing
+            Dim loaded As Boolean = False
 
-			Try
+            Try
 
-				dataTable = New dataTable(Me.MappingName)
+                dataTable = New DataTable(Me.MappingName)
 
-				Dim cmd As IDbCommand = Me.CreateIDbCommand()
-				cmd.CommandText = sp
-				cmd.CommandType = commandType
+                Dim cmd As IDbCommand = Me.CreateIDbCommand()
+                cmd.CommandText = sp
+                cmd.CommandType = commandType
 
-				Dim p As IDataParameter
+                Dim p As IDataParameter
 
-				If Not Parameters Is Nothing Then
-					Dim param As DictionaryEntry
+                If Not Parameters Is Nothing Then
+                    Dim param As DictionaryEntry
 
-					For Each param In Parameters
-						If Not TypeOf param.Key Is IDataParameter Then
-							p = Me.CreateIDataParameter(CType(param.Key, String), param.Value)
-						Else
-							p = CType(param.Key, IDataParameter)
-							p.Value = param.Value
-						End If
+                    For Each param In Parameters
+                        If Not TypeOf param.Key Is IDataParameter Then
+                            p = Me.CreateIDataParameter(CType(param.Key, String), param.Value)
+                        Else
+                            p = CType(param.Key, IDataParameter)
+                            p.Value = param.Value
+                        End If
 
-						cmd.Parameters.Add(p)
-					Next
+                        cmd.Parameters.Add(p)
+                    Next
 
-				End If
+                End If
 
-				Dim da As IDbDataAdapter = Me.CreateIDbDataAdapter()
-				da.SelectCommand = cmd
+                Dim da As IDbDataAdapter = Me.CreateIDbDataAdapter()
+                da.SelectCommand = cmd
 
-				Dim txMgr As TransactionMgr = TransactionMgr.ThreadTransactionMgr()
+                Dim txMgr As TransactionMgr = TransactionMgr.ThreadTransactionMgr()
 
-				txMgr.Enlist(cmd, Me)
-				Dim adapter As DbDataAdapter = Me.ConvertIDbDataAdapter(da)
-				adapter.Fill(dataTable)
-				txMgr.DeEnlist(cmd, Me)
+                txMgr.Enlist(cmd, Me)
+                Dim adapter As DbDataAdapter = Me.ConvertIDbDataAdapter(da)
+                adapter.Fill(dataTable)
+                txMgr.DeEnlist(cmd, Me)
 
-			Catch ex As Exception
-				Throw ex
-			Finally
-				Me.DataTable = dataTable
-				loaded = (Me.RowCount() > 0)
-			End Try
+            Catch ex As Exception
+                Throw ex
+            Finally
+                Me.DataTable = dataTable
+                loaded = (Me.RowCount() > 0)
+            End Try
 
-			Return loaded
+            Return loaded
 
-		End Function
+        End Function
 
 		Protected Function LoadFromRawSql(ByVal rawSql As String, ByVal ParamArray parameters() As Object) As Boolean
 
