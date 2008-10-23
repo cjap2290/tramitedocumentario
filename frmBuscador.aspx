@@ -27,16 +27,23 @@
             </tr>
             <tr>
                 <td colspan="6" style="width: 100%">
-                    <asp:GridView ID="gdListado" runat="server" AllowPaging="True">
+                    <asp:GridView ID="gdListado" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" PageSize="7">
                         <Columns>
                             <asp:BoundField />
+                            <asp:CommandField ShowSelectButton="True" />
                         </Columns>
+                        <FooterStyle BackColor="White" ForeColor="#333333" />
+                        <RowStyle BackColor="White" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
                     </asp:GridView>
+                    &nbsp;
                 </td>                
             </tr>
             <tr>
                 <td style="height: 56px; width: 67px;">
-                </td>
+                    <asp:TextBox ID="txtselec" runat="server"></asp:TextBox></td>
                 <td style="width: 272px; height: 56px;">
                     <asp:Button ID="Button1" runat="server" Text="Button" /></td>
                 <td style="width: 18px; height: 56px;">
@@ -44,7 +51,7 @@
                 <td style="width: 27px; height: 56px;">
                 </td>
                 <td style="width: 101px; height: 56px;">
-                </td>
+                    </td>
                 <td style="width: 17px; height: 56px;">
                 </td>
             </tr>
