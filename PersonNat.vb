@@ -3,18 +3,10 @@ Imports CapaAccesoDatos
 
 Public Class PersonNat 
 	Inherits _PersonNat
-    Public Function ListarPersonas() As DataTable
-        Dim dcoll As New Collection
-        'Dim rs As String
-        Dim b As Integer
+    Public Function ListarPersonas(ByVal txtBusq As String) As DataTable
         Dim dt As DataTable
         'Me.Where.Tear()
-        If Me.LoadAll Then
-            NombreColumna = Usuarios.ColumnNames.IdPersona
-            b = Me.cuentafilas
-
-        End If
-        dt = Me.retornaUser
+        dt = Me.BuscaPersonNat(txtBusq)
         'dcoll.Add(dt, "Tabla")
         'dcoll.Add(rs, "NombreCol")
         Return dt
