@@ -3,7 +3,7 @@ Imports system.Data
 Imports System.Data.SqlClient
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
-    Dim a As New CapaLogicaNegocio.Usuarios
+    Dim a As New CapaLogicaNegocio.PersonNat
 
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -29,8 +29,10 @@ Partial Class frmBuscador
         Call Cargardatos()
     End Sub
     Sub Cargardatos()
+        Dim dtPersonas As DataTable
         With gdListado
-            .DataSource = a.ListarDepartment.DefaultView
+            dtPersonas = a.ListarPersonas(Me.txtselec.Text)
+            .DataSource = dtPersonas.DefaultView
             .DataBind()
         End With
     End Sub
