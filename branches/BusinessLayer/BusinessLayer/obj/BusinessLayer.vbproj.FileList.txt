@@ -1,5 +1,4 @@
 obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\BusinessLayer.vbproj.ResolveComReference.cache
 obj\Debug\BusinessLayer.Resources.resources
 obj\Debug\BusinessLayer.vbproj.GenerateResource.Cache
 bin\Debug\BusinessLayer.dll
@@ -30,5 +29,3 @@ obj\Release\BusinessLayer.vbproj.GenerateResource.Cache
 obj\Release\BusinessLayer.dll
 obj\Release\BusinessLayer.xml
 obj\Release\BusinessLayer.pdb
-bin\Debug\Interop.CAPICOM.dll
-obj\Debug\Interop.CAPICOM.dll

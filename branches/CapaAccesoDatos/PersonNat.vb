@@ -1415,18 +1415,11 @@ Public MustInherit Class _PersonNat
 
 
 	End Sub	
-    Public Function BuscaPersonNat() As DataTable
+    Public Function BuscaPersonNat(ByVal sCadena As String) As DataTable
         Dim Parms As ListDictionary = New ListDictionary
-        Me.Where.IdUser.Value = "A%"
-        Me.Where.IdUser.Operator = WhereParameter.Operand.Like_
-        'Me.Where.FecProR.BetweenBeginValue = "'01/01/2002'"
-        'Me.Where.FecProR.BetweenEndValue = "'12/31/2006'"
-        'Me.Where.FecProR.Operator = WhereParameter.Operand.Between
-        'me.LoadFromSql("select * from usuarios where iduser like '%A%'",
-        'Dim query = Me.Query.GenerateSQL
-        Parms.Add("param", "A%")
-        Parms.Add("campo", "[IdUser]")
-        Parms.Add("tabla", "[Usuarios]")
+        Parms.Add("param", sCadena + "%")
+        Parms.Add("campo", "[Apepat]")
+        Parms.Add("tabla", "[PersonNat]")
         If (Me.LoadFromSql("paBuscador", Parms)) Then
 
         End If

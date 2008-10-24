@@ -22,7 +22,7 @@
                         <asp:ListItem>Apellidos y Nombres</asp:ListItem>
                     </asp:DropDownList></td>
                 <td colspan = "5" style="width: 85%">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="545px"></asp:TextBox></td>
+                    <asp:TextBox ID="txtCadIng" runat="server" Width="545px"></asp:TextBox></td>
                 
             </tr>
             <tr>
