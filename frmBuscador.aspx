@@ -19,7 +19,9 @@
             <tr>
                 <td style="width: 15%">
                     <asp:DropDownList ID="cboOpcion" runat="server" Width="157px">
-                        <asp:ListItem>Apellidos y Nombres</asp:ListItem>
+                        <asp:ListItem Value="0">Apellido Paterno</asp:ListItem>
+                        <asp:ListItem Value="1">Apellido Materno</asp:ListItem>
+                        <asp:ListItem Value="2">Nombres</asp:ListItem>
                     </asp:DropDownList></td>
                 <td colspan = "5" style="width: 85%">
                     <asp:TextBox ID="txtCadIng" runat="server" Width="545px"></asp:TextBox></td>

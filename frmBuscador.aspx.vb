@@ -30,10 +30,12 @@ Partial Class frmBuscador
     End Sub
     Sub Cargardatos()
         Dim dtPersonas As DataTable
+        Dim b As Integer
         With gdListado
-            dtPersonas = a.ListarPersonas(Me.txtselec.Text)
+            dtPersonas = a.ListarPersonas(Me.txtCadIng.Text)
             .DataSource = dtPersonas.DefaultView
             .DataBind()
+            b = .Columns.Count
         End With
     End Sub
 
@@ -45,6 +47,11 @@ Partial Class frmBuscador
             txtselec.Text = variable
             variable = gdListado.SelectedIndex
         End If
+    End Sub
+
+    Public Sub gdListado_OnRowCreated(ByVal sender As Object, ByVal e As Web.UI.WebControls.GridViewRowEventArgs) Handles gdListado.RowCreated
+        e.Row.Cells(0).Visible = False 'Uid cobranza
+
     End Sub
 End Class
 
