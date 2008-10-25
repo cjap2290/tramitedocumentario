@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td colspan="6" style="width: 100%">
-                    <asp:GridView ID="gdListado" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" PageSize="7">
+                    <asp:GridView ID="gdListado" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" PageSize="7" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField />
                             <asp:CommandField ShowSelectButton="True" />
