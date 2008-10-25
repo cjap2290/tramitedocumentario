@@ -31,8 +31,14 @@ Partial Class frmBuscador
     Sub Cargardatos()
         Dim dtPersonas As DataTable
         Dim b As Integer
+        Dim idpersona As New BoundField
+        dtPersonas = a.ListarPersonas(Me.txtCadIng.Text)
+        With idpersona
+            .DataField = dtPersonas.Columns(1).ColumnName
+            .HeaderText = dtPersonas.Columns(1).ColumnName
+            gdListado.Columns.Add(idpersona)
+        End With
         With gdListado
-            dtPersonas = a.ListarPersonas(Me.txtCadIng.Text)
             .DataSource = dtPersonas.DefaultView
             .DataBind()
             b = .Columns.Count
@@ -48,11 +54,22 @@ Partial Class frmBuscador
             variable = gdListado.SelectedIndex
         End If
     End Sub
+    '--otro metodo para ocultar columnas en un gridview---
+    'Public Sub gdListado_OnRowCreated(ByVal sender As Object, ByVal e As Web.UI.WebControls.GridViewRowEventArgs) Handles gdListado.RowCreated
+    '    e.Row.Cells(0).Visible = False 'Uid cobranza
 
-    Public Sub gdListado_OnRowCreated(ByVal sender As Object, ByVal e As Web.UI.WebControls.GridViewRowEventArgs) Handles gdListado.RowCreated
-        e.Row.Cells(0).Visible = False 'Uid cobranza
+    'End Sub
+    '--fin------------------------------------------------
+    '--metodo para ocultar columnas en un gridview----------
+    'Protected Sub gdListado_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gdListado.RowDataBound
+    '    If (gdListado.Rows.Count < gdListado.PageSize) & (gdListado.Rows.Count + gdListado.PageSize * gdListado.PageIndex < (CType(gdListado.DataSource, DataTable)).Rows.Count) Then
 
-    End Sub
+    '    End If
+    '    e.Row.Cells(5).Visible = False
+    '    'e.Row.Cells[IndiceCol].Visible = false;
+
+    'End Sub
+    '--fin------------------------------------------------------
 End Class
 
 
