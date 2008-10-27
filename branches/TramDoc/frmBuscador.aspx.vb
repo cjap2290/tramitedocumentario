@@ -4,23 +4,21 @@ Imports System.Data.SqlClient
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
     Dim a As New CapaLogicaNegocio.PersonNat
+    'Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+    '    'Dim dt As DataTable
+    '    Dim ousuario As New Usuarios
+    '    'With cboOpcion
+    '    '    .DataSource = a.ListarDepartment.DefaultView
+    '    '    .DataTextField = a.NombreColumna
+    '    '    .DataBind()
+    '    'End With
 
-
-    Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'Dim dt As DataTable
-        Dim ousuario As New Usuarios
-        'With cboOpcion
-        '    .DataSource = a.ListarDepartment.DefaultView
-        '    .DataTextField = a.NombreColumna
-        '    .DataBind()
-        'End With
-
-        'With gdListado
-        '    .DataSource = a.ListarDepartment.DefaultView
-        '    .DataBind()
-        'End With
-        Call Cargardatos()
-    End Sub
+    '    'With gdListado
+    '    '    .DataSource = a.ListarDepartment.DefaultView
+    '    '    .DataBind()
+    '    'End With
+    '    Call Cargardatos()
+    'End Sub
 
     Protected Sub gdListado_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gdListado.PageIndexChanging
         Dim gv As New GridView()
@@ -84,11 +82,18 @@ Partial Class frmBuscador
             .HeaderText = "Apellido Materno"
             gdListado.Columns.Add(apemat)
         End With
+
     End Sub
 
     Protected Sub btn_Buscar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Buscar.Click
         Dim ousuario As New Usuarios
+        'gdListado.Columns.Clear()
         Call Cargardatos()
+    End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'gdListado.Attributes.Add("onclick", "javascript:'obtValor()'")
+        'Me.txtselec.Attributes.Add("ontextchanged", "javascript:'obtValor()'")
     End Sub
 End Class
 
