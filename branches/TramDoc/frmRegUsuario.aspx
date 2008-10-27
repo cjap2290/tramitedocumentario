@@ -7,7 +7,10 @@
     <title>Página sin título</title>
 <script language="javascript" type="text/javascript">
 // <!CDATA[
-
+function llamaBuscador(topic)
+{
+  aPopUp= window.open('frmBuscador.aspx','popupBuscaPers','scrollbars=yes,width=400,height=400')
+}
 
 
 // ]]>
@@ -34,7 +37,7 @@
                                 <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
                                 </td>
                             <td style="width: 96px; text-align: center;">
-                                <asp:Button ID="Button3" runat="server" Text="Button" /></td>
+                                <asp:Button ID="Btn_BuscPers" runat="server" Text="..." /></td>
                             <td>
                                 <asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
                         </tr>

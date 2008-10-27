@@ -31,13 +31,8 @@ Partial Class frmBuscador
     Sub Cargardatos()
         Dim dtPersonas As DataTable
         Dim b As Integer
-        Dim idpersona As New BoundField
         dtPersonas = a.ListarPersonas(Me.txtCadIng.Text)
-        With idpersona
-            .DataField = dtPersonas.Columns(1).ColumnName
-            .HeaderText = dtPersonas.Columns(1).ColumnName
-            gdListado.Columns.Add(idpersona)
-        End With
+        iniGrid(dtPersonas)
         With gdListado
             .DataSource = dtPersonas.DefaultView
             .DataBind()
@@ -70,6 +65,31 @@ Partial Class frmBuscador
 
     'End Sub
     '--fin------------------------------------------------------
+    Sub iniGrid(ByRef dtPersonas As DataTable)
+        Dim idpersona As New BoundField
+        Dim apepat As New BoundField
+        Dim apemat As New BoundField
+        With idpersona
+            .DataField = dtPersonas.Columns(0).ColumnName
+            .HeaderText = dtPersonas.Columns(0).ColumnName
+            gdListado.Columns.Add(idpersona)
+        End With
+        With apepat
+            .DataField = dtPersonas.Columns(1).ColumnName
+            .HeaderText = "Apellido Paterno"
+            gdListado.Columns.Add(apepat)
+        End With
+        With apemat
+            .DataField = dtPersonas.Columns(2).ColumnName
+            .HeaderText = "Apellido Materno"
+            gdListado.Columns.Add(apemat)
+        End With
+    End Sub
+
+    Protected Sub btn_Buscar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Buscar.Click
+        Dim ousuario As New Usuarios
+        Call Cargardatos()
+    End Sub
 End Class
 
 

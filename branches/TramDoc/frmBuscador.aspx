@@ -9,7 +9,7 @@
 <body>
     <form id="frmBuscador" runat="server">
     <div>
-        <table style="width: 100%; height: 100%">
+        <table style="width: 50%; height: 50%">
             <tr>
                 <td colspan="6" style="height: 6px">
                     Buscar Personal : <br />
@@ -24,11 +24,12 @@
                         <asp:ListItem Value="2">Nombres</asp:ListItem>
                     </asp:DropDownList></td>
                 <td colspan = "5" style="width: 85%">
-                    <asp:TextBox ID="txtCadIng" runat="server" Width="545px"></asp:TextBox></td>
+                    <asp:TextBox ID="txtCadIng" runat="server" Width="369px"></asp:TextBox>
+                    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" /></td>
                 
             </tr>
             <tr>
-                <td colspan="6" style="width: 100%">
+                <td colspan="6" style="width: 100%; height: 275px;">
                     <asp:GridView ID="gdListado" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" PageSize="7" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField />
