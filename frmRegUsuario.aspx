@@ -9,9 +9,9 @@
 // <!CDATA[
 function llamaBuscador(topic)
 {
-  aPopUp= window.open('frmBuscador.aspx','popupBuscaPers','scrollbars=yes,width=400,height=400')
+  aPopUp= window.open('frmBuscador.aspx','popupBuscaPers','scrollbars=yes,width=600,height=400')
 }
-
+function
 
 // ]]>
 </script>

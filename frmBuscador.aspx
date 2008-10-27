@@ -5,9 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Página sin título</title>
+    <script language="javascript" type="text/javascript">
+        function obtValor()
+        {
+          document.frmBuscador1.txtIdPers.value= document.getElementById("txtidpersona");
+        }
+
+    </script>
 </head>
 <body>
-    <form id="frmBuscador" runat="server">
+    <form id="frmBuscador" name="frmBuscador1" runat="server" action="frmRegUsuario.aspx" method="post">
     <div>
         <table style="width: 50%; height: 50%">
             <tr>
@@ -17,14 +24,14 @@
                  </td>              
             </tr>
             <tr>
-                <td style="width: 15%">
-                    <asp:DropDownList ID="cboOpcion" runat="server" Width="157px">
+                <td style="width: 10%">
+                    <asp:DropDownList ID="cboOpcion" runat="server" Width="122px">
                         <asp:ListItem Value="0">Apellido Paterno</asp:ListItem>
                         <asp:ListItem Value="1">Apellido Materno</asp:ListItem>
                         <asp:ListItem Value="2">Nombres</asp:ListItem>
                     </asp:DropDownList></td>
-                <td colspan = "5" style="width: 85%">
-                    <asp:TextBox ID="txtCadIng" runat="server" Width="369px"></asp:TextBox>
+                <td colspan = "5" style="width: 90%" id="txtidpersona">
+                    <asp:TextBox ID="txtCadIng" runat="server" Width="239px"></asp:TextBox>
                     <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" /></td>
                 
             </tr>
@@ -45,17 +52,17 @@
                 </td>                
             </tr>
             <tr>
-                <td style="height: 56px; width: 67px;">
-                    <asp:TextBox ID="txtselec" runat="server"></asp:TextBox></td>
-                <td style="width: 272px; height: 56px;">
-                    <asp:Button ID="Button1" runat="server" Text="Button" /></td>
-                <td style="width: 18px; height: 56px;">
-                </td>
+                <td style="height: 56px; width: 58px;">
+                    <asp:TextBox ID="txtselec" runat="server" ></asp:TextBox></td>
+                <td style="width: 88px; height: 56px;">
+                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers"  /></td>
+                <td style="width: 3px; height: 56px;">
+                    <input id="Submit1" type="submit" value="submit"  /></td>
                 <td style="width: 27px; height: 56px;">
                 </td>
-                <td style="width: 101px; height: 56px;">
+                <td style="width: 13px; height: 56px;">
                     </td>
-                <td style="width: 17px; height: 56px;">
+                <td style="width: 6px; height: 56px;">
                 </td>
             </tr>
         </table>

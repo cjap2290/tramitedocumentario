@@ -9,9 +9,14 @@ Partial Class Default2
     '"</script>"
 
     'End Sub
+    Dim sidpersona As String
 
   
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
+    End Sub
+
+    Protected Sub Btn_BuscPers_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_BuscPers.Click
+        'sidpersona = Request.QueryString("idpersona")
     End Sub
 End Class
