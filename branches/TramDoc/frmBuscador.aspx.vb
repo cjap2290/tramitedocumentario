@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
     Dim a As New CapaLogicaNegocio.PersonNat
+    Dim sidpersona As String
     'Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
     '    'Dim dt As DataTable
     '    Dim ousuario As New Usuarios
@@ -44,6 +45,7 @@ Partial Class frmBuscador
             Dim gvr As GridViewRow = gdListado.SelectedRow
             Dim variable As String = gvr.Cells(2).Text
             txtselec.Text = variable
+            'Response.Redirect("frmRegUsuario.aspx?variable=" + variable + "")
             variable = gdListado.SelectedIndex
         End If
     End Sub
