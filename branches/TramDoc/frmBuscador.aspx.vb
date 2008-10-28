@@ -96,6 +96,7 @@ Partial Class frmBuscador
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'gdListado.Attributes.Add("onclick", "javascript:'obtValor()'")
         'Me.txtselec.Attributes.Add("ontextchanged", "javascript:'obtValor()'")
+        Me.Button2.Attributes.Add("onclik", "javascript:'closeFrmBuscador()'")
     End Sub
 End Class
 

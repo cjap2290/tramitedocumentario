@@ -10,11 +10,14 @@ Partial Class Default2
 
     'End Sub
     Dim sidpersona As String
-
-  
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
-        sidpersona = Request.QueryString("variable")
+        'sidpersona = Request.QueryString("variable")-- codigo usando query string
+        If Not (Page.PreviousPage Is Nothing) Then
+            Dim txtidpersona As TextBox = CType(Page.PreviousPage.FindControl("txtselec"), TextBox)
+            sIdPersona = txtidpersona.Text
+        End If
     End Sub
 
     Protected Sub Btn_BuscPers_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_BuscPers.Click

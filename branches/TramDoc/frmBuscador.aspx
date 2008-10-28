@@ -61,7 +61,7 @@
                 <td style="width: 3px; height: 56px;">
                     <input id="Button1" type="button" value="button" onclick='closeFrmBuscador()' /></td>
                 <td style="width: 27px; height: 56px;">
-                </td>
+                    <asp:Button ID="Button2" runat="server" PostBackUrl="~/frmRegUsuario.aspx" Text="Button" /></td>
                 <td style="width: 13px; height: 56px;">
                     </td>
                 <td style="width: 6px; height: 56px;">
