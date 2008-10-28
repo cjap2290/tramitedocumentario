@@ -5,10 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Página sin título</title>
-    <script language="javascript" type="text/javascript">
-        function obtValor()
+    <script language="javascript" type="text/javascript">        
+        function closeFrmBuscador()
         {
-          document.frmBuscador1.txtIdPers.value= document.getElementById("txtidpersona");
+            alert("LLego hasta aqui");
+          document.frmBuscador.submit();
+          window.close();
         }
 
     </script>
@@ -54,10 +56,10 @@
             <tr>
                 <td style="height: 56px; width: 58px;">
                     <asp:TextBox ID="txtselec" runat="server" ></asp:TextBox></td>
-                <td style="width: 88px; height: 56px;">
-                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers"  /></td>
+                <td style="width: 65px; height: 56px;">
+                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px"  /></td>
                 <td style="width: 3px; height: 56px;">
-                    <input id="Submit1" type="submit" value="submit"  /></td>
+                    <input id="Button1" type="button" value="button" onclick='closeFrmBuscador()' /></td>
                 <td style="width: 27px; height: 56px;">
                 </td>
                 <td style="width: 13px; height: 56px;">

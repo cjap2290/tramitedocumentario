@@ -14,9 +14,15 @@ Partial Class Default2
   
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
+        sidpersona = Request.QueryString("variable")
     End Sub
 
     Protected Sub Btn_BuscPers_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_BuscPers.Click
-        'sidpersona = Request.QueryString("idpersona")
+
+    End Sub
+
+    Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
+        sidpersona = Request.QueryString("variable")
+        txtIdPersona.Text = sidpersona
     End Sub
 End Class

@@ -7,12 +7,10 @@
     <title>Página sin título</title>
 <script language="javascript" type="text/javascript">
 // <!CDATA[
-function llamaBuscador(topic)
+function llamaBuscador()
 {
-  aPopUp= window.open('frmBuscador.aspx','popupBuscaPers','scrollbars=yes,width=600,height=400')
+  aPopUp= window.open('frmBuscador.aspx','popupBuscaPers','scrollbars=yes,width=600,height=400');
 }
-function
-
 // ]]>
 </script>
 </head>
