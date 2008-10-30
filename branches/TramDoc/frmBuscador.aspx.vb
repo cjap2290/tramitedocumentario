@@ -1,8 +1,18 @@
 ﻿Imports CapaLogicaNegocio
 Imports system.Data
 Imports System.Data.SqlClient
+Imports System
+Imports System.Web.Security
+Imports System.Configuration
+Imports System.Web
+Imports System.Web.UI
+Imports System.Web.UI.WebControls
+Imports System.Web.UI.WebControls.WebParts
+
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
+
+
     Dim a As New CapaLogicaNegocio.PersonNat
     Dim sidpersona As String
     'Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -20,7 +30,14 @@ Partial Class frmBuscador
     '    'End With
     '    Call Cargardatos()
     'End Sub
+#Region "IFrmBuscador Members"
 
+    ReadOnly Property IdPersona() As String
+        Get
+            Return txtselec.Text
+        End Get
+    End Property
+#End Region
     Protected Sub gdListado_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gdListado.PageIndexChanging
         Dim gv As New GridView()
         gv = CType(sender, GridView)
@@ -45,6 +62,7 @@ Partial Class frmBuscador
             Dim gvr As GridViewRow = gdListado.SelectedRow
             Dim variable As String = gvr.Cells(2).Text
             txtselec.Text = variable
+
             'Response.Redirect("frmRegUsuario.aspx?variable=" + variable + "")
             variable = gdListado.SelectedIndex
         End If
@@ -69,6 +87,7 @@ Partial Class frmBuscador
         Dim idpersona As New BoundField
         Dim apepat As New BoundField
         Dim apemat As New BoundField
+
         With idpersona
             .DataField = dtPersonas.Columns(0).ColumnName
             .HeaderText = dtPersonas.Columns(0).ColumnName
@@ -88,6 +107,7 @@ Partial Class frmBuscador
     End Sub
 
     Protected Sub btn_Buscar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Buscar.Click
+
         Dim ousuario As New Usuarios
         'gdListado.Columns.Clear()
         Call Cargardatos()
@@ -97,6 +117,10 @@ Partial Class frmBuscador
         'gdListado.Attributes.Add("onclick", "javascript:'obtValor()'")
         'Me.txtselec.Attributes.Add("ontextchanged", "javascript:'obtValor()'")
         Me.Button2.Attributes.Add("onclik", "javascript:'closeFrmBuscador()'")
+    End Sub
+
+    Public Sub update() Implements IPrueba.update
+
     End Sub
 End Class
 
