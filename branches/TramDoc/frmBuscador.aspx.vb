@@ -11,10 +11,17 @@ Imports System.Web.UI.WebControls.WebParts
 
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
+    Implements IFrmBuscador
 
 
+    Public ReadOnly Property IdPersona() As String Implements IFrmBuscador.IdPersona
+        Get
+            Return txtselec.Text
+        End Get
+    End Property
     Dim a As New CapaLogicaNegocio.PersonNat
     Dim sidpersona As String
+    Dim IdPersonaImp As New Prueba
     'Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
     '    'Dim dt As DataTable
     '    Dim ousuario As New Usuarios
@@ -30,14 +37,14 @@ Partial Class frmBuscador
     '    'End With
     '    Call Cargardatos()
     'End Sub
-#Region "IFrmBuscador Members"
+    '#Region "IFrmBuscador Members"
 
-    ReadOnly Property IdPersona() As String
-        Get
-            Return txtselec.Text
-        End Get
-    End Property
-#End Region
+    '    ReadOnly Property IdPersona() As String
+    '        Get
+    '            Return txtselec.Text
+    '        End Get
+    '    End Property
+    '#End Region
     Protected Sub gdListado_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gdListado.PageIndexChanging
         Dim gv As New GridView()
         gv = CType(sender, GridView)
@@ -62,9 +69,10 @@ Partial Class frmBuscador
             Dim gvr As GridViewRow = gdListado.SelectedRow
             Dim variable As String = gvr.Cells(2).Text
             txtselec.Text = variable
-
+            txtIdpers.value = variable
             'Response.Redirect("frmRegUsuario.aspx?variable=" + variable + "")
             variable = gdListado.SelectedIndex
+            IdPersonaImp.pasavarIdPers(txtselec.Text)
         End If
     End Sub
     '--otro metodo para ocultar columnas en un gridview---
@@ -116,12 +124,11 @@ Partial Class frmBuscador
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'gdListado.Attributes.Add("onclick", "javascript:'obtValor()'")
         'Me.txtselec.Attributes.Add("ontextchanged", "javascript:'obtValor()'")
-        Me.Button2.Attributes.Add("onclik", "javascript:'closeFrmBuscador()'")
+        Me.Button2.Attributes.Add("onclick", "javascript:'closeFrmBuscador()'")
     End Sub
 
-    Public Sub update() Implements IPrueba.update
 
-    End Sub
+   
 End Class
 
 
