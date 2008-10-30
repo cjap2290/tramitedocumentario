@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmRegUsuario.aspx.vb" Inherits="Default2" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmRegUsuario.aspx.vb" Inherits="Default2"  %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -35,6 +35,7 @@ function llamaBuscador()
                                 <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
                                 </td>
                             <td style="width: 96px; text-align: center;">
+                                <input id="txtIdPersonal" type="text" />
                                 <asp:Button ID="Btn_BuscPers" runat="server" Text="..." /></td>
                             <td>
                                 <asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>

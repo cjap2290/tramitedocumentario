@@ -14,14 +14,18 @@ Partial Class Default2
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
-        '--codigo par autilizar interface ifrmbuscador
-        Dim form As IFrmBuscador = TryCast(PreviousPage, IFrmBuscador)
-        If form IsNot Nothing Then
-            'Dim txtidpersona As TextBox = CType(Page.PreviousPage.FindControl("txtselec"), TextBox)
-            'sIdPersona = txtidpersona.Text
-            Dim sidpersona As String = form.IdPersona
-        End If
-        '--
+        '*******------------  Metodos utuilizados para pasar variables usando el postback()--*********
+        '--Metodo 3 codigo par autilizar interface ifrmbuscador
+        'Dim form As IFrmBuscador = TryCast(PreviousPage, IFrmBuscador)
+        'If form IsNot Nothing Then
+        '    'sIdPersona = txtidpersona.Text
+        '    Dim sidpersona As String = form.IdPersona
+        'End If
+        '-- fin metodo 3
+        '--metodo 2 codigo para utilizar interface ifrmbuscador
+        'Dim txtidpersona As TextBox = CType(Page.PreviousPage.FindControl("txtselec"), TextBox)
+        '-- fin metodo 2
+        '*******-------------     FIN     -------------************************************
     End Sub
 
     Protected Sub Btn_BuscPers_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_BuscPers.Click

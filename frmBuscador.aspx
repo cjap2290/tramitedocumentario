@@ -8,8 +8,11 @@
     <script language="javascript" type="text/javascript">        
         function closeFrmBuscador()
         {
-            alert("LLego hasta aqui");
-          document.frmBuscador.submit();
+           
+          //document.frmBuscador.submit();          
+           window.opener.frmRegUsu.txtIdPersona.value=window.frmBuscador.txtIdPers.value ;
+          //=;
+          alert("hasta aqui llego");
           window.close();
         }
 
@@ -57,7 +60,7 @@
                 <td style="height: 56px; width: 58px;">
                     <asp:TextBox ID="txtselec" runat="server" ></asp:TextBox></td>
                 <td style="width: 65px; height: 56px;">
-                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px"  /></td>
+                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px" runat="server" /></td>
                 <td style="width: 3px; height: 56px;">
                     <input id="Button1" type="button" value="button" onclick='closeFrmBuscador()' /></td>
                 <td style="width: 27px; height: 56px;">
