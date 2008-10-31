@@ -37,7 +37,7 @@
                     </asp:DropDownList></td>
                 <td colspan = "5" style="width: 90%" id="txtidpersona">
                     <asp:TextBox ID="txtCadIng" runat="server" Width="239px"></asp:TextBox>
-                    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" /></td>
+                    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" UseSubmitBehavior="False" OnClientClick="this.disabled=true" /></td>
                 
             </tr>
             <tr>
