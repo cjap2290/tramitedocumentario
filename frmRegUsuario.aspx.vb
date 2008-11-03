@@ -1,4 +1,4 @@
-﻿
+﻿Imports CapaLogicaNegocio
 Partial Class Default2
     Inherits System.Web.UI.Page
 
@@ -9,10 +9,15 @@ Partial Class Default2
     '"</script>"
 
     'End Sub
+    Dim Cargos As CapaLogicaNegocio.Cargos
+    Dim usuarios As CapaLogicaNegocio.Usuarios
     Dim sidpersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
+        If Me.txtIdPersona.Text.Length > 0 And Me.txtPersona.Text.Length > 0 Then
+            Dim sIdCargo As String = A_obtCargo()
+        End If
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
         '*******------------  Metodos utuilizados para pasar variables usando el postback()--*********
         '--Metodo 3 codigo par autilizar interface ifrmbuscador
@@ -36,4 +41,9 @@ Partial Class Default2
         sidpersona = Request.QueryString("variable")
         txtIdPersona.Text = sidpersona
     End Sub
+    Function A_obtCargo() As String
+        Dim A_sIdCargo As String
+        A_sIdCargo = usuarios.EC_obtIdCargo(txtIdPersona.Text)
+        Return A_sIdCargo
+    End Function
 End Class

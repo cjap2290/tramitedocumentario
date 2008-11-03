@@ -9,43 +9,43 @@
         function closeFrmBuscador()
         {
            
-          //document.frmBuscador.submit();          
+          //document.frmBuscador.submit();
+          window.opener.location.href = window.opener.location.href;          
            window.opener.frmRegUsu.txtIdPersona.value=window.frmBuscador.txtIdPers.value ;
+           window.opener.frmRegUsu.txtPersona.value=window.frmBuscador.txtPersona.value ;
           //=;
-          alert("hasta aqui llego");
+          alert("hasta aqui llego");          
           window.close();
         }
 
     </script>
 </head>
 <body>
-    <form id="frmBuscador" name="frmBuscador1" runat="server" action="frmRegUsuario.aspx" method="post">
+    <form id="frmBuscador"  runat="server" action="frmRegUsuario.aspx" method="post">
     <div>
-        <table style="width: 50%; height: 50%">
+        <table style="width: 50%; height: 30%">
             <tr>
-                <td colspan="6" style="height: 6px">
+                <td colspan="1" style="height: 6px; width: 482px;">
                     Buscar Personal : <br />
                     <hr id="HR2" style="height: 2px; width: 663px;" />
                  </td>              
             </tr>
             <tr>
-                <td style="width: 10%">
+                <td style="width: 482px">
                     <asp:DropDownList ID="cboOpcion" runat="server" Width="122px">
                         <asp:ListItem Value="0">Apellido Paterno</asp:ListItem>
                         <asp:ListItem Value="1">Apellido Materno</asp:ListItem>
                         <asp:ListItem Value="2">Nombres</asp:ListItem>
-                    </asp:DropDownList></td>
-                <td colspan = "5" style="width: 90%" id="txtidpersona">
+                    </asp:DropDownList>
                     <asp:TextBox ID="txtCadIng" runat="server" Width="239px"></asp:TextBox>
                     <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" UseSubmitBehavior="False" OnClientClick="this.disabled=true" /></td>
                 
             </tr>
             <tr>
-                <td colspan="6" style="width: 100%; height: 275px;">
+                <td colspan="1" style="width: 482px; height: 275px;">
                     <asp:GridView ID="gdListado" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" PageSize="7" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField />
-                            <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#333333" />
                         <RowStyle BackColor="White" ForeColor="#333333" />
@@ -57,18 +57,10 @@
                 </td>                
             </tr>
             <tr>
-                <td style="height: 56px; width: 58px;">
-                    <asp:TextBox ID="txtselec" runat="server" ></asp:TextBox></td>
-                <td style="width: 65px; height: 56px;">
-                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px" runat="server" /></td>
-                <td style="width: 3px; height: 56px;">
-                    <input id="Button1" type="button" value="button" onclick='closeFrmBuscador()' /></td>
-                <td style="width: 27px; height: 56px;">
-                    <asp:Button ID="Button2" runat="server" PostBackUrl="~/frmRegUsuario.aspx" Text="Button" /></td>
-                <td style="width: 13px; height: 56px;">
-                    </td>
-                <td style="width: 6px; height: 56px;">
-                </td>
+                <td style="height: 56px; width: 482px;">
+                    &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px" runat="server" />&nbsp;
+                    <input id="txtPersona" type="text"  runat="server" />
+                    <input id="Button2" type="button" value="button" onclick='closeFrmBuscador()' /></td>
             </tr>
         </table>
     
