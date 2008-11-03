@@ -39,7 +39,7 @@ Imports MyGeneration.dOOdads
 
 Public MustInherit Class _Usuarios
 	Inherits SqlClientEntity
-
+    Public E_sIdCargo As String
 		Public Sub New() 
 			Me.QuerySource = "Usuarios"
         Me.MappingName = "Usuarios"
@@ -1202,6 +1202,16 @@ Public MustInherit Class _Usuarios
         'Dim query1 = Me.Query.GenerateSQL
         Return Me.DataTable
 
+    End Function
+    Public Function E_obtIdCargo(ByVal sIdPersona As String) As Boolean
+        Me.Where.IdPersona.Value = sIdPersona
+        Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
+        If Not (Me.Query.Load) Then
+            Return False
+        Else
+            Return True
+        End If
+        E_sIdCargo = Me.DataTable.Rows(0).Item(1).ToString
     End Function
 End Class
 
