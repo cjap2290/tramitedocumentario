@@ -23,7 +23,7 @@ function llamaBuscador()
                 <td colspan="2">
                     <table style="width: 100%; height: 100%">
                         <tr>
-                            <td colspan="4">
+                            <td colspan="3">
                                 Información <br />
                                 <hr id="HR2" style="height: 2px" />
                              </td>                           
@@ -31,14 +31,11 @@ function llamaBuscador()
                         <tr>
                             <td style="width: 96px">
                                 Personal :</td>
-                            <td style="width: 109px">
+                            <td style="width: 136px">
                                 <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
-                                </td>
-                            <td style="width: 96px; text-align: center;">
-                                <input id="txtIdPersonal" type="text" />
                                 <asp:Button ID="Btn_BuscPers" runat="server" Text="..." /></td>
-                            <td>
-                                <asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
+                            <td style="width: 116px; text-align: center;">
+                                &nbsp;<asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
                         </tr>
                     </table>
                 </td>                
@@ -56,19 +53,19 @@ function llamaBuscador()
                             <td style="width: 73px">
                                 Area:</td>
                             <td colspan="2">
-                                <asp:TextBox ID="TextBox1" runat="server" Width="402px"></asp:TextBox></td>                            
+                                <asp:TextBox ID="txtArea" runat="server" Width="402px"></asp:TextBox></td>                            
                         </tr>
                         <tr>
                             <td style="width: 73px">
                                 Cargo:</td>
                             <td colspan="2">
-                                <asp:TextBox ID="TextBox2" runat="server" Width="403px"></asp:TextBox></td>  
+                                <asp:TextBox ID="txtCargo" runat="server" Width="403px"></asp:TextBox></td>  
                         </tr>
                         <tr>
                             <td style="width: 73px">
                                 Agencia</td>
                             <td colspan="2">
-                                <asp:TextBox ID="TextBox3" runat="server" Width="402px"></asp:TextBox></td> 
+                                <asp:TextBox ID="txtAgencia" runat="server" Width="402px"></asp:TextBox></td> 
                         </tr>
                     </table>
                 </td>

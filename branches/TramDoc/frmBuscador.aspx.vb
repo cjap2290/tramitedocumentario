@@ -11,14 +11,14 @@ Imports System.Web.UI.WebControls.WebParts
 
 Partial Class frmBuscador
     Inherits System.Web.UI.Page
-    Implements IFrmBuscador
-
-
-    Public ReadOnly Property IdPersona() As String Implements IFrmBuscador.IdPersona
-        Get
-            Return txtselec.Text
-        End Get
-    End Property
+    '--bloque de codigo utilizado para uso de interface
+    'Implements IFrmBuscador
+    'Public ReadOnly Property IdPersona() As String Implements IFrmBuscador.IdPersona
+    '    Get
+    '        Return txtselec.Text
+    '    End Get
+    'End Property
+    '--fin--
     Dim a As New CapaLogicaNegocio.PersonNat
     Dim sidpersona As String
     Dim IdPersonaImp As New Prueba
@@ -68,11 +68,14 @@ Partial Class frmBuscador
             gdListado.SelectedIndex = Convert.ToInt32(e.CommandArgument)
             Dim gvr As GridViewRow = gdListado.SelectedRow
             Dim variable As String = gvr.Cells(2).Text
-            txtselec.Text = variable
-            txtIdpers.value = variable
-            'Response.Redirect("frmRegUsuario.aspx?variable=" + variable + "")
+            Dim nombre As String = gvr.Cells(5).Text + " " + gvr.Cells(3).Text + " " + gvr.Cells(4).Text
+            txtIdPers.Value = variable
+            txtPersona.Value = nombre
             variable = gdListado.SelectedIndex
-            IdPersonaImp.pasavarIdPers(txtselec.Text)
+            '--funciona con el metodo de pasar variables con interface
+            'IdPersonaImp.pasavarIdPers(txtselec.Text)
+            '-- fin
+            'Response.Redirect("frmRegUsuario.aspx?variable=" + variable + "")
         End If
     End Sub
     '--otro metodo para ocultar columnas en un gridview---
@@ -95,7 +98,15 @@ Partial Class frmBuscador
         Dim idpersona As New BoundField
         Dim apepat As New BoundField
         Dim apemat As New BoundField
+        Dim Nombres As New BoundField
+        Dim SelecCol As New CommandField
 
+        With SelecCol
+            .ButtonType = ButtonType.Link
+            .SelectText = "Selec."
+            .ShowSelectButton = True
+            gdListado.Columns.Add(SelecCol)
+        End With
         With idpersona
             .DataField = dtPersonas.Columns(0).ColumnName
             .HeaderText = dtPersonas.Columns(0).ColumnName
@@ -111,6 +122,11 @@ Partial Class frmBuscador
             .HeaderText = "Apellido Materno"
             gdListado.Columns.Add(apemat)
         End With
+        With Nombres
+            .DataField = dtPersonas.Columns(3).ColumnName
+            .HeaderText = dtPersonas.Columns(3).ColumnName
+            gdListado.Columns.Add(Nombres)
+        End With
 
     End Sub
 
@@ -124,11 +140,9 @@ Partial Class frmBuscador
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'gdListado.Attributes.Add("onclick", "javascript:'obtValor()'")
         'Me.txtselec.Attributes.Add("ontextchanged", "javascript:'obtValor()'")
-        Me.Button2.Attributes.Add("onclick", "javascript:'closeFrmBuscador()'")
+        'Me.Button2.Attributes.Add("onclick", "javascript:'closeFrmBuscador()'")
     End Sub
 
-
-   
 End Class
 
 

@@ -7,7 +7,7 @@ Public Class Usuarios
     Inherits CapaAccesoDatos._Usuarios
     'Dim oUsuario 
     Public NombreColumna As String
-    
+    Dim sECIdCargo As String
 
     Public Function ListarDepartment() As DataTable
         Dim dcoll As New Collection
@@ -24,5 +24,11 @@ Public Class Usuarios
         'dcoll.Add(dt, "Tabla")
         'dcoll.Add(rs, "NombreCol")
         Return dt
+    End Function
+    Public Function EC_obtIdCargo(ByVal sEIdPersona As String) As String
+        If Me.E_obtIdCargo(sEIdPersona) Then
+            sECIdCargo = Me.E_sIdCargo
+        End If
+        Return sECIdCargo
     End Function
 End Class

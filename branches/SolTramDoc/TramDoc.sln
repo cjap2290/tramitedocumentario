@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\TramDoc\", "..\TramDoc", "{5C05F390-E3B2-4F06-814D-0C1B3EC83AFF}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\TramDoc\", "..\TramDoc\", "{5C05F390-E3B2-4F06-814D-0C1B3EC83AFF}"
 	ProjectSection(WebsiteProperties) = preProject
 		ProjectReferences = "{78565451-B2F3-4E5A-90B1-E0C91D6747F2}|CapaLogicaNegocio.dll;{98525A03-6D2D-4634-96CC-322A41C04E61}|BusinessLayer.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/TramDoc"
@@ -18,7 +18,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\TramDoc\", "..\TramD
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1399"
+		VWDPort = "4143"
 	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CapaAccesoDatos", "..\CapaAccesoDatos\CapaAccesoDatos.vbproj", "{09A9BE4F-0F33-45D9-8A93-CE0D5E6A5CD3}"
