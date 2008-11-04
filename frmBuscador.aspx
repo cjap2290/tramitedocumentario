@@ -14,7 +14,8 @@
            window.opener.frmRegUsu.txtIdPersona.value=window.frmBuscador.txtIdPers.value ;
            window.opener.frmRegUsu.txtPersona.value=window.frmBuscador.txtPersona.value ;
           //=;
-          alert("hasta aqui llego");  
+          alert("hasta aqui llego"); 
+          window.opener.location.href = window.opener.location.href; 
           //document.frmBuscador.submit();        
           //opener.location.reload();
           window.close();

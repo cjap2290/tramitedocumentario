@@ -9,14 +9,15 @@ Partial Class Default2
     '"</script>"
 
     'End Sub
-    Dim Cargos As CapaLogicaNegocio.Cargos
-    Dim usuarios As CapaLogicaNegocio.Usuarios
+    Dim Cargos As New CapaLogicaNegocio.Cargos
+    Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim sidpersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
-        Dim sperseona As String = Request.QueryString("id")
-        If Me.txtIdPersona.Text.Length > 0 And Me.txtPersona.Text.Length > 0 Then
+        Dim sPersona As String = Session.Item("IdPersona")
+        If sPersona IsNot Nothing Then
+            txtIdPersona.Text = sPersona
             Dim sIdCargo As String = A_obtCargo()
         End If
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
@@ -47,9 +48,4 @@ Partial Class Default2
         A_sIdCargo = usuarios.EC_obtIdCargo(txtIdPersona.Text)
         Return A_sIdCargo
     End Function
-
-    
-    Protected Sub txtIdPersona_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtIdPersona.TextChanged
-        Dim idperosna = "ggg"
-    End Sub
 End Class

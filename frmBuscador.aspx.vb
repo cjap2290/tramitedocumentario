@@ -70,6 +70,7 @@ Partial Class frmBuscador
             Dim variable As String = gvr.Cells(2).Text
             Dim nombre As String = gvr.Cells(5).Text + " " + gvr.Cells(3).Text + " " + gvr.Cells(4).Text
             txtIdPers.Value = variable
+            Session("IdPersona") = variable
             txtPersona.Value = nombre
             variable = gdListado.SelectedIndex
             '--funciona con el metodo de pasar variables con interface
@@ -144,7 +145,7 @@ Partial Class frmBuscador
     End Sub
 
     Protected Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
-        Response.Redirect("frmRegUsuario.aspx?id=" + txtIdPers.Value)
+        'Response.Redirect("frmRegUsuario.aspx?id=" + txtIdPers.Value)
     End Sub
 End Class
 
