@@ -143,6 +143,9 @@ Partial Class frmBuscador
         'Me.Button2.Attributes.Add("onclick", "javascript:'closeFrmBuscador()'")
     End Sub
 
+    Protected Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
+        Response.Redirect("frmRegUsuario.aspx?id=" + txtIdPers.Value)
+    End Sub
 End Class
 
 
