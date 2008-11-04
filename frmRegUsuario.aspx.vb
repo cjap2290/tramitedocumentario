@@ -47,4 +47,9 @@ Partial Class Default2
         A_sIdCargo = usuarios.EC_obtIdCargo(txtIdPersona.Text)
         Return A_sIdCargo
     End Function
+
+    
+    Protected Sub txtIdPersona_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtIdPersona.TextChanged
+        Dim idperosna = "ggg"
+    End Sub
 End Class
