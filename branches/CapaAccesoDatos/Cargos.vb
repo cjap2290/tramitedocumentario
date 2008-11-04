@@ -473,9 +473,10 @@ Public MustInherit Class _Cargos
         If Not (Me.Query.Load) Then
             Return False
         Else
+            sNomCargo = Me.DataTable.Rows(0).Item(1).ToString
             Return True
         End If
-        sNomCargo = Me.DataTable.Rows(0).Item(1).ToString
+
     End Function
 End Class
 
