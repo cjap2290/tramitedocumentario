@@ -9,12 +9,14 @@
         function closeFrmBuscador()
         {
            
-          //document.frmBuscador.submit();
-          window.opener.location.href = window.opener.location.href;          
-           window.opener.frmRegUsu.txtIdPersona.value=window.frmBuscador.txtIdPers.value ;
-           window.opener.frmRegUsu.txtPersona.value=window.frmBuscador.txtPersona.value ;
+          
+          //window.opener.location.href = window.opener.location.href;          
+           //window.opener.frmRegUsu.txtIdPersona.value=window.frmBuscador.txtIdPers.value ;
+          // window.opener.frmRegUsu.txtPersona.value=window.frmBuscador.txtPersona.value ;
           //=;
-          alert("hasta aqui llego");          
+          alert("hasta aqui llego");  
+          //document.frmBuscador.submit();        
+          //opener.location.reload();
           window.close();
         }
 
@@ -60,7 +62,7 @@
                 <td style="height: 56px; width: 482px;">
                     &nbsp;<input id="txtIdPers" type="text" name="txtIdPers" style="width: 100px" runat="server" />&nbsp;
                     <input id="txtPersona" type="text"  runat="server" />
-                    <input id="Button2" type="button" value="button" onclick='closeFrmBuscador()' /></td>
+                    <asp:Button ID="BtnAceptar" runat="server" Text="Button" /></td>
             </tr>
         </table>
     

@@ -15,6 +15,7 @@ Partial Class Default2
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
+        Dim sperseona As String = Request.QueryString("id")
         If Me.txtIdPersona.Text.Length > 0 And Me.txtPersona.Text.Length > 0 Then
             Dim sIdCargo As String = A_obtCargo()
         End If
