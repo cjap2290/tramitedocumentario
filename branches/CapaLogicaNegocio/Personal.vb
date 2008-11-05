@@ -5,6 +5,7 @@ Public Class Personal
     Inherits _Personal
     Dim sNomCargo As String
     Dim sNomArea As String
+    Dim sNomAgencia As String
     Dim Cargos As New CapaLogicaNegocio.Cargos
     Dim Areas As New CapaLogicaNegocio.Areas
     Public ReadOnly Property NombreCargo()
@@ -17,14 +18,20 @@ Public Class Personal
             Return sNomArea
         End Get
     End Property
+    Public ReadOnly Property NombreAgencia()
+        Get
+            Return sNomAgencia
+        End Get
+    End Property
     Public Function obtCargoPersonal(ByVal sIdpersona As String)
         Dim sIdCargo As String
         Dim sIdArea As String
-        If EobtCargo_Area(sIdpersona) Then
+        If EobtCargo_Area_Agencia(sIdpersona) Then
             sIdCargo = Me.IdCargo
             sIdArea = Me.IdArea
             sNomCargo = Cargos.EC_obtCargo(sIdCargo)
             sNomArea = Areas.EC_obtArea(sIdArea)
+
             Return True
         Else
             Return False
