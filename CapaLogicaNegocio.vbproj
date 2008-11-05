@@ -43,6 +43,7 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agencias.vb" />
     <Compile Include="Areas.vb" />
     <Compile Include="Cargos.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
