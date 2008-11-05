@@ -39,11 +39,10 @@ Imports MyGeneration.dOOdads
 
 Public MustInherit Class _Cargos
 	Inherits SqlClientEntity
-    Public sNomCargo As String
-		Public Sub New() 
-			Me.QuerySource = "Cargos"
-			Me.MappingName = "Cargos"
-		End Sub
+    Public Sub New()
+        Me.QuerySource = "Cargos"
+        Me.MappingName = "Cargos"
+    End Sub
 
 	'=================================================================
 	'  Public Overrides Sub AddNew()
@@ -473,10 +472,8 @@ Public MustInherit Class _Cargos
         If Not (Me.Query.Load) Then
             Return False
         Else
-            sNomCargo = Me.DataTable.Rows(0).Item(1).ToString
             Return True
         End If
-
     End Function
 End Class
 
