@@ -11,14 +11,21 @@ Partial Class Default2
     'End Sub
     Dim Cargos As New CapaLogicaNegocio.Cargos
     Dim usuarios As New CapaLogicaNegocio.Usuarios
+    Dim personal As New CapaLogicaNegocio.Personal
     Dim sidpersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
         Dim sPersona As String = Session.Item("IdPersona")
         If sPersona IsNot Nothing Then
-            txtIdPersona.Text = sPersona
-            Dim sIdCargo As String = A_obtCargo()
+            If personal.obtCargoPersonal(sPersona) Then
+                txtCargo.Text = personal.NombreCargo
+                txtArea.Text = personal.NombreArea
+            End If
+            'If personal.obtAreaPersonal(sPersona) Then
+            '    txtArea.Text = personal.NombreArea
+            'End If
+
         End If
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
         '*******------------  Metodos utuilizados para pasar variables usando el postback()--*********
