@@ -1338,14 +1338,12 @@ Public MustInherit Class _Personal
 
 
 	End Sub	
-    Public Function EobtCargo_Area(ByVal sIdPersona As String) As Boolean
+    Public Function EobtCargo_Area_Agencia(ByVal sIdPersona As String) As Boolean
         Me.Where.IdPersona.Value = sIdPersona
         Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
         If Not (Me.Query.Load) Then
             Return False
         Else
-            sIdCargo = Me.DataTable.Rows(0).Item(2).ToString
-            sIdArea = Me.DataTable.Rows(0).Item(2).ToString
             Return True
         End If
     End Function
