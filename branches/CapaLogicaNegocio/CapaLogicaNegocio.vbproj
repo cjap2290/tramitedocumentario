@@ -60,6 +60,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Personal.vb" />
     <Compile Include="PersonNat.vb" />
     <Compile Include="Usuarios.vb" />
   </ItemGroup>

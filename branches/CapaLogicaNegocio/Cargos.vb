@@ -5,11 +5,12 @@ Public Class Cargos
     Inherits _Cargos
     Dim sECNomCargo As String
 
-    Public Function obtCargo(ByVal sEIdCargo As String) As String
-        If Me.obtCargo(sEIdCargo) Then
-            sECNomCargo = sNomCargo
+    Public Function EC_obtCargo(ByVal sEIdCargo As String) As String
+        If EobtCargo(sEIdCargo) Then
+            Return Me.Cargo
+        Else
+            Return " "
         End If
-        Return sECNomCargo
     End Function
 
 End Class
