@@ -1196,10 +1196,6 @@ Public MustInherit Class _Usuarios
         If (Me.LoadFromSql("paBuscador", Parms)) Then
 
         End If
-        '--If (Me.Query.Load()) Then
-
-        ' End If
-        'Dim query1 = Me.Query.GenerateSQL
         Return Me.DataTable
 
     End Function
