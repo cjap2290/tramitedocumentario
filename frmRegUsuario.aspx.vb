@@ -11,6 +11,7 @@ Partial Class Default2
     'End Sub
     Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim personal As New CapaLogicaNegocio.Personal
+    Dim nivelaccesos As New CapaLogicaNegocio.NivelAcceso
     Dim sIdpersona As String
     Dim sPersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -29,7 +30,14 @@ Partial Class Default2
             'If personal.obtAreaPersonal(sPersona) Then
             '    txtArea.Text = personal.NombreArea
             'End If
-
+        End If
+        If nivelaccesos.listarNivelAcceso IsNot Nothing Then
+            With cboNivAcceso
+                .DataSource = nivelaccesos.listarNivelAcceso.DefaultView
+                .DataTextField = nivelaccesos.NombreColDesc
+                .DataValueField = nivelaccesos.NombreColId
+                .DataBind()
+            End With
         End If
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
         '*******------------  Metodos utuilizados para pasar variables usando el postback()--*********
@@ -57,7 +65,7 @@ Partial Class Default2
     End Function
 
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRegistrar.Click
-        If usuarios.activaUsuario(sIdpersona) Then
+        If usuarios.ingresaUsuario(sIdpersona) Then
 
         End If
     End Sub
