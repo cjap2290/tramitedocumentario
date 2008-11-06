@@ -3,7 +3,7 @@ Imports CapaAccesoDatos
 
 Public Class Agencias 
 	Inherits _Agencias
-    Public Function EC_obtAgencia(ByVal sEIdAgencia As String)
+    Public Function EC_obtAgencia(ByVal sEIdAgencia As String) As String
         If LoadByPrimaryKey(sEIdAgencia) Then
             Return Me.Agencia
         Else
