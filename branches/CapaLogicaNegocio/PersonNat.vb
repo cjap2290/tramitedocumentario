@@ -11,4 +11,13 @@ Public Class PersonNat
         'dcoll.Add(rs, "NombreCol")
         Return dt
     End Function
+    Public Function ObtNombreCompleto(ByVal sIdPersona As String) As String
+        Dim sNomComp As String
+        If LoadByPrimaryKey(sIdPersona) Then
+            sNomComp = ApePat + " " + ApeMat + " " + Nombres
+            Return sNomComp
+        Else
+            Return " "
+        End If
+    End Function
 End Class

@@ -6,8 +6,16 @@ Public Class Personal
     Dim sNomCargo As String
     Dim sNomArea As String
     Dim sNomAgencia As String
+    Dim sNomPersonal As String
     Dim Cargos As New CapaLogicaNegocio.Cargos
     Dim Areas As New CapaLogicaNegocio.Areas
+    Dim Agencias As New CapaLogicaNegocio.Agencias
+    Dim Personas As New CapaLogicaNegocio.PersonNat
+    Public ReadOnly Property NombreCompleto()
+        Get
+            Return sNomPersonal
+        End Get
+    End Property
     Public ReadOnly Property NombreCargo()
         Get
             Return sNomCargo
@@ -24,14 +32,11 @@ Public Class Personal
         End Get
     End Property
     Public Function obtCargoPersonal(ByVal sIdpersona As String)
-        Dim sIdCargo As String
-        Dim sIdArea As String
         If EobtCargo_Area_Agencia(sIdpersona) Then
-            sIdCargo = Me.IdCargo
-            sIdArea = Me.IdArea
-            sNomCargo = Cargos.EC_obtCargo(sIdCargo)
-            sNomArea = Areas.EC_obtArea(sIdArea)
-
+            sNomCargo = Cargos.EC_obtCargo(IdCargo)
+            sNomArea = Areas.EC_obtArea(IdArea)
+            sNomAgencia = Agencias.EC_obtAgencia(Idagencia)
+            sNomPersonal = Personas.ObtNombreCompleto(sIdpersona)
             Return True
         Else
             Return False
