@@ -31,4 +31,16 @@ Public Class Usuarios
         End If
         Return sECIdCargo
     End Function
+    Public Function activaUsuario(ByVal sEIdPersona As String) As Boolean
+        If LoadByPrimaryKey(sEIdPersona) Then
+            If Me.E_actActivo(Me.IdUser) Then
+                Return True
+            Else
+                Return False
+            End If
+        Else
+            Return False
+        End If
+        
+    End Function
 End Class

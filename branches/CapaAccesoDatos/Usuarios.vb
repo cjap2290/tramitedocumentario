@@ -1217,5 +1217,15 @@ Public MustInherit Class _Usuarios
             Return True
         End If
     End Function
+    Public Function E_actActivo(ByVal sIdUser As String) As Boolean
+        If LoadByPrimaryKey(sIdUser) Then
+            Activo = "1"
+            Save()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class
 

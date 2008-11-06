@@ -9,7 +9,6 @@ Partial Class Default2
     '"</script>"
 
     'End Sub
-    Dim Cargos As New CapaLogicaNegocio.Cargos
     Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim personal As New CapaLogicaNegocio.Personal
     Dim sIdpersona As String
@@ -47,14 +46,19 @@ Partial Class Default2
         '*******-------------     FIN     -------------************************************
     End Sub
 
-    Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
-        sIdpersona = Request.QueryString("variable")
-        txtIdPersona.Text = sIdpersona
-    End Sub
+    'Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+    '    sIdpersona = Request.QueryString("variable")
+    '    txtIdPersona.Text = sIdpersona
+    'End Sub
     Function A_obtCargo() As String
         Dim A_sIdCargo As String
         A_sIdCargo = usuarios.EC_obtIdCargo(txtIdPersona.Text)
         Return A_sIdCargo
     End Function
 
+    Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRegistrar.Click
+        If usuarios.activaUsuario(sIdpersona) Then
+
+        End If
+    End Sub
 End Class
