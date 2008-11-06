@@ -1341,7 +1341,7 @@ Public MustInherit Class _Personal
     Public Function EobtCargo_Area_Agencia(ByVal sIdPersona As String) As Boolean
         Me.Where.IdPersona.Value = sIdPersona
         Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
-        If Not (Me.Query.Load) Then
+        If Not (Query.Load) Then
             Return False
         Else
             Return True
