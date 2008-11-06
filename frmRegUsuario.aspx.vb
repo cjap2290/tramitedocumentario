@@ -12,15 +12,20 @@ Partial Class Default2
     Dim Cargos As New CapaLogicaNegocio.Cargos
     Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim personal As New CapaLogicaNegocio.Personal
-    Dim sidpersona As String
+    Dim sIdpersona As String
+    Dim sPersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Dim sIdPersona As String
         Btn_BuscPers.Attributes.Add("onclick", "javascript:llamaBuscador();")
-        Dim sPersona As String = Session.Item("IdPersona")
+        sPersona = Session.Item("IdPersona")
         If sPersona IsNot Nothing Then
             If personal.obtCargoPersonal(sPersona) Then
+                txtIdPersona.Text = sPersona
+                txtPersona.Text = personal.NombreCompleto
                 txtCargo.Text = personal.NombreCargo
                 txtArea.Text = personal.NombreArea
+                txtAgencia.Text = personal.NombreAgencia
+                'sPersona = Nothing
             End If
             'If personal.obtAreaPersonal(sPersona) Then
             '    txtArea.Text = personal.NombreArea
@@ -42,17 +47,14 @@ Partial Class Default2
         '*******-------------     FIN     -------------************************************
     End Sub
 
-    Protected Sub Btn_BuscPers_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_BuscPers.Click
-
-    End Sub
-
     Protected Sub Button2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button2.Click
-        sidpersona = Request.QueryString("variable")
-        txtIdPersona.Text = sidpersona
+        sIdpersona = Request.QueryString("variable")
+        txtIdPersona.Text = sIdpersona
     End Sub
     Function A_obtCargo() As String
         Dim A_sIdCargo As String
         A_sIdCargo = usuarios.EC_obtIdCargo(txtIdPersona.Text)
         Return A_sIdCargo
     End Function
+
 End Class
