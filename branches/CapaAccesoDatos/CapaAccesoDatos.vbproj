@@ -61,6 +61,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NivelAcceso.vb" />
     <Compile Include="Personal.vb" />
     <Compile Include="Personal_Cargo_Areas.vb" />
     <Compile Include="PersonNat.vb" />

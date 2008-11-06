@@ -467,6 +467,12 @@ Public MustInherit Class _NivelAcceso
 
 
 	End Sub	
-
+    Public Function lstNivelAcceso() As DataTable
+        If Me.LoadAll() Then
+            Return Me.DataTable
+        Else
+            Return Nothing
+        End If
+    End Function
 End Class
 

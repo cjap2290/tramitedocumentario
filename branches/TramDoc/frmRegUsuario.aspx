@@ -93,7 +93,7 @@ function llamaBuscador()
                         <tr>
                             <td style="width: 268px">
                                 Nivel de Acceso &nbsp; :&nbsp;
-                                <asp:DropDownList ID="DropDownList1" runat="server" Width="116px">
+                                <asp:DropDownList ID="cboNivAcceso" runat="server" Width="116px">
                                 </asp:DropDownList></td>
                             <td style="width: 188px">
                             </td>
@@ -106,7 +106,7 @@ function llamaBuscador()
                 </td>
             </tr>
             <tr>                
-                <td style="width: 405px; text-align: right; height: 21px;">
+                <td style="width: 202px; text-align: right; height: 21px;">
                     <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" Width="84px" /></td>
                 <td style="width: 47px; text-align: center; height: 21px;">
                     <asp:Button ID="btnSalir" runat="server" Text="Salir" Width="84px" />&nbsp;&nbsp;
