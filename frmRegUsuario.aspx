@@ -78,17 +78,17 @@ function llamaBuscador()
                         <tr>
                             <td style="width: 268px">
                                 Id Usuario &nbsp;&nbsp; :
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtIdUser" runat="server"></asp:TextBox></td>
                             <td style="width: 188px">
                                 Clave &nbsp; &nbsp; &nbsp;&nbsp; :
-                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtClave" runat="server"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td style="width: 268px">
-                                Fecha Inicio :<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                                Fecha Inicio :<asp:TextBox ID="txtFecIni" runat="server"></asp:TextBox></td>
                             <td style="width: 188px">
                                 Fecha Fin&nbsp; :
-                                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtFecFin" runat="server"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td style="width: 268px">

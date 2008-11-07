@@ -1,4 +1,6 @@
 ﻿Imports CapaLogicaNegocio
+Imports Microsoft.VisualBasic
+Imports System
 Partial Class Default2
     Inherits System.Web.UI.Page
 
@@ -65,7 +67,11 @@ Partial Class Default2
     End Function
 
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRegistrar.Click
-        If usuarios.ingresaUsuario(sIdpersona) Then
+        Dim sfecha As String
+        Dim shora As String
+        sfecha = DateTime.Now().Date.ToString
+        sHora = DateTime.Now().Hour.ToString
+        If usuarios.EC_ingresaUsuario(Me.txtIdUser.Text, Me.txtIdPersona.Text, sfecha, shora, Me.txtFecIni.Text, Me.txtFecFin.Text, "JeaCol", "Yepo") Then
 
         End If
     End Sub
