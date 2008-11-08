@@ -47,6 +47,7 @@ Public Class Usuarios
         IdUser = sIdUser
         Clave = sClave
         Activo = "1"
+        Bloqueo = "0"
         Save()
         Return True
     End Function
