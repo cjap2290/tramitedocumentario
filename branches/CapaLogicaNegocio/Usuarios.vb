@@ -37,18 +37,20 @@ Public Class Usuarios
                                     ByVal dFechaIni As String, ByVal dFechaFin As String, _
                                     ByVal sIdUserR As String, ByVal sClave As String _
                                     ) As Boolean
-        AddNew()
-        IdUser = sIdUser
-        IdPersona = sIdPersona
-        FecProR = CType(dFecProR, Date)
-        FechaIni = CType(dFechaIni, Date)
-        FechaFin = CType(dFechaFin, Date)
-        HoraR = HoraR
-        IdUser = sIdUser
-        Clave = sClave
-        Activo = "1"
-        Bloqueo = "0"
-        Save()
-        Return True
+        If sIdUser.Length > 0 Then
+            AddNew()
+            IdUser = sIdUser
+            IdPersona = sIdPersona
+            FecProR = CType(dFecProR, Date)
+            FechaIni = CType(dFechaIni, Date)
+            FechaFin = CType(dFechaFin, Date)
+            HoraR = HoraR
+            IdUser = sIdUser
+            Clave = sClave
+            Activo = "1"
+            Bloqueo = "0"
+            Save()
+            Return True
+        End If
     End Function
 End Class

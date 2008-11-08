@@ -14,6 +14,7 @@ Partial Class Default2
     Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim personal As New CapaLogicaNegocio.Personal
     Dim nivelaccesos As New CapaLogicaNegocio.NivelAcceso
+    Dim Encriptador As New CEncriptador
     Dim sIdpersona As String
     Dim sPersona As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -70,9 +71,9 @@ Partial Class Default2
         Dim sfecha As String
         Dim shora As String
         Dim sClave As String
-        sclave = 
+        sClave = Encriptador.EncryptData("yepo")
         sfecha = DateTime.Now().Date.ToString
-        sHora = DateTime.Now().Hour.ToString
+        shora = DateTime.Now().Hour.ToString + ":" + DateTime.Now().Minute.ToString + ":" + DateTime.Now.Second.ToString
         If usuarios.EC_ingresaUsuario(Me.txtIdUser.Text, Me.txtIdPersona.Text, sfecha, shora, Me.txtFecIni.Text, Me.txtFecFin.Text, "JeaCol", "Yepo") Then
 
         End If

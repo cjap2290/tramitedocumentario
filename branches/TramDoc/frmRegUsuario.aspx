@@ -31,7 +31,7 @@ function llamaBuscador()
                             <td style="width: 194px">
                                 Personal :
                                 <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
-                                <asp:Button ID="Btn_BuscPers" runat="server" Text="..." CausesValidation="False" /></td>
+                                <asp:Button ID="Btn_BuscPers" runat="server" Text="..." CausesValidation="False" Width="20px" /></td>
                             <td style="width: 136px">
                                 &nbsp;<asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
                         </tr>
