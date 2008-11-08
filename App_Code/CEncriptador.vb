@@ -1,8 +1,9 @@
 Imports Microsoft.VisualBasic
 Imports CAPICOM
-Const gKey As String = "SisLeonXIII"  'xa Produccion
 
 Public Class CEncriptador
+    Const gKey As String = "SisLeonXIII"  'xa Produccion
+
     Public Function DecryptData(ByVal xTobeDecrypt As String, Optional ByVal xKey As String = "") As String
         'On Error GoTo ErrorHandler
         Dim obEncrypt As New EncryptedData
@@ -20,19 +21,19 @@ Public Class CEncriptador
             obEncrypt.Decrypt(xTobeDecrypt)
             xDecryptMsg = obEncrypt.Content
         Else
-            MessageBox.Show("No existe mensaje a ser Desencriptado", "Apliación-Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MsgBox("No existe mensaje a ser Desencriptado", vbInformation, "Mensajes ")
         End If
         DecryptData = xDecryptMsg
         obEncrypt = Nothing
         'Exit Function
         'ErrorHandler:
         If Err.Number > 0 Then
-            MessageBox.Show("Visual Basic error found:" & Err.Description)
+            MsgBox("Visual Basic error found:" & Err.Description)
         Else
             If Err.Number = -2146893819 Then
-                MessageBox.Show("Error. The Clave para desencriptar no es correcta.", "Aplicación-Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MsgBox("Error. The Clave para desencriptar no es correcta.", vbInformation, "Mensajes ")
             Else
-                MessageBox.Show("CAPICOM error found : " & Err.Number, "Aplicación-Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MsgBox("CAPICOM error found : " & Err.Number, vbInformation, "Mensajes ")
             End If
         End If
     End Function
@@ -48,7 +49,7 @@ Public Class CEncriptador
         End If
         obEncrypt.Content = xTobeEncrypt
         obEncrypt.SetSecret(xKeyDefault)
-        obEncrypt.Algorithm.Name = CAPICOM_ENCRYPTION_ALGORITHM_3DES
+        obEncrypt.Algorithm.Name = CAPICOM_ENCRYPTION_ALGORITHM.CAPICOM_ENCRYPTION_ALGORITHM_3DES
 
         xEncryptMsg = obEncrypt.Encrypt
 
