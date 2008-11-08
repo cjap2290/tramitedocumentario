@@ -31,7 +31,7 @@ function llamaBuscador()
                             <td style="width: 194px">
                                 Personal :
                                 <asp:TextBox ID="txtIdPersona" runat="server" Width="92px"></asp:TextBox>
-                                <asp:Button ID="Btn_BuscPers" runat="server" Text="..." /></td>
+                                <asp:Button ID="Btn_BuscPers" runat="server" Text="..." CausesValidation="False" /></td>
                             <td style="width: 136px">
                                 &nbsp;<asp:TextBox ID="txtPersona" runat="server" Width="273px"></asp:TextBox></td>
                         </tr>
@@ -76,22 +76,28 @@ function llamaBuscador()
                 <td colspan="2" style="height: 26px">
                     <table style="width: 100% ; height: 100%">
                         <tr>
-                            <td style="width: 268px">
-                                Id Usuario &nbsp;&nbsp; :
-                                <asp:TextBox ID="txtIdUser" runat="server"></asp:TextBox></td>
+                            <td style="width: 403px">
+                                Login &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :
+                                <asp:TextBox ID="txtIdUser" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIdUser"
+                                    ErrorMessage="*" Width="14px"></asp:RequiredFieldValidator></td>
                             <td style="width: 188px">
                                 Clave &nbsp; &nbsp; &nbsp;&nbsp; :
                                 <asp:TextBox ID="txtClave" runat="server"></asp:TextBox></td>
                         </tr>
                         <tr>
-                            <td style="width: 268px">
-                                Fecha Inicio :<asp:TextBox ID="txtFecIni" runat="server"></asp:TextBox></td>
+                            <td style="width: 403px">
+                                Fecha Inicio :<asp:TextBox ID="txtFecIni" runat="server"></asp:TextBox>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtFecIni"
+                                    ErrorMessage="Fecha invalida" Operator="DataTypeCheck" Type="Date"></asp:CompareValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFecIni"
+                                    ErrorMessage="*"></asp:RequiredFieldValidator></td>
                             <td style="width: 188px">
                                 Fecha Fin&nbsp; :
                                 <asp:TextBox ID="txtFecFin" runat="server"></asp:TextBox></td>
                         </tr>
                         <tr>
-                            <td style="width: 268px">
+                            <td style="width: 403px">
                                 Nivel de Acceso &nbsp; :&nbsp;
                                 <asp:DropDownList ID="cboNivAcceso" runat="server" Width="116px">
                                 </asp:DropDownList></td>
@@ -102,7 +108,7 @@ function llamaBuscador()
                 </td>
             </tr>
             <tr>
-                <td colspan="2" style="height: 26px">
+                <td colspan="2" style="height: 20px">
                 </td>
             </tr>
             <tr>                
