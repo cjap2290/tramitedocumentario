@@ -1,5 +1,6 @@
 Imports Microsoft.VisualBasic
 Imports CAPICOM
+Const gKey As String = "SisLeonXIII"  'xa Produccion
 
 Public Class CEncriptador
     Public Function DecryptData(ByVal xTobeDecrypt As String, Optional ByVal xKey As String = "") As String
