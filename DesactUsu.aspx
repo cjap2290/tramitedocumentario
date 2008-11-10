@@ -42,21 +42,21 @@
                             <td>
                                 Login</td>
                             <td>
-                                <input id="Text3" type="text" /></td>
+                                <input id="txtIdUser" type="text" /></td>
                             <td>
                                 Fecha Inicio</td>
                             <td>
-                                <input id="Text5" type="text" /></td>
+                                <input id="txtFecIni" type="text" /></td>
                         </tr>
                         <tr>
                             <td>
                                 Nivel de Acceso</td>
                             <td>
-                                <input id="Text4" type="text" /></td>
+                                <input id="txtNivelAcceso" type="text" /></td>
                             <td>
                                 Fecha Fin</td>
                             <td>
-                                <input id="Text6" type="text" /></td>
+                                <input id="txtFecFin" type="text" /></td>
                         </tr>
                     </table>
                 </td>
