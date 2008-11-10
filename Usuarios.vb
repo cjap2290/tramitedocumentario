@@ -8,24 +8,63 @@ Public Class Usuarios
     Inherits CapaAccesoDatos._Usuarios
     'Dim oUsuario 
     Public NombreColumna As String
+    Dim nivelacceso As New CapaLogicaNegocio.NivelAcceso
+    Dim nivaccxusu As New CapaLogicaNegocio.NivelAccesoxUsuario
     Dim sECIdCargo As String
+    Private sIdUser As String
+    Private sFecIni As String
+    Private sFecFin As String
+    Private sNomNivAcc As String
+    Public Property obtNomNivAcceso() As String
+        Get
+            Return sNomNivAcc
+        End Get
+        Set(ByVal value As String)
+            sNomNivAcc = value
+        End Set
+    End Property
 
-    Public Function ListarDepartment() As DataTable
-        Dim dcoll As New Collection
-        'Dim rs As String
-        Dim b As Integer
-        Dim dt As DataTable
-        'Me.Where.Tear()
-        If Me.LoadAll Then
-            NombreColumna = Usuarios.ColumnNames.IdPersona
-            b = Me.cuentafilas
+    Public Property obtIdUser() As String
+        Get
+            Return sIdUser
+        End Get
+        Set(ByVal value As String)
+            sIdUser = value
+        End Set
+    End Property
+    Public Property obtFecIni() As String
+        Get
+            Return sFecIni
+        End Get
+        Set(ByVal value As String)
+            sFecIni = value
+        End Set
+    End Property
+    Public Property obtFecFin() As String
+        Get
+            Return sFecFin
+        End Get
+        Set(ByVal value As String)
+            sFecFin = value
+        End Set
+    End Property
 
-        End If
-        dt = Me.retornaUser
-        'dcoll.Add(dt, "Tabla")
-        'dcoll.Add(rs, "NombreCol")
-        Return dt
-    End Function
+    'Public Function ListarDepartment() As DataTable
+    '    Dim dcoll As New Collection
+    '    'Dim rs As String
+    '    Dim b As Integer
+    '    Dim dt As DataTable
+    '    'Me.Where.Tear()
+    '    If Me.LoadAll Then
+    '        NombreColumna = Usuarios.ColumnNames.IdPersona
+    '        b = Me.cuentafilas
+
+    '    End If
+    '    dt = Me.retornaUser
+    '    'dcoll.Add(dt, "Tabla")
+    '    'dcoll.Add(rs, "NombreCol")
+    '    Return dt
+    'End Function
     Public Function EC_obtIdCargo(ByVal sEIdPersona As String) As String
         If Me.E_obtIdCargo(sEIdPersona) Then
             sECIdCargo = Me.E_sIdCargo
@@ -53,8 +92,20 @@ Public Class Usuarios
             Return True
         End If
     End Function
-    'Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
-    '    Me.Where.IdPersona.Value = sIdPersona
-    '    Me.Where.IdPersona.Operand = Me.wherepa
-    'End Function
+    Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
+
+        Me.Where.IdPersona.Value = sIdPersona
+        Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
+        If Query.Load() Then
+            sIdUser = IdUser
+            sFecIni = FechaIni.ToShortDateString
+            sFecFin = FechaFin.ToShortDateString
+            If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
+                If nivelacceso.LoadByPrimaryKey(nivaccxusu.s_IdNivelAcceso) Then
+                    sNomNivAcc = nivelacceso.Descripcion
+                End If
+            End If
+        End If
+
+    End Function
 End Class

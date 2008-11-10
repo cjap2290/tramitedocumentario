@@ -62,6 +62,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NivelAcceso.vb" />
+    <Compile Include="NivelAccesoxUsuario.vb" />
     <Compile Include="Personal.vb" />
     <Compile Include="PersonNat.vb" />
     <Compile Include="Usuarios.vb" />
