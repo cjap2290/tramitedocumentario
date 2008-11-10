@@ -53,4 +53,8 @@ Public Class Usuarios
             Return True
         End If
     End Function
+    'Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
+    '    Me.Where.IdPersona.Value = sIdPersona
+    '    Me.Where.IdPersona.Operand = Me.wherepa
+    'End Function
 End Class
