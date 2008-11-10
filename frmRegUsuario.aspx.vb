@@ -14,6 +14,7 @@ Partial Class Default2
     Dim usuarios As New CapaLogicaNegocio.Usuarios
     Dim personal As New CapaLogicaNegocio.Personal
     Dim nivelaccesos As New CapaLogicaNegocio.NivelAcceso
+    Dim accesoxusuario As New CapaLogicaNegocio.NivelAccesoxUsuario
     Dim Encriptador As New CEncriptador
     Dim sIdpersona As String
     Dim sPersona As String
@@ -71,11 +72,13 @@ Partial Class Default2
         Dim sfecha As String
         Dim shora As String
         Dim sClave As String
-        sClave = Encriptador.EncryptData("yepo")
+        sClave = Encriptador.EncryptData(Me.txtClave.Text)
         sfecha = DateTime.Now().Date.ToString
         shora = DateTime.Now().Hour.ToString + ":" + DateTime.Now().Minute.ToString + ":" + DateTime.Now.Second.ToString
-        If usuarios.EC_ingresaUsuario(Me.txtIdUser.Text, Me.txtIdPersona.Text, sfecha, shora, Me.txtFecIni.Text, Me.txtFecFin.Text, "JeaCol", "Yepo") Then
+        If usuarios.EC_ingresaUsuario(Me.txtIdUser.Text, Me.txtIdPersona.Text, sfecha, shora, Me.txtFecIni.Text, Me.txtFecFin.Text, "JeaCol", sClave) Then
+            If accesoxusuario.EC_insertarNivelAcceso(Me.txtIdUser.Text, Me.cboNivAcceso.DataValueField) Then
 
+            End If
         End If
     End Sub
 End Class
