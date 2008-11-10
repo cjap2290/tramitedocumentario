@@ -26,4 +26,6 @@ Public Class NivelAcceso
             Return Nothing
         End If
     End Function
+    
+
 End Class

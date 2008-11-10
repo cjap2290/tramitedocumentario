@@ -1222,7 +1222,5 @@ Public MustInherit Class _Usuarios
             Return False
         End If
     End Function
-
-
 End Class
 
