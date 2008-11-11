@@ -101,10 +101,17 @@ Public Class Usuarios
             sFecIni = FechaIni.ToShortDateString
             sFecFin = FechaFin.ToShortDateString
             If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
-                If nivelacceso.LoadByPrimaryKey(nivaccxusu.s_IdNivelAcceso) Then
+                If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
                     sNomNivAcc = nivelacceso.Descripcion
+                    Return True
+                Else
+                    Return False
                 End If
+            Else
+                Return False
             End If
+        Else
+            Return False
         End If
 
     End Function
