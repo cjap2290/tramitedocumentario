@@ -11,10 +11,10 @@
     <div>
         <table style="width: 100%; height: 100%">
             <tr>
-                <td style="width: 59px">
+                <td style="width: 59px; height: 29px;">
                     Nro. Documento</td>
-                <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                <td style="height: 29px">
+                    <asp:TextBox ID="txtNroDoc" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width: 59px">
@@ -24,10 +24,10 @@
                     <asp:TextBox ID="txtRemitente" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 59px">
+                <td style="width: 59px; height: 25px;">
                     Asunto</td>
-                <td>
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                <td style="height: 25px">
+                    <asp:TextBox ID="Asunto" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width: 59px">
@@ -40,8 +40,8 @@
                     Cuerpo :</td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
-                    <asp:TextBox ID="TextBox5" runat="server" Height="128px" Width="697px" TextMode="MultiLine"></asp:TextBox></td>
+                <td colspan="2" align="center" style="height: 161px">
+                    <asp:TextBox ID="txtCuerpo" runat="server" Height="128px" Width="697px" TextMode="MultiLine"></asp:TextBox></td>
                 
             </tr>
             <tr>
