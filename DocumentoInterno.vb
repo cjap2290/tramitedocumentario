@@ -5,10 +5,10 @@ Imports MyGeneration.dOOdads
 Public Class DocumentoInterno 
 	Inherits _DocumentoInterno
 
-    Public Function EC_insertaDocInt(ByVal sNroDoc As String, ByVal sIdTipoDocumento As Integer, ByVal sIdArea As String, _
+    Public Sub EC_insertaDocInt(ByVal sNroDoc As String, ByVal sIdTipoDocumento As Integer, ByVal sIdArea As String, _
                                      ByVal sIdAgencia As String, ByVal sPeriodo As String, ByVal sAsunto As String, _
                                      ByVal sEncabezado As String, ByVal sPrioridad As String, ByVal sFechaR As String, _
-                                     ByVal sIdUserR As String) As Boolean
+                                     ByVal sIdUserR As String)
         AddNew()
         IdTipoDocumento = sIdTipoDocumento
         NroDoc = sNroDoc
@@ -20,8 +20,7 @@ Public Class DocumentoInterno
         Prioridad = sPrioridad
         FechaR = sFechaR
         IdUserR = sIdUserR
+        IdEstDoc = "01"
         Save()
-    End Function
-
-
+    End Sub
 End Class
