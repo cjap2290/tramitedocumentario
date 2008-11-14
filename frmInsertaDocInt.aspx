@@ -9,6 +9,50 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <table style="width: 100%; height: 100%">
+            <tr>
+                <td style="width: 59px">
+                    Nro. Documento</td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width: 59px">
+                    De
+                </td>
+                <td>
+                    <asp:TextBox ID="txtRemitente" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width: 59px">
+                    Asunto</td>
+                <td>
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width: 59px">
+                    Fecha</td>
+                <td>
+                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td align="left" colspan="2">
+                    Cuerpo :</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:TextBox ID="TextBox5" runat="server" Height="128px" Width="697px" TextMode="MultiLine"></asp:TextBox></td>
+                
+            </tr>
+            <tr>
+                <td align="left" style="width: 59px">
+                    &nbsp;
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar Borrador" /></td>
+                <td align="right">
+                    <asp:Button ID="btnAsignar" runat="server" Text="Asignar" />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
+            </tr>
+        </table>
     
     </div>
     </form>
