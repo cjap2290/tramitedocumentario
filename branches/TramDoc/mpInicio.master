@@ -3,100 +3,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>Página sin título</title>
-    <link href="style.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript">
-//Funcion que inicializa ocultando lo que esta dentro del div borrar
- function fncInicia(){
-   document.all.item("opc1").style.display="none";
-   document.all.item("opc2").style.display="none";
-   document.all.item("opc3").style.display="none";
-
- }
- function fncMnu1(opc1){
-   if (document.all.item("opc1").style.display=="none"){document.all.item("opc1").style.display=""}
-   else{document.all.item("opc1").style.display="none"}
-   document.all.item("opc2").style.display="none";
-   document.all.item("opc3").style.display="none";
- }
- function fncMnu2(opc2){
-   if (document.all.item("opc2").style.display=="none"){document.all.item("opc2").style.display=""}
-   else{document.all.item("opc2").style.display="none"}
-   document.all.item("opc1").style.display="none";
-   document.all.item("opc3").style.display="none";
- }
- function fncMnu3(opc3){
-   if (document.all.item("opc3").style.display=="none"){document.all.item("opc3").style.display=""}
-   else{document.all.item("opc3").style.display="none"}
-   document.all.item("opc1").style.display="none";
-   document.all.item("opc2").style.display="none";
-
- }
-  function fncMnu4(opc4){
-   if (document.all.item("opc4").style.display=="none"){document.all.item("opc4").style.display=""}
-	else{document.all.item("opc4").style.display="none"}
-   document.all.item("opc1").style.display="none";
-   document.all.item("opc2").style.display="none";
-   document.all.item("opc3").style.display="none";
-   document.all.item("opc5").style.display="none";
-
- }
- function fncMnu5(opc5){
-   if (document.all.item("opc5").style.display=="none"){document.all.item("opc5").style.display=""}
-	else{document.all.item("opc5").style.display="none"}
-   document.all.item("opc1").style.display="none";
-   document.all.item("opc2").style.display="none";
-   document.all.item("opc3").style.display="none";
-   document.all.item("opc4").style.display="none";
- }
- function ejecutarMenu(url)
- {
-    f=document.frmMenu;
-    f.action = url;
-    f.target = "fracuerpo";
-    f.submit();
- }
-</script>
+<head id="Head1" runat="server">
+  <link rel="stylesheet" href="Style.css" type="text/css" />
+  <title> Gestion de Tramite Documentario</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+<form id="Form1" runat="server">
     <div>
-        &nbsp;<br />
-        <table style="width: 100%; height: 100%">
-            <tr >
-                <td  colspan="3" style="width: 8px">
+        <table class="main" cellspacing="0" cellpadding="2">
+              <tr  class="header">
+                  <td colspan="2" class="header"/>
+              </tr>
+               <tr valign="top">
+                <td class="sidebar" rowspan="2">
+                    <a id="A1" href="~/admin/frmInsTipDoc.aspx" runat="server">Home</a><br/>
+                    <%--<h4>Perrenials</h4>                
+                    <a id="A2" href="perrenials/daffodil.aspx" runat="server">Daffodil</a><br/>
+                    <a id="A3" href="perrenials/rose.aspx" runat="server">Rose</a><br/>
+                    <a id="A4" href="perrenials/dahlia.aspx" runat="server">Dahlia</a><br/>
+                    <a id="A5" href="perrenials/hydrangea.aspx" runat="server">Hydrangea</a><br/>
+                    <a id="A6" href="perrenials/daisy.aspx" runat="server">Daisy</a><br />
+                    <h4>Annuals</h4>
+                    <a id="A7" href="annuals/gerranium.aspx" runat="server">Gerranium</a><br/>
+                    <a id="A8" href="annuals/impatiens.aspx" runat="server">Impatiens</a><br/>
+                    <a id="A9" href="annuals/petunia.aspx" runat="server">Petunia</a><br/>--%>
                 </td>
-                
+                <td class="body">
+                   <asp:ContentPlaceHolder id="SeccionContenidos" runat="server">
+                          <h3>Welcome to my florist website!</h3>
+                          We have an enormous selection of quality flowers and seeds, available for shipping to any location worldwide.  Let us handle all you gardening needs!<br/><br/>
+                        <asp:Image ID="Image1" AlternateText="Water Lillies" ImageUrl="~/Images/Waterlilies.jpg" runat="server"/>
+                    </asp:ContentPlaceHolder>
+                 </td>
             </tr>
             <tr>
-                <td style="width: 8px">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 8px">
-                </td>
-                <td>
-        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">        
-        </asp:contentplaceholder>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 8px">
-                </td>
-                <td>
-                </td>
-                <td>
+                <td class="footer">
+                    <asp:label id="Footer" font-italic="true" text="Copyright Microsoft 2003" runat="server" />
                 </td>
             </tr>
         </table>
     </div>
-    </form>
+</form>
 </body>
 </html>
+
