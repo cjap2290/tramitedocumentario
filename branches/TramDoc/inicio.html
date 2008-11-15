@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Administracion de Trabajos de Lectura de Medidores</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script>
+function cerrar() {
+    var ventana = window.self;
+    ventana.opener = window.self;
+    parent.close();
+}
+function iniciar(){
+    width  = screen.width;
+    height = screen.height;
+}
+</script>
+</head>
+<frameset rows="60,22,*" border="0">
+     <frame name="fracabecera" src="cabecera.html" scrolling="no" marginwidth="0" marginheight="0" noresize="no">
+     <frame name="frabarra" src="barra.html" scrolling="no" marginwidth="0" marginheight="0" noresize="no">
+   <frameset cols="180,*" border="0">
+     <frame name="framenu" src="menus.html" scrolling="yes" marginwidth="0" marginheight="0" target="mainbody" noresize="no">
+     <frame name="fracuerpo" src="cuerpo.html" scrolling="auto" marginwidth="0" marginheight="0" noresize="no">
+   </frameset>
+</frameset>
+<noframes>
+<body bgcolor="#FFFFFF" text="#000000" ONLOAD='JavaScript:iniciar();'>
+</body>
+</noframes>
+</html>
