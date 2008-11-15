@@ -18,7 +18,7 @@ Public Class DocumentoInterno
         Asunto = sAsunto
         Encabezado = sEncabezado
         Prioridad = sPrioridad
-        FechaR = sFechaR
+        FechaR = CType(sFechaR, Date)
         IdUserR = sIdUserR
         IdEstDoc = "01"
         Save()
