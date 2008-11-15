@@ -7,7 +7,7 @@ Partial Class frmInsertaDocInt
         Dim strStreamW As Stream
         Dim strStreamWriter As StreamWriter
         Try
-            Dim RutaArchivo = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+            Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
             'Se abre el archivo y si este no existe se crea
             strStreamW = File.OpenWrite(RutaArchivo)
             strStreamWriter = New StreamWriter(strStreamW, _
