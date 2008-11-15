@@ -1,0 +1,102 @@
+﻿<%@ Master Language="VB" CodeFile="mpInicio.master.vb" Inherits="mpInicio" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Página sin título</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+//Funcion que inicializa ocultando lo que esta dentro del div borrar
+ function fncInicia(){
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+
+ }
+ function fncMnu1(opc1){
+   if (document.all.item("opc1").style.display=="none"){document.all.item("opc1").style.display=""}
+   else{document.all.item("opc1").style.display="none"}
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+ }
+ function fncMnu2(opc2){
+   if (document.all.item("opc2").style.display=="none"){document.all.item("opc2").style.display=""}
+   else{document.all.item("opc2").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc3").style.display="none";
+ }
+ function fncMnu3(opc3){
+   if (document.all.item("opc3").style.display=="none"){document.all.item("opc3").style.display=""}
+   else{document.all.item("opc3").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+
+ }
+  function fncMnu4(opc4){
+   if (document.all.item("opc4").style.display=="none"){document.all.item("opc4").style.display=""}
+	else{document.all.item("opc4").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+   document.all.item("opc5").style.display="none";
+
+ }
+ function fncMnu5(opc5){
+   if (document.all.item("opc5").style.display=="none"){document.all.item("opc5").style.display=""}
+	else{document.all.item("opc5").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+   document.all.item("opc4").style.display="none";
+ }
+ function ejecutarMenu(url)
+ {
+    f=document.frmMenu;
+    f.action = url;
+    f.target = "fracuerpo";
+    f.submit();
+ }
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        &nbsp;<br />
+        <table style="width: 100%; height: 100%">
+            <tr >
+                <td  colspan="3" style="width: 8px">
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="width: 8px">
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 8px">
+                </td>
+                <td>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">        
+        </asp:contentplaceholder>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 8px">
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
