@@ -30,10 +30,11 @@
                 </td>
             </tr>
             <tr>
-                <td style="height: 126px">
+                <td style="height: 126px" colspan="2">
+                    <asp:GridView ID="gvTipDoc" runat="server">
+                    </asp:GridView>
                 </td>
-                <td style="height: 126px">
-                </td>
+                
             </tr>
             <tr>
                 <td>
