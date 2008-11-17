@@ -6,6 +6,59 @@
 <head id="Head1" runat="server">
   <link rel="stylesheet" href="Style.css" type="text/css" />
   <title> Gestion de Tramite Documentario</title>
+  <script type="text/javascript">
+//Funcion que inicializa ocultando lo que esta dentro del div borrar
+ function fncInicia(){
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+
+ }
+ function fncMnu1(opc1){
+   if (document.all.item("opc1").style.display=="none"){document.all.item("opc1").style.display=""}
+   else{document.all.item("opc1").style.display="none"}
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+ }
+ function fncMnu2(opc2){
+   if (document.all.item("opc2").style.display=="none"){document.all.item("opc2").style.display=""}
+   else{document.all.item("opc2").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc3").style.display="none";
+ }
+ function fncMnu3(opc3){
+   if (document.all.item("opc3").style.display=="none"){document.all.item("opc3").style.display=""}
+   else{document.all.item("opc3").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+
+ }
+  function fncMnu4(opc4){
+   if (document.all.item("opc4").style.display=="none"){document.all.item("opc4").style.display=""}
+	else{document.all.item("opc4").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+   document.all.item("opc5").style.display="none";
+
+ }
+ function fncMnu5(opc5){
+   if (document.all.item("opc5").style.display=="none"){document.all.item("opc5").style.display=""}
+	else{document.all.item("opc5").style.display="none"}
+   document.all.item("opc1").style.display="none";
+   document.all.item("opc2").style.display="none";
+   document.all.item("opc3").style.display="none";
+   document.all.item("opc4").style.display="none";
+ }
+ function ejecutarMenu(url)
+ {
+    f=document.frmMenu;
+    f.action = url;
+    f.target = "fracuerpo";
+    f.submit();
+ }
+</script>
+
 </head>
 <body>
 <form id="Form1" runat="server">
@@ -16,8 +69,8 @@
               </tr>
                <tr valign="top">
                 <td class="sidebar" rowspan="2">
-                    <a id="A1" href="~/admin/frmInsTipDoc.aspx" runat="server">Home</a><br/>
-                    <%--<h4>Perrenials</h4>                
+                    <%--<a id="A1" href="~/admin/frmInsTipDoc.aspx" runat="server">Home</a><br/>
+                    <h4>Perrenials</h4>                
                     <a id="A2" href="perrenials/daffodil.aspx" runat="server">Daffodil</a><br/>
                     <a id="A3" href="perrenials/rose.aspx" runat="server">Rose</a><br/>
                     <a id="A4" href="perrenials/dahlia.aspx" runat="server">Dahlia</a><br/>
@@ -27,6 +80,65 @@
                     <a id="A7" href="annuals/gerranium.aspx" runat="server">Gerranium</a><br/>
                     <a id="A8" href="annuals/impatiens.aspx" runat="server">Impatiens</a><br/>
                     <a id="A9" href="annuals/petunia.aspx" runat="server">Petunia</a><br/>--%>
+                    <table width="160" border="0" cellspacing="0" cellpadding="0" class="tableborder">
+                        <tr>
+                        <td valign="top" bgcolor="FBFFFF" style="width: 162px">
+                        <table width="160" border="0" cellspacing="0" cellpadding="0">
+                          <tr><td height="22" align="center" class="textcellexit"> <a class="href" href="~/Inicio.aspx" target="fracuerpo">Menu Principal</a></td></tr>
+                          <tr><td height="4" class="text"></td></tr>
+                          <tr><td height="20" align="center" class="textcelld"><a class="href" href="javascript:fncMnu1(opc1);">Procesos</a></td></tr>
+                          <tr><td height="3" class="text"></td></tr>
+                          <tr><td><div id="opc1">
+                                <table width="160" height="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="~/frmInsertaDocInt.aspx" runat="server">&nbsp;Opcion1</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion1.html')">&nbsp;Opcion1</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion1.html')">&nbsp;Opcion1</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion1.html')">&nbsp;Opcion1</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+
+                                </table>
+                                </div></td>
+                          </tr>
+                          <tr><td height="20" align="center" class="textcelld"><a class="href" href="javascript:fncMnu2(opc2);">Mantenimiento</a></td></tr>
+                          <tr><td height="3" class="text"></td></tr>
+                          <tr><td><div id="opc2">
+                                <table width="160" border="0" height="100%" cellspacing="0" cellpadding="0">
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('frmInsTipDoc.aspx'">&nbsp;Registro Tipo de Documento</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                            <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
+                                            <tr><td height="4" class="text"></td></tr>
+                                </table>
+                          </div>
+                          </td>
+                          </tr>
+                          <tr><td height="20" align="center" class="textcelld"><a class="href" href="javascript:fncMnu3(opc3);">Reportes Gestion Yepo</a></td></tr>
+                          <tr><td height="3" class="text"></td></tr>
+                          <tr><td><div id="opc3">
+                            <table width="160" height="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="reportelibros.html" target="fracuerpo">Libros Asignados</a></td></tr>
+                                <tr><td height="4" class="text"></td></tr>
+                                <tr><td height="19" align="left" class="textcellc"><a class="hrefb" href="reporteclientes.html" target="fracuerpo">Informacion de Clientes</a></td></tr>
+                                <tr><td height="4" class="text"></td></tr>
+                            </table>
+                          </div>
+                          </td>
+                          </tr>
+                           <tr>
+                              <td height="19" align="left" class="textcelld"><a class="hrefexit" href="#" onClick="JavaScript: parent.location='../UsuarioLogout.do'">Cerrar Sesion</a></td>
+                           </tr>
+                        </table>
+                        </td>
+                        </tr>
+                     </table>
                 </td>
                 <td class="body">
                    <asp:ContentPlaceHolder id="SeccionContenidos" runat="server">
