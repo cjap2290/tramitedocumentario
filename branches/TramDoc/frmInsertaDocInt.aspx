@@ -45,7 +45,7 @@
                 
             </tr>
             <tr>
-                <td align="left" style="width: 59px">
+                <td align="left" style="width: 59px" >
                     &nbsp;
                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar Borrador" /></td>
                 <td align="right">

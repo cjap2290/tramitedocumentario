@@ -238,41 +238,36 @@ div#cibertec {
 }
 /*************************Cuerpo de Módulo******************************/
 /***Color de fondo y fondo de imagen del cuerpo de la página***/
-body#body {
-    background-image: url('../images/watermark.gif');
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    margin: 0px;
-    background-repeat: no-repeat;
-	background-color: #F5F7F9;
-	scrollbar-face-color: #5378A8;
+body#body
+{
+	margin: 0px;
+	/*scrollbar-face-color: #5378A8;
 	scrollbar-highlight-color: #B1BBC5;
 	scrollbar-3dlight-color: #F0F0F0;
 	scrollbar-arrow-color: #FFFFFF;
-	scrollbar-track-color: #E0E9F3;
+	scrollbar-track-color: #E0E9F3;*/
+	background: url(Imagenes/FondoSistema.jpg) #f5f7f9 fixed no-repeat 50% 50%;
 }
 body#body2 {
     background-color: #F5F7F9;
-	scrollbar-face-color: #B1BBC5;
+	/*scrollbar-face-color: #B1BBC5;
 	scrollbar-highlight-color: #B1BBC5;
 	scrollbar-3dlight-color: #F0F0F0;
 	scrollbar-arrow-color: #000000;
 	scrollbar-track-color: #B1BBC5;
-	scrollbar-darkshadow-color: #000000;
+	scrollbar-darkshadow-color: #000000;*/
 }
 /***Color de fondo del body cuerpo izquierdo***/
 body#leftbody {
     margin: 0px;
 	background-color: #FFFFFF;
-         SCROLLBAR-FACE-COLOR: #ffffff; 
+     /*SCROLLBAR-FACE-COLOR: #ffffff; 
 	 SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
 	 SCROLLBAR-SHADOW-COLOR: #a5abbe; 
 	 SCROLLBAR-3DLIGHT-COLOR: #a5abbe; 
 	 SCROLLBAR-ARROW-COLOR: #073c68; 
 	 SCROLLBAR-TRACK-COLOR: #d4d8e4; 
-	 SCROLLBAR-DARKSHADOW-COLOR: #a5abbe
-				   }
-
+	 SCROLLBAR-DARKSHADOW-COLOR: #a5abbe*/
 }
 .tableborder {
 	border-right: #0E668E 1px ridge;
@@ -480,4 +475,8 @@ body#leftbody {
 	border-right: 1px ridge #0E668E;
 	border-bottom: 1px ridge #0E668E;
 	background-color: #ECF5F8;
+}
+.body
+{
+	background-image: url(Imagenes/FondoSistema.jpg);
 }

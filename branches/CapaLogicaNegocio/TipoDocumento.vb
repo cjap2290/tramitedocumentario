@@ -23,6 +23,7 @@ Public Class TipoDocumento
     End Sub
     Public Function EC_ListarTipoDoc() As Boolean
         If LoadAll() Then
+            dtTipDoc = Me.DataTable
             Return True
         Else
             Return False
