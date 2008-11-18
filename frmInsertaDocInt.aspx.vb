@@ -6,19 +6,20 @@ Partial Class frmInsertaDocInt
         'Variables para abrir el archivo en modo de escritura
         Dim strStreamW As Stream
         Dim strStreamWriter As StreamWriter
-        Try
-            Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
-            'Se abre el archivo y si este no existe se crea
-            strStreamW = File.OpenWrite(RutaArchivo)
-            strStreamWriter = New StreamWriter(strStreamW, _
-                                System.Text.Encoding.UTF8)
-            strStreamWriter.WriteLine(txtCuerpo.Text)
-            strStreamWriter.Close()
-            MsgBox("El archivo se generó con éxito")
-        Catch ex As Exception
-            strStreamWriter.Close()
-            MsgBox(ex.Message)
-        End Try
+        'Try
+        Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+        'Se abre el archivo y si este no existe se crea
+        strStreamW = File.OpenWrite(RutaArchivo)
+        strStreamWriter = New StreamWriter(strStreamW, _
+                            System.Text.Encoding.UTF8)
+        strStreamWriter.WriteLine(txtCuerpo.Text)
+        'strStreamWriter.Close()
+        MsgBox("El archivo se generó con éxito")
+        'Catch ex As Exception
+        'MsgBox(ex.Message)
+        'Finally
+        strStreamWriter.Close()
+        'End Try
     End Sub
 
     Protected Sub btnGuardar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuardar.Click

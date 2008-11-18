@@ -9,7 +9,7 @@
 <body>--%>
 <asp:content id="InsTipDoc" ContentPlaceHolderId="SeccionContenidos" runat="server">
     <%--<form id="form1" runat="server">--%>
-    <div>
+    <div class="body#body">
         <table style="width: 100%; height: 100%">
             <tr>
                 <td>
