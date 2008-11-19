@@ -60,10 +60,10 @@
 </script>
 
 </head>
-<body>
+<body class="body">
 <form id="Form1" runat="server">
     <div>
-        <table class="main" cellspacing="0" cellpadding="2">
+        <table  cellspacing="0" cellpadding="2">
               <tr  class="header">
                   <td colspan="2" class="header"/>
               </tr>
@@ -140,7 +140,7 @@
                         </tr>
                      </table>
                 </td>
-                <td class="body">
+                <td >
                    <asp:ContentPlaceHolder id="SeccionContenidos" runat="server">
                           <h3>Welcome to my florist website!</h3>
                           We have an enormous selection of quality flowers and seeds, available for shipping to any location worldwide.  Let us handle all you gardening needs!<br/><br/>

@@ -1,15 +1,27 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmInsertaDocInt.aspx.vb" Inherits="frmInsertaDocInt" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmInsertaDocInt.aspx.vb" Inherits="frmInsertaDocInt" MasterPageFile="~/mpInicio.master" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Página sin título</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server">--%>
+ <asp:content id="InsDocInt" ContentPlaceHolderId="SeccionContenidos" runat="server">
     <div>
         <table style="width: 100%; height: 100%">
+            <tr>
+                <td  colspan="2" style="width: 59px; height: 29px">
+                    Registro de Documento Interno</td>                
+            </tr>
+            <tr>
+                <td style="width: 59px; height: 29px">
+                    Tipo de Documento</td>
+                <td style="height: 29px">
+                    <asp:DropDownList ID="DropDownList1" runat="server" Width="154px">
+                    </asp:DropDownList></td>
+            </tr>
             <tr>
                 <td style="width: 59px; height: 29px;">
                     Nro. Documento</td>
@@ -52,9 +64,9 @@
                     <asp:Button ID="btnAsignar" runat="server" Text="Asignar" />
                     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
             </tr>
-        </table>
-    
+        </table>    
     </div>
-    </form>
+   </asp:content>
+<%--    </form>
 </body>
-</html>
+</html>--%>
