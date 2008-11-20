@@ -29,4 +29,15 @@ Public Class TipoDocumento
             Return False
         End If
     End Function
+    Public Function EC_ListarDocMenosReq() As Boolean
+        Where.Descripcion.Value = "%Requerimiento%"
+        Where.Descripcion.Operator = WhereParameter.Operand.NotLike
+
+        If Query.Load() Then
+            dtTipDoc = Me.DataTable
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

@@ -65,10 +65,12 @@
     <div>
         <table  cellspacing="0" cellpadding="2">
               <tr  class="header">
-                  <td colspan="2" class="header"/>
+                  <td colspan="2" class="header"> 
+                  <asp:Image ID="Image1"  ImageUrl= "~/Imagenes/Cabecera.gif" runat="server"/>
+                  </td>                                    
               </tr>
                <tr valign="top">
-                <td class="sidebar" rowspan="2">
+                <td class="sidebar" rowspan="2" style="width: 67px">
                     <%--<a id="A1" href="~/admin/frmInsTipDoc.aspx" runat="server">Home</a><br/>
                     <h4>Perrenials</h4>                
                     <a id="A2" href="perrenials/daffodil.aspx" runat="server">Daffodil</a><br/>
@@ -140,12 +142,12 @@
                         </tr>
                      </table>
                 </td>
-                <td >
-                   <asp:ContentPlaceHolder id="SeccionContenidos" runat="server">
-                          <h3>Welcome to my florist website!</h3>
+                <td  style ="height:100% ; width:100%">
+                   <asp:ContentPlaceHolder   id="SeccionContenidos" runat="server">
+                         <%-- <h3>Welcome to my florist website!</h3>
                           We have an enormous selection of quality flowers and seeds, available for shipping to any location worldwide.  Let us handle all you gardening needs!<br/><br/>
                         <asp:Image ID="Image1" AlternateText="Water Lillies" ImageUrl="~/Images/Waterlilies.jpg" runat="server"/>
-                    </asp:ContentPlaceHolder>
+ --%>                   </asp:ContentPlaceHolder>
                  </td>
             </tr>
             <tr>

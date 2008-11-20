@@ -14,16 +14,11 @@ obj\Debug\BusinessLayer.pdb
 bin\Release\BusinessLayer.dll
 bin\Release\BusinessLayer.pdb
 bin\Release\BusinessLayer.xml
-bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
-bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
 bin\Release\Microsoft.Practices.ObjectBuilder.dll
 bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
 bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.xml
 bin\Release\Microsoft.Practices.ObjectBuilder.xml
-bin\Release\Interop.CAPICOM.dll
 obj\Release\ResolveAssemblyReference.cache
-obj\Release\Interop.CAPICOM.dll
-obj\Release\BusinessLayer.vbproj.ResolveComReference.cache
 obj\Release\BusinessLayer.Resources.resources
 obj\Release\BusinessLayer.vbproj.GenerateResource.Cache
 obj\Release\BusinessLayer.dll

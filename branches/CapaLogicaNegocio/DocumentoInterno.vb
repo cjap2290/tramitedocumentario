@@ -23,4 +23,5 @@ Public Class DocumentoInterno
         IdEstDoc = "01"
         Save()
     End Sub
+   
 End Class

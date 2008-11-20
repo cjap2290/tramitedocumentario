@@ -13,3 +13,17 @@ bin\Debug\CapaAccesoDatos.xml
 obj\Debug\CapaLogicaNegocio.dll
 obj\Debug\CapaLogicaNegocio.xml
 obj\Debug\CapaLogicaNegocio.pdb
+bin\Release\CapaLogicaNegocio.dll
+bin\Release\CapaLogicaNegocio.pdb
+bin\Release\CapaLogicaNegocio.xml
+bin\Release\CapaAccesoDatos.dll
+bin\Release\MyGeneration.dOOdads.dll
+bin\Release\MyGeneration.dOOdads.xml
+bin\Release\CapaAccesoDatos.pdb
+bin\Release\CapaAccesoDatos.xml
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\CapaLogicaNegocio.Resources.resources
+obj\Release\CapaLogicaNegocio.vbproj.GenerateResource.Cache
+obj\Release\CapaLogicaNegocio.dll
+obj\Release\CapaLogicaNegocio.xml
+obj\Release\CapaLogicaNegocio.pdb
