@@ -31,7 +31,12 @@
             </tr>
             <tr>
                 <td style="height: 126px" colspan="2">
-                    <asp:GridView ID="gvTipDoc" runat="server">
+                    <asp:GridView ID="gvTipDoc" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                        <FooterStyle BackColor="White" ForeColor="#333333" />
+                        <RowStyle BackColor="White" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
                     </asp:GridView>
                 </td>
                 

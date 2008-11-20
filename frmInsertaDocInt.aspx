@@ -19,7 +19,7 @@
                 <td style="width: 59px; height: 29px">
                     Tipo de Documento</td>
                 <td style="height: 29px">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Width="154px">
+                    <asp:DropDownList ID="cboTipDoc" runat="server" Width="154px">
                     </asp:DropDownList></td>
             </tr>
             <tr>

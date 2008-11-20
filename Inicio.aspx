@@ -1,2 +1,2 @@
-﻿<%@ page language="VB" MasterPageFile="~/mpInicio.master" %>
+﻿<%@ page language="VB" MasterPageFile="~/mpInicio.master"  %>
 
