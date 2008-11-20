@@ -66,7 +66,7 @@
         <table  cellspacing="0" cellpadding="2">
               <tr  class="header">
                   <td colspan="2" class="header"> 
-                  <asp:Image ID="Image1"  ImageUrl= "~/Imagenes/Cabecera.gif" runat="server"/>
+                  <asp:Image ID="Image1"  ImageUrl= "~/Imagenes/Cabecera.gif" runat="server" Width="513px" Height="103px"/>
                   </td>                                    
               </tr>
                <tr valign="top">
