@@ -10,3 +10,14 @@ obj\Debug\CapaAccesoDatos.vbproj.GenerateResource.Cache
 obj\Debug\CapaAccesoDatos.dll
 obj\Debug\CapaAccesoDatos.xml
 obj\Debug\CapaAccesoDatos.pdb
+bin\Release\CapaAccesoDatos.dll
+bin\Release\CapaAccesoDatos.pdb
+bin\Release\CapaAccesoDatos.xml
+bin\Release\MyGeneration.dOOdads.dll
+bin\Release\MyGeneration.dOOdads.xml
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\CapaAccesoDatos.Resources.resources
+obj\Release\CapaAccesoDatos.vbproj.GenerateResource.Cache
+obj\Release\CapaAccesoDatos.dll
+obj\Release\CapaAccesoDatos.xml
+obj\Release\CapaAccesoDatos.pdb
