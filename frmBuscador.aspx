@@ -26,7 +26,7 @@
     </script>
 </head>
 <body>
-    <form id="frmBuscador"  runat="server" action="frmRegUsuario.aspx" method="post">
+    <form id="frmBuscador"  runat="server" action="admin/frmRegUsuario.aspx" method="post">
     <div>
         <table style="width: 50%; height: 30%">
             <tr>

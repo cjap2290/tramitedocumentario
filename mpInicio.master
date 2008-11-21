@@ -8,6 +8,7 @@
   <title> Gestion de Tramite Documentario</title>
   <script type="text/javascript">
 //Funcion que inicializa ocultando lo que esta dentro del div borrar
+ 
  function fncInicia(){
    document.all.item("opc1").style.display="none";
    document.all.item("opc2").style.display="none";
@@ -21,12 +22,21 @@
    document.all.item("opc3").style.display="none";
  }
  function fncMnu2(opc2){
-   if (document.all.item("opc2").style.display=="none"){document.all.item("opc2").style.display=""}
-   else{document.all.item("opc2").style.display="none"}
+   if (document.all.item("opc2").style.display=="none")
+   {
+   document.all.item("opc2").style.display="";
+   document.getElementById("Menu2").className="textcellf3";
+   }
+   else{
+   document.all.item("opc2").style.display="none";
+   document.getElementById("Menu2").className="textcelld";
+   }
    document.all.item("opc1").style.display="none";
    document.all.item("opc3").style.display="none";
+   document.getElementById("Menu2").className="textcelld";
+   
  }
- function fncMnu3(opc3){
+/* function fncMnu3(opc3){
    if (document.all.item("opc3").style.display=="none"){document.all.item("opc3").style.display=""}
    else{document.all.item("opc3").style.display="none"}
    document.all.item("opc1").style.display="none";
@@ -49,7 +59,7 @@
    document.all.item("opc2").style.display="none";
    document.all.item("opc3").style.display="none";
    document.all.item("opc4").style.display="none";
- }
+ }*/
  function ejecutarMenu(url)
  {
     f=document.frmMenu;
@@ -57,11 +67,49 @@
     f.target = "fracuerpo";
     f.submit();
  }
+ 
+ function fncMnu2a(opc2a){
+   if (document.all.item("opc2a").style.display=="none"){document.all.item("opc2a").style.display=""}
+   else{document.all.item("opc2a").style.display="none"}   
+ }
+ 
+  function fncMnu(id){
+    var xid;
+   if ( document.getElementById("opc"+id).style.display=="none" )
+   /*document.all.item("opc1").style.display=="none"*/
+   {
+        /*document.all.item("opc1").style.display=""*/
+        document.getElementById("opc"+id).style.display="";
+        //alert(document.getElementById("Menu"+id).className);
+        document.getElementById("Menu"+id).className="textcellf3";
+   }
+   else
+   {
+        /*document.all.item("opc1").style.display="none"*/
+        document.getElementById("opc"+id).style.display="none";
+        //alert(document.getElementById("Menu"+id).id);
+        document.getElementById("Menu"+id).className="textcelld";
+   }
+        //document.getElementById("Menu"+id).className="textcelld";
+        /*xid=id;
+        for(var q=1;q<4;q++) //modificar segun el numeor de secciones a mostrar
+        {
+            //alert(q + " " + id + " " + xid);
+            if (xid == q){}
+            else 
+            {
+                document.getElementById("opc"+q).style.display="none";                
+                //document.all.item("opc2").style.display="none";
+                //document.all.item("opc3").style.display="none";
+            }
+        }*/
+ }
+ 
 </script>
 
 </head>
-<body class="body">
-<form id="Form1" runat="server">
+<body class="body" >
+<form id="frmInicio"  runat="server">
     <div>
         <table  cellspacing="0" cellpadding="2">
               <tr  class="header">
@@ -70,7 +118,7 @@
                   </td>                                    
               </tr>
                <tr valign="top">
-                <td class="sidebar" rowspan="2" style="width: 67px">
+                <td class="sidebar" rowspan="2"  style="width: 67px">
                     <%--<a id="A1" href="~/admin/frmInsTipDoc.aspx" runat="server">Home</a><br/>
                     <h4>Perrenials</h4>                
                     <a id="A2" href="perrenials/daffodil.aspx" runat="server">Daffodil</a><br/>
@@ -86,11 +134,11 @@
                         <tr>
                         <td valign="top" style="background-color: #FBFFFF ;width: 162px">
                         <table width="160" border="0" cellspacing="0" cellpadding="0">
-                          <tr><td style ="height: 22px" align="center" class="textcellexit"> <a class="href" href="~/Inicio.aspx" target="fracuerpo">Menu Principal</a></td></tr>
-                          <tr><td style ="height: 4px" class="text"></td></tr>
-                          <tr><td style ="height: 20px" align="center" class="textcelld"><a class="href" href="javascript:fncMnu1(opc1);">Procesos</a></td></tr>
-                          <tr><td style ="height: 3px" class="text"></td></tr>
-                          <tr><td><div id="opc1">
+                          <tr><td style="height: 22px; width: 162px;" align="center" class="textcellexit"> <a class="href" href="~/Inicio.aspx" target="fracuerpo">Menu Principal</a></td></tr>
+                          <tr><td style="height: 4px; width: 162px;" class="text"></td></tr>
+                          <tr><td id="Menu1" style="height: 20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(1);">Procesos</a></td></tr>
+                          <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                          <tr><td style="width: 162px"><div id="opc1">
                                 <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr><td style ="height: 19px" align="left" class="textcellc"><a class="hrefb" href="~/frmInsertaDocInt.aspx" runat="server">&nbsp;Opcion1</a></td></tr>
                                             <tr><td style ="height: 4px" class="text"></td></tr>
@@ -100,16 +148,24 @@
                                             <tr><td style ="height:4px" class="text"></td></tr>
                                             <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion1.html')">&nbsp;Opcion1</a></td></tr>
                                             <tr><td style ="height: 4px" class="text"></td></tr>
-
                                 </table>
                                 </div></td>
                           </tr>
-                          <tr><td style ="height:20px" align="center" class="textcelld"><a class="href" href="javascript:fncMnu2(opc2);">Mantenimiento</a></td></tr>
-                          <tr><td style ="height: 3px" class="text"></td></tr>
-                          <tr><td><div id="opc2">
+                          <tr><td id="Menu2" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(2);">Mantenimiento</a></td></tr>
+                          <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                          <tr><td style="width: 162px"><div id="opc2">
                                 <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
-                                            <tr><td style ="height: 19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('frmInsTipDoc.aspx'">&nbsp;Registro Tipo de Documento</a></td></tr>
-                                            <tr><td style ="height:4px" class="text"></td></tr>
+                                            <tr><td style ="height: 19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fncMnu2a(opc2a);">&nbsp;Registro Tipo de Documento</a></td></tr>
+                                            <tr><td style ="height:4px" class="text"> 
+                                            <div id="opc2a">
+                                                    <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
+                                                            <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="javascript:ejecutarMenu('frmInsTipDoc.aspx'">&nbsp;Opcion2a1</a></td></tr>
+                                                            <tr><td style ="height:4px" class="text"></td></tr>
+                                                            <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="javascript:ejecutarMenu('frmInsTipDoc.aspx'">&nbsp;Opcion2a2</a></td></tr>
+                                                            <tr><td style ="height:4px" class="text"></td></tr>
+                                            </table>
+                                            </div>
+                                             </td></tr>
                                             <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
                                             <tr><td style ="height:4px" class="text"></td></tr>
                                             <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
@@ -122,9 +178,9 @@
                           </div>
                           </td>
                           </tr>
-                          <tr><td style ="height:20px" align="center" class="textcelld"><a class="href" href="javascript:fncMnu3(opc3);">Reportes Gestion Yepo</a></td></tr>
-                          <tr><td style ="height:3px" class="text"></td></tr>
-                          <tr><td><div id="opc3">
+                          <tr><td id="Menu3" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(3);">Reportes Gestion Yepo</a></td></tr>
+                          <tr><td style="height:3px; width: 162px;" class="text"></td></tr>
+                          <tr><td style="width: 162px"><div id="opc3">
                             <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="reportelibros.html" target="fracuerpo">Libros Asignados</a></td></tr>
                                 <tr><td style ="height:4px" class="text"></td></tr>
@@ -135,7 +191,7 @@
                           </td>
                           </tr>
                            <tr>
-                              <td style ="height: 19px" align="left" class="textcelld"><a class="hrefexit" href="#"  onclick="javascript: parent.location='../UsuarioLogout.do'">Cerrar Sesion</a></td>
+                              <td style="height: 19px; width: 162px;" align="left" class="textcelld"><a class="hrefexit" href="#"  onclick="javascript: parent.location='../UsuarioLogout.do'">Cerrar Sesion</a></td>
                            </tr>
                         </table>
                         </td>

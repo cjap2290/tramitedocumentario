@@ -24,7 +24,22 @@ Partial Class frmInsertaDocInt
     End Sub
 
     Protected Sub btnGuardar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
-        docInt.EC_insertaDocInt(Me.txtNroDoc.Text, 1, "06", "01", "2004", Me.txtNroDoc.Text, " ", "1", "13/11/2008", "JeaCol")
+        With docInt
+            .pNroDocu = txtNroDoc.Text
+            .pIdTipDocumento = 1
+            .pIdArea = "06"
+            .pIdAgencia = "01"
+            .pPeriodo = "2004"
+            .pAsunto = Me.txtAsunto.Text
+            .pEncabezado = ""
+            .pPrioridad = "1"
+            .pFechaR = "13/11/2008"
+            .pIdUserR = "JeaCol"
+            .pAsiDocInt_Condicion = "18"
+            .pAsiDocInt_IdEstAsigDoc = "12"
+            .pAsiDocInt_IdUser = ""
+            .EC_insertaDocInt()
+        End With
         GenerarArchivo()
     End Sub
 
