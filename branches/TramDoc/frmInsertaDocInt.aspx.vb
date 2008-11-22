@@ -33,12 +33,9 @@ Partial Class frmInsertaDocInt
             .pAsunto = Me.txtAsunto.Text
             .pEncabezado = ""
             .pPrioridad = "1"
-            .pFechaR = "13/11/2008"
+            .pFechaR = DateTime.Now().Date.ToString
             .pIdUserR = "JeaCol"
-            .pAsiDocInt_Condicion = "18"
-            .pAsiDocInt_IdEstAsigDoc = "12"
-            .pAsiDocInt_IdUser = ""
-            .EC_insertaDocInt()
+            .EC_insertaDocInt(False)
         End With
         GenerarArchivo()
     End Sub
@@ -50,5 +47,25 @@ Partial Class frmInsertaDocInt
             cboTipDoc.DataValueField = tipdoc.lsTipoDoc.Columns(0).ColumnName
             cboTipDoc.DataBind()
         End If
+    End Sub
+
+    Protected Sub btnAsignar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAsignar.Click
+        With docInt
+            .pNroDocu = txtNroDoc.Text
+            .pIdTipDocumento = 1
+            .pIdArea = "06"
+            .pIdAgencia = "01"
+            .pPeriodo = "2004"
+            .pAsunto = Me.txtAsunto.Text
+            .pEncabezado = ""
+            .pPrioridad = "1"
+            .pFechaR = "13/11/2008"
+            .pIdUserR = "JeaCol"
+            .pAsiDocInt_Condicion = "18"
+            .pAsiDocInt_IdEstAsigDoc = "12"
+            .pAsiDocInt_IdUser = "JeaCol"
+            .EC_insertaDocInt(True)
+        End With
+        GenerarArchivo()
     End Sub
 End Class
