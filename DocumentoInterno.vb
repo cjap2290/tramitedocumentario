@@ -134,10 +134,10 @@ Public Class DocumentoInterno
     End Property
 
 
-    Public Sub EC_insertaDocInt()
+    Public Sub EC_insertaDocInt(ByVal bAsigna As Boolean)
         AddNew()
         IdTipoDocumento = sIdTipDocumento
-        NroDoc = sNroDoc
+        NroDoc = sNrodoc
         IdArea = sIdArea
         IdAgencia = sIdAgencia
         Periodo = sPeriodo
@@ -148,16 +148,18 @@ Public Class DocumentoInterno
         IdUserR = sIdUserR
         IdEstDoc = "01"
         Save()
-        With AsignacionDocInt
-            AddNew()
-            .IdUser = AsiDocInt_IdUser
-            .IdDocInterno = Me.IdDocInterno
-            .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
-            .Condicion = AsiDocInt_Condicion
-            .IdUserR = sIdUserR
-            .FechaR = CType(sFechaR, Date)
-            Save()
-        End With
+        If bAsigna Then
+            With AsignacionDocInt
+                .AddNew()
+                .IdUser = AsiDocInt_IdUser
+                .IdDocInterno = Me.IdDocInterno
+                .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
+                .Condicion = AsiDocInt_Condicion
+                .IdUserR = sIdUserR
+                .FechaR = CType(sFechaR, Date)
+                .Save()
+            End With
+        End If
     End Sub
    
 End Class
