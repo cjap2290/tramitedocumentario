@@ -16,6 +16,7 @@
                 <td>
                 </td>
                 <td>
+                    &nbsp;
                 </td>
             </tr>
             <tr>
@@ -26,7 +27,7 @@
                 <td style="text-align: center">
                     <table style="width: 286px; height: 168px; text-align: center">
                         <tr>
-                            <td style="width: 109px; height: 34px">
+                            <td style="width: 301px; height: 34px">
                             </td>
                             <td style="width: 116px; height: 34px">
                                 Inicio de Sesión</td>
@@ -34,31 +35,32 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 109px; height: 34px">
-                                Agencia</td>
-                            <td style="width: 116px; height: 34px">
-                                <asp:TextBox ID="txtAgencia" runat="server"></asp:TextBox></td>
-                            <td style="width: 47px; height: 34px">
+                            <td style="width: 301px; height: 18px">
+                                </td>
+                            <td style="width: 116px; height: 18px">
+                                </td>
+                            <td style="width: 47px; height: 18px">
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 109px; height: 34px">
+                            <td style="width: 301px; height: 34px">
+                                Nombre de
                                 Usuario</td>
                             <td style="width: 116px; height: 34px">
                                 <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox></td>
                             <td style="width: 47px; height: 34px">
-                                <asp:Label ID="Label1" runat="server" Text="*"></asp:Label></td>
+                                <asp:RequiredFieldValidator ID="rvUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td style="width: 109px; height: 34px">
+                            <td style="width: 301px; height: 34px">
                                 Contraseña</td>
                             <td style="width: 116px; height: 34px">
                                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
                             <td style="width: 47px; height: 34px">
-                                <asp:Label ID="Label2" runat="server" Text="*"></asp:Label></td>
+                                <asp:RequiredFieldValidator ID="rvContraseña" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td style="width: 109px">
+                            <td style="width: 301px">
                             </td>
                             <td style="width: 116px">
                                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" /></td>
