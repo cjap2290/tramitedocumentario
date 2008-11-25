@@ -19,7 +19,10 @@
                 <td>
                     Elegir Tipo de Busqueda</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="cbotipBusq" runat="server">
+                        <asp:ListItem Value="1">Por Area</asp:ListItem>
+                        <asp:ListItem Value="2">Por Cargo</asp:ListItem>
+                        <asp:ListItem>Por Agencia</asp:ListItem>
                     </asp:DropDownList></td>
                 <td style="width: 85px">
                 </td>
@@ -28,9 +31,10 @@
             </tr>
             <tr>
                 <td>
-                </td>
+                    <asp:Label ID="Label1" runat="server" Text="Label" Width="177px"></asp:Label></td>
                 <td>
-                </td>
+                    <asp:DropDownList ID="cboitemBusq" runat="server">
+                    </asp:DropDownList></td>
                 <td style="width: 85px">
                 </td>
                 <td>
