@@ -26,7 +26,7 @@ Partial Class _Default
                     'MessageBox.Show("El usuario esta desactivado..." + Space(10), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     'Me.LoginOK = False
                 Else
-                    txtAgencia.Text = DR.Item("Agencia")
+                    'txtAgencia.Text = DR.Item("Agencia")
                     xPass = BSLayer.DecryptData(DR.Item("Clave"))
                     BSLayer.vIdAgencia = dr.Item("IdAgencia")
                     BSLayer.vIdArea = dr.Item("IdArea")
