@@ -1415,20 +1415,6 @@ Public MustInherit Class _PersonNat
 
 
 	End Sub	
-    Public Function BuscaPersonNat(ByVal sCadena As String) As DataTable
-        Dim Parms As ListDictionary = New ListDictionary
-        Parms.Add("param", sCadena + "%")
-        Parms.Add("campo", "[Apepat]")
-        Parms.Add("tabla", "[PersonNat]")
-        If (Me.LoadFromSql("paBuscador", Parms)) Then
-
-        End If
-        '--If (Me.Query.Load()) Then
-
-        ' End If
-        'Dim query1 = Me.Query.GenerateSQL
-        Return Me.DataTable
-
-    End Function
+    
 End Class
 

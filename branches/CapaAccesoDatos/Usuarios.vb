@@ -1205,11 +1205,11 @@ Public MustInherit Class _Usuarios
         If Not (Me.Query.Load) Then
             Return False
         Else
-            E_sIdCargo = Me.DataTable.Rows(0).Item(0).ToString
-            E_sIdCargo = Me.DataTable.Rows(0).Item(1).ToString
-            E_sIdCargo = Me.DataTable.Rows(0).Item(2).ToString
-            E_sIdCargo = Me.DataTable.Rows(0).Item(3).ToString
-            E_sIdCargo = Me.DataTable.Rows(0).Item(4).ToString
+            'E_sIdCargo = Me.DataTable.Rows(0).Item(0).ToString
+            'E_sIdCargo = Me.DataTable.Rows(0).Item(1).ToString
+            'E_sIdCargo = Me.DataTable.Rows(0).Item(2).ToString
+            'E_sIdCargo = Me.DataTable.Rows(0).Item(3).ToString
+            'E_sIdCargo = Me.DataTable.Rows(0).Item(4).ToString
             Return True
         End If
     End Function

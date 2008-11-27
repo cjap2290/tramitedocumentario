@@ -11,6 +11,7 @@ Public Class Personal
     Dim Areas As New CapaLogicaNegocio.Areas
     Dim Agencias As New CapaLogicaNegocio.Agencias
     Dim Personas As New CapaLogicaNegocio.PersonNat
+
     Public ReadOnly Property NombreCompleto()
         Get
             Return sNomPersonal
@@ -41,6 +42,7 @@ Public Class Personal
         Else
             Return False
         End If
+
     End Function
     'Public Function obtAreaPersonal(ByVal sIdpersona As String)
     '    Dim sIdArea As String
