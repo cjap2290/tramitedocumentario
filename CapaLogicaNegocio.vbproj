@@ -69,6 +69,7 @@
     <Compile Include="PersonNat.vb" />
     <Compile Include="TipoDocumento.vb" />
     <Compile Include="Usuarios.vb" />
+    <Compile Include="vs_Personal_Usuario_PersonNat.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
