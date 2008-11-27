@@ -66,7 +66,6 @@
     <Compile Include="NivelAcceso.vb" />
     <Compile Include="NivelAccesoxUsuario.vb" />
     <Compile Include="Personal.vb" />
-    <Compile Include="Personal_Cargo_Areas.vb" />
     <Compile Include="PersonNat.vb" />
     <Compile Include="TipoDocumento.vb" />
     <Compile Include="Usuarios.vb" />
