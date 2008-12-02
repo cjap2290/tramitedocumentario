@@ -16,6 +16,10 @@ Partial Class frmRemitirDocInt
                         .DataTextField = areas.lstAreas.Columns(1).ColumnName
                         .DataValueField = areas.lstAreas.Columns(0).ColumnName
                         .DataBind()
+                        UpdatePanel2.Update()
+                        .SelectedIndex = 1
+                        cboitemBusq_SelectedIndexChanged(Me, Nothing)
+
                     End With
 
                 End If
@@ -40,19 +44,13 @@ Partial Class frmRemitirDocInt
     End Sub
 
     Protected Sub cboitemBusq_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboitemBusq.SelectedIndexChanged
-        
-        Select Case cbotipBusq.SelectedValue
-            Case 1
-                Me.Label1.Text = "SelectedIndexChanged is fired: " + DateTime.Now.ToString()
-            Case Else
-        End Select
-    End Sub
-
-    Private Sub CargaLista(ByVal key As String)
         Dim dt As DataTable
         dt = listaTrabxCargo.obtListaxArea
-        GridView1.DataSource = dt.DefaultView
-        GridView1.DataBind()
+        With DataList1
+            .DataSource = dt.DefaultView
+            .DataBind()
+            UpdatePanel3.Update()
+        End With
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

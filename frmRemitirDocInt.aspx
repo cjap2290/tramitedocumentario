@@ -20,28 +20,46 @@
                 
             </tr>
             <tr>
-                <td>
-                    Elegir Tipo de Busqueda</td>
-                <td rowspan="3">
+                <td colspan="2" rowspan="3">
+                    &nbsp;
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate  >
-                    <asp:DropDownList ID="cbotipBusq" runat="server">
-                        <asp:ListItem Value="0">Seleccionar tipo de Busqueda</asp:ListItem>
-                        <asp:ListItem Value="1">Por Area</asp:ListItem>
-                        <asp:ListItem Value="2">Por Cargo</asp:ListItem>
-                        <asp:ListItem>Por Agencia</asp:ListItem>
-                    </asp:DropDownList>&nbsp;<asp:DropDownList ID="cboitemBusq" runat="server"   AutoPostBack="True">
+                    Elegir tipo de Busqueda:<asp:DropDownList ID="cbotipBusq" runat="server" AutoPostBack="True" Width="295px">
+                                <asp:ListItem Value="1">a</asp:ListItem>
+                                <asp:ListItem Value="2">b</asp:ListItem>
+                    </asp:DropDownList><br />
+                            &nbsp; &nbsp;
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>&nbsp;<br />
+                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:DropDownList ID="cboitemBusq" runat="server"   AutoPostBack="True">
                             </asp:DropDownList>
-                            <asp:DataList ID="DataList1" runat="server">
-                            </asp:DataList>
-                            <cc1:CascadingDropDown ID="CascadingDropDown1" runat="server" TargetControlID="cbotipBusq">
-                            </cc1:CascadingDropDown>
-                            <cc1:CascadingDropDown ID="CascadingDropDown2" runat="server" TargetControlID="cboitemBusq">
-                            </cc1:CascadingDropDown>
-                            <cc1:CascadingDropDown ID="CascadingDropDown3" runat="server">
-                            </cc1:CascadingDropDown>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    ikikk
+                                    <asp:DataList ID="DataList1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                        <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                                        <AlternatingItemStyle BackColor="Gainsboro" />
+                                        <ItemStyle BackColor="#EEEEEE" ForeColor="Black" />
+                                        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                        <ItemTemplate>
+                                            &nbsp;<asp:Label ID="Label3" runat="server" Text='<%# bind("ApeMat") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <SelectedItemTemplate>
+                                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" Text='<%# bind("ApeMat") %>'></asp:LinkButton>
+                                        </SelectedItemTemplate>
+                                    </asp:DataList>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            &nbsp; &nbsp; &nbsp;
                         </ContentTemplate>                        
-                    </asp:UpdatePanel> </td>
+                    </asp:UpdatePanel> &nbsp;&nbsp;
+                </td>
                 <td style="width: 85px">
                 </td>
                 <td>
@@ -49,17 +67,11 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label1" runat="server" Text="Label" Width="177px"></asp:Label></td>
-                <td>
                 </td>
                 <td>
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;<asp:GridView ID="GridView1" runat="server">
-                    </asp:GridView>
-                </td>
                 <td style="width: 85px">
                 </td>
                 <td>
