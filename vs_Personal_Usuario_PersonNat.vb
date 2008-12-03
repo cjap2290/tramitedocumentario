@@ -2624,9 +2624,17 @@ Public Class vs_Personal_Usuario_PersonNat
     Protected Overrides Function GetDeleteCommand() As IDbCommand
         Return Nothing
     End Function
-    Public Function obtListaxArea() As DataTable
-        Me.Where.IdArea.Value = "06"
-        Me.Where.IdArea.Operator = WhereParameter.Operand.Equal
+    Public Function obtListaxArea(ByVal nCaso As String, ByVal sIdItem As String) As DataTable
+
+        Select Case nCaso
+            Case 1
+                Me.Where.IdArea.Value = sIdItem
+                Me.Where.IdArea.Operator = WhereParameter.Operand.Equal
+            Case 2
+                Me.Where.IdCargo.Value = sIdItem
+                Me.Where.IdCargo.Operator = WhereParameter.Operand.Equal
+            Case Else
+        End Select
         If Query.Load Then
             Return DataTable
         Else
