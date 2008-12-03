@@ -18,73 +18,53 @@
                 <td colspan="4">
                     Agregar Remitente(s) al Documento&nbsp;</td>
                 
+            </tr>            
+            <tr>
+                <td colspan="2">
+                </td>
+                <td colspan="2">
+                    &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                <asp:DropDownList ID="cbotipBusq" runat="server" AutoPostBack="True" Width="295px">
+                                <asp:ListItem Value="1">Por Area</asp:ListItem>
+                                <asp:ListItem Value="2">PorCargo</asp:ListItem>
+                    </asp:DropDownList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>                
             </tr>
             <tr>
-                <td colspan="2" rowspan="3">
-                    &nbsp;
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate  >
-                    Elegir tipo de Busqueda:<asp:DropDownList ID="cbotipBusq" runat="server" AutoPostBack="True" Width="295px">
-                                <asp:ListItem Value="1">a</asp:ListItem>
-                                <asp:ListItem Value="2">b</asp:ListItem>
-                    </asp:DropDownList><br />
-                            &nbsp; &nbsp;
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>&nbsp;<br />
-                            <br />
+                <td colspan="2">
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td>
+                <td colspan="2">
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
                                     <asp:DropDownList ID="cboitemBusq" runat="server"   AutoPostBack="True">
                             </asp:DropDownList>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
-                            <br />
-                            <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                </td>                
+            </tr>
+            <tr>
+                <td colspan="4">
+                    &nbsp; &nbsp; &nbsp;<asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
-                                    ikikk
-                                    <asp:DataList ID="DataList1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
-                                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                                        <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                                        <AlternatingItemStyle BackColor="Gainsboro" />
-                                        <ItemStyle BackColor="#EEEEEE" ForeColor="Black" />
-                                        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                                        <ItemTemplate>
-                                            &nbsp;<asp:Label ID="Label3" runat="server" Text='<%# bind("ApeMat") %>'></asp:Label>
-                                        </ItemTemplate>
-                                        <SelectedItemTemplate>
-                                            &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" Text='<%# bind("ApeMat") %>'></asp:LinkButton>
-                                        </SelectedItemTemplate>
-                                    </asp:DataList>
+                                    &nbsp;<asp:GridView ID="gvItem" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                        <EditRowStyle BackColor="#999999" />
+                                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    </asp:GridView>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
-                            &nbsp; &nbsp; &nbsp;
-                        </ContentTemplate>                        
-                    </asp:UpdatePanel> &nbsp;&nbsp;
                 </td>
-                <td style="width: 85px">
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 85px">
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;
-                </td>
-                <td colspan="2" style="width: 85px">
-                    <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox></td>
                 
             </tr>
             <tr>
