@@ -73,7 +73,13 @@
                 <td style="height: 62px">
                     <asp:Button ID="Button5" runat="server" Text="Button" /></td>
                 <td colspan="2" style="height: 62px; width: 85px;">
-                    <asp:ListBox ID="ListBox2" runat="server"></asp:ListBox></td>
+                    &nbsp;
+                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                    <asp:ListBox ID="lbRemitentes" runat="server" Height="162px" Width="224px"></asp:ListBox>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
                 
             </tr>
             <tr>

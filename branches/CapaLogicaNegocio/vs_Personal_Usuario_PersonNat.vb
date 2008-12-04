@@ -2628,13 +2628,15 @@ Public Class vs_Personal_Usuario_PersonNat
 
         Select Case nCaso
             Case 1
-                Me.Where.IdArea.Value = sIdItem
-                Me.Where.IdArea.Operator = WhereParameter.Operand.Equal
+                Where.IdArea.Value = sIdItem
+                Where.IdArea.Operator = WhereParameter.Operand.Equal
             Case 2
-                Me.Where.IdCargo.Value = sIdItem
-                Me.Where.IdCargo.Operator = WhereParameter.Operand.Equal
+                Where.IdCargo.Value = sIdItem
+                Where.IdCargo.Operator = WhereParameter.Operand.Equal
             Case Else
         End Select
+        Where.Activo.Value = "1"
+        Where.Activo.Operator = WhereParameter.Operand.Equal
         If Query.Load Then
             Return DataTable
         Else

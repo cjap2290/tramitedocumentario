@@ -101,14 +101,21 @@ Partial Class frmRemitirDocInt
     End Sub
 
     Protected Sub gvItem_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvItem.RowCommand
+        Dim itemlbrem As New ListItem
         If e.CommandName = "Select" Then
             gvItem.SelectedIndex = Convert.ToInt32(e.CommandArgument)
             Dim gvr As GridViewRow = gvItem.SelectedRow
-            Dim variable As String = gvr.Cells(2).Text
-            Dim nombre As String = gvr.Cells(5).Text + " " + gvr.Cells(3).Text + " " + gvr.Cells(4).Text
+            Dim idpersona As String = gvr.Cells(1).Text
+            Dim nombre As String = gvr.Cells(2).Text + " " + gvr.Cells(3).Text + " " + gvr.Cells(4).Text
             'txtIdPers.Value = variable
             'txtPersona.Value = nombre
-            variable = gvItem.SelectedIndex
+            'variable = gvItem.SelectedIndex
+            itemlbrem.Enabled = True
+            itemlbrem.Value = idpersona
+            itemlbrem.Text = nombre
+            'Call añadeItem(itemlbrem)
+            Me.lbRemitentes.Items.Add(itemlbrem)
+            Me.UpdatePanel4.Update()
         End If
     End Sub
     Protected Sub gvItem_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvItem.PageIndexChanging
@@ -116,5 +123,8 @@ Partial Class frmRemitirDocInt
         gv = CType(sender, GridView)
         gv.PageIndex = e.NewPageIndex
         cboitemBusq_SelectedIndexChanged(Me, Nothing)
+    End Sub
+    Protected Sub añadeItem(ByVal item As ListItem)
+        'Me.lbRemitentes.Items.Add("monin")
     End Sub
 End Class
