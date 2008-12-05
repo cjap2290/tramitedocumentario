@@ -1,7 +1,6 @@
 ﻿<%@ Page  Language="VB" AutoEventWireup="false" CodeFile="frmRemitirDocInt.aspx.vb" Inherits="frmRemitirDocInt"  UICulture="es" Culture= "es-PE"  MasterPageFile="~/mpInicio.master" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register TagPrefix="GridSelectCheckBox" Namespace="solCommon.Web.UI.DataGrid"  Assembly="ProjectAssembly" %>
  <%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -20,9 +19,9 @@
                     AGREGAR REMITENTE(s) AL DOCUMENTO&nbsp;</td>                
             </tr>            
             <tr>
-                <td colspan="2">
+                <td colspan="2" style="height: 19px">
                 </td>
-                <td colspan="2">
+                <td colspan="2" style="height: 19px">
                     &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
                 <asp:DropDownList ID="cbotipBusq" runat="server" AutoPostBack="True" Width="295px">
@@ -100,7 +99,7 @@
                 <td style="height: 62px; width: 3px;">
                 </td>
                 <td style="height: 62px">
-                    <asp:Button ID="Button4" runat="server" Text="Button" /></td>
+                    </td>
                 <td style="width: 85px; height: 62px">
                 </td>
                 <td style="height: 62px">

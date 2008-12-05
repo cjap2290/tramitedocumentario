@@ -84,6 +84,7 @@ Partial Class frmRemitirDocInt
 
         With chk
             .Visible = True
+            gvItem.Columns.Add(chk)
         End With
         With SelecCol
             .ButtonType = ButtonType.Link
@@ -120,8 +121,8 @@ Partial Class frmRemitirDocInt
         If e.CommandName = "Select" Then
             gvItem.SelectedIndex = Convert.ToInt32(e.CommandArgument)
             Dim gvr As GridViewRow = gvItem.SelectedRow
-            Dim idpersona As String = gvr.Cells(1).Text
-            Dim nombre As String = Page.Server.HtmlDecode(gvr.Cells(2).Text) + " " + Page.Server.HtmlDecode(gvr.Cells(3).Text) + " " + gvr.Cells(4).Text
+            Dim idpersona As String = gvr.Cells(2).Text
+            Dim nombre As String = Page.Server.HtmlDecode(gvr.Cells(3).Text) + " " + Page.Server.HtmlDecode(gvr.Cells(4).Text) + " " + gvr.Cells(5).Text
             'txtIdPers.Value = variable
             'txtPersona.Value = nombre
             'variable = gvItem.SelectedIndex
@@ -129,7 +130,9 @@ Partial Class frmRemitirDocInt
             itemlbrem.Value = idpersona
             itemlbrem.Text = nombre
             'Call añadeItem(itemlbrem)
-            Me.lbRemitentes.Items.Add(itemlbrem)
+            If Not EstaEnLista(idpersona) Then
+                Me.lbRemitentes.Items.Add(itemlbrem)
+            End If
             Me.UpdatePanel4.Update()
         End If
     End Sub
@@ -139,4 +142,18 @@ Partial Class frmRemitirDocInt
         gv.PageIndex = e.NewPageIndex
         cboitemBusq_SelectedIndexChanged(Me, Nothing)
     End Sub
+    Protected Function EstaEnLista(ByVal sidpersona As String) As Boolean
+        Dim n As Integer
+        For i As Integer = 0 To lbRemitentes.Items.Count - 1
+            If sidpersona = lbRemitentes.Items(i).Value Then
+                n = n + 1
+            End If
+        Next i
+        If n >= 1 Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
 End Class
