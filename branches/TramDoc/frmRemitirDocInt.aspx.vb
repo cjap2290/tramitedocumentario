@@ -7,6 +7,16 @@ Partial Class frmRemitirDocInt
     Private cargos As New Cargos
     Private areas As New Areas
     Private listaTrabxCargo As New vs_Personal_Usuario_PersonNat
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'CargaLista("06")
+        If Not (IsPostBack) Then
+            Me.UpdatePanel1.Update()
+            Me.UpdatePanel2.Update()
+            Me.UpdatePanel3.Update()
+            cbotipBusq_SelectedIndexChanged(Me, Nothing)
+        End If
+
+    End Sub
     Protected Sub cbotipBusq_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbotipBusq.SelectedIndexChanged
         Select Case cbotipBusq.SelectedValue
             Case 1
@@ -18,7 +28,8 @@ Partial Class frmRemitirDocInt
                         .DataBind()
                         UpdatePanel2.Update()
                         UpdatePanel3.Update()
-                        .SelectedIndex = 1
+                        .SelectedIndex = 0
+                        Label1.Text = Right(cbotipBusq.SelectedItem.Text, cbotipBusq.SelectedItem.Text.Length - 4)
                         cboitemBusq_SelectedIndexChanged(Me, Nothing)
                     End With
 
@@ -32,7 +43,8 @@ Partial Class frmRemitirDocInt
                         .DataBind()
                         UpdatePanel2.Update()
                         UpdatePanel3.Update()
-                        .SelectedIndex = 1
+                        .SelectedIndex = 0
+                        Label1.Text = Right(cbotipBusq.SelectedItem.Text, cbotipBusq.SelectedItem.Text.Length - 4)
                         cboitemBusq_SelectedIndexChanged(Me, Nothing)
                     End With
                 End If
@@ -43,7 +55,7 @@ Partial Class frmRemitirDocInt
         End Select
 
         If cbotipBusq.SelectedValue = 1 Then
-            
+
         End If
     End Sub
 
@@ -61,16 +73,18 @@ Partial Class frmRemitirDocInt
         End If
     End Sub
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'CargaLista("06")
-    End Sub
+   
     Sub iniGrid(ByRef dtPersonas As DataTable)
         Dim idpersona As New BoundField
         Dim apepat As New BoundField
         Dim apemat As New BoundField
         Dim Nombres As New BoundField
+        Dim chk As New CheckBoxField
         Dim SelecCol As New CommandField
 
+        With chk
+            .Visible = True
+        End With
         With SelecCol
             .ButtonType = ButtonType.Link
             .SelectText = "Selec."
@@ -90,6 +104,7 @@ Partial Class frmRemitirDocInt
         With apemat
             .DataField = dtPersonas.Columns(14).ColumnName
             .HeaderText = "Apellido Materno"
+            .HtmlEncode = True
             gvItem.Columns.Add(apemat)
         End With
         With Nombres
@@ -106,7 +121,7 @@ Partial Class frmRemitirDocInt
             gvItem.SelectedIndex = Convert.ToInt32(e.CommandArgument)
             Dim gvr As GridViewRow = gvItem.SelectedRow
             Dim idpersona As String = gvr.Cells(1).Text
-            Dim nombre As String = gvr.Cells(2).Text + " " + gvr.Cells(3).Text + " " + gvr.Cells(4).Text
+            Dim nombre As String = Page.Server.HtmlDecode(gvr.Cells(2).Text) + " " + Page.Server.HtmlDecode(gvr.Cells(3).Text) + " " + gvr.Cells(4).Text
             'txtIdPers.Value = variable
             'txtPersona.Value = nombre
             'variable = gvItem.SelectedIndex
@@ -123,8 +138,5 @@ Partial Class frmRemitirDocInt
         gv = CType(sender, GridView)
         gv.PageIndex = e.NewPageIndex
         cboitemBusq_SelectedIndexChanged(Me, Nothing)
-    End Sub
-    Protected Sub añadeItem(ByVal item As ListItem)
-        'Me.lbRemitentes.Items.Add("monin")
     End Sub
 End Class

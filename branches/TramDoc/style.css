@@ -66,8 +66,9 @@ div#cibertec {
 .titlelogin {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-weight: bold;
-	font-size: 12px;
-	color: #1B180D;
+	font-size: 14px;
+	text-align:center;
+	color: #037631;
 }
 /***Tipo de letra y color para los textboxes***/
 .txtlogin {
@@ -269,8 +270,8 @@ body#leftbody {
 	 SCROLLBAR-TRACK-COLOR: #d4d8e4; 
 	 SCROLLBAR-DARKSHADOW-COLOR: #a5abbe*/
 }
-.tableborder {
-	border-right: #0E668E 1px ridge;
+.tableborder {	
+	border :ridge #EFCC1C 4px 
 }
 /***Tipo de letra y borde de celda***/
 .textcell1 {
@@ -302,7 +303,7 @@ body#leftbody {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-weight: bold;
 	font-size: 12px;
-	color: #002256;
+	color: #258D4E;
 }
 .text2 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
