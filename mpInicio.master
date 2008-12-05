@@ -130,7 +130,7 @@
                     <a id="A7" href="annuals/gerranium.aspx" runat="server">Gerranium</a><br/>
                     <a id="A8" href="annuals/impatiens.aspx" runat="server">Impatiens</a><br/>
                     <a id="A9" href="annuals/petunia.aspx" runat="server">Petunia</a><br/>--%>
-                    <table width="160" border="0" cellspacing="0" cellpadding="0" class="tableborder">
+                    <table width="160" border="0" cellspacing="0" cellpadding="0" >
                         <tr>
                         <td valign="top" style="background-color: #FBFFFF ;width: 162px">
                         <table width="160" border="0" cellspacing="0" cellpadding="0">
