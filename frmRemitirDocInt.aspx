@@ -1,8 +1,8 @@
 ﻿<%@ Page  Language="VB" AutoEventWireup="false" CodeFile="frmRemitirDocInt.aspx.vb" Inherits="frmRemitirDocInt"  UICulture="es" Culture= "es-PE"  MasterPageFile="~/mpInicio.master" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register TagPrefix="chkbox" Namespace="DataGridControls" Assembly="DataGridCheckbox" %>
-<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register TagPrefix="GridSelectCheckBox" Namespace="solCommon.Web.UI.DataGrid"  Assembly="ProjectAssembly" %>
+ <%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
