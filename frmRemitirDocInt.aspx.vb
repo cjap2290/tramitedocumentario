@@ -156,4 +156,11 @@ Partial Class frmRemitirDocInt
         End If
 
     End Function
+    Protected Sub LnkBtnRemCC_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnDestCC.Click
+        Me.mvConCopia.SetActiveView(View2)
+    End Sub
+
+    Protected Sub LnkBtnRem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnRem.Click
+        Me.mvConCopia.SetActiveView(View3)
+    End Sub
 End Class
