@@ -19,9 +19,9 @@
                     AGREGAR REMITENTE(s) AL DOCUMENTO&nbsp;</td>                
             </tr>            
             <tr>
-                <td colspan="2" style="height: 19px">
+                <td colspan="2" style="height: 23px">
                 </td>
-                <td colspan="2" style="height: 19px">
+                <td colspan="2" style="height: 23px">
                     &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
                 <asp:DropDownList ID="cbotipBusq" runat="server" AutoPostBack="True" Width="295px">
@@ -38,8 +38,7 @@
                 <td colspan="2">
                     &nbsp;<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
-<asp:DropDownList id="cboitemBusq" runat="server" AutoPostBack="True" __designer:wfdid="w7">
-                            </asp:DropDownList> 
+<asp:DropDownList id="cboitemBusq" runat="server" Width="152px" AutoPostBack="True" __designer:wfdid="w7"></asp:DropDownList> 
 </ContentTemplate>
                             </asp:UpdatePanel>
                 </td>
@@ -70,18 +69,17 @@
             </tr>
             <tr>
                 <td colspan="4" style="height: 25px" class="text">
-                    REMITENTES :</td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td style="height: 62px" colspan="4">
-                    &nbsp;<asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-<asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px" __designer:wfdid="w9"></asp:ListBox> 
+&nbsp;<asp:MultiView id="mvConCopia" runat="server" __designer:dtid="562949953421339" __designer:wfdid="w84" ActiveViewIndex="2"><asp:View id="View1" runat="server" __designer:dtid="562949953421340" __designer:wfdid="w85"><BR __designer:dtid="562949953421342" /></asp:View> <asp:View id="View2" runat="server" __designer:dtid="562949953421344" __designer:wfdid="w86">&nbsp;<asp:ListBox id="ListBox1" runat="server" __designer:dtid="562949953421345" __designer:wfdid="w87"></asp:ListBox><BR /><asp:LinkButton id="LnkBtnRem" runat="server" __designer:dtid="562949953421341" __designer:wfdid="w88">Añadir Remitente</asp:LinkButton></asp:View> <asp:View id="View3" runat="server" __designer:dtid="562949953421346" __designer:wfdid="w89">REMITENTES : <asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px" __designer:wfdid="w90"></asp:ListBox> <asp:Button id="Button5" runat="server" __designer:dtid="562949953421349" Text="Button" __designer:wfdid="w91"></asp:Button> <BR /><asp:LinkButton id="LnkBtnDestCC" runat="server" __designer:dtid="562949953421343" __designer:wfdid="w92">Añadir Destino "Con Copia"</asp:LinkButton></asp:View> </asp:MultiView>
 </ContentTemplate>
                     </asp:UpdatePanel>
-                    <asp:Button ID="Button5" runat="server" Text="Button" />
-                    &nbsp;&nbsp;
-                </td>
+                    </td>
                 
             </tr>
             <tr>
@@ -96,14 +94,18 @@
                     <asp:Button ID="Button3" runat="server" Text="Button" /></td>
             </tr>
             <tr>
-                <td style="height: 62px; width: 3px;">
+                <td style="width: 3px;">
                 </td>
-                <td style="height: 62px">
+                <td>
                     </td>
-                <td style="width: 85px; height: 62px">
+                <td style="width: 85px;">
                 </td>
-                <td style="height: 62px">
+                <td>
                 </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height: 62px">
+                    &nbsp;</td>
             </tr>
         </table>
     
