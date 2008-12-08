@@ -7,6 +7,7 @@ Partial Class frmRemitirDocInt
     Private cargos As New Cargos
     Private areas As New Areas
     Private listaTrabxCargo As New vs_Personal_Usuario_PersonNat
+    Dim esRemitente As Boolean
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'CargaLista("06")
         If Not (IsPostBack) Then
@@ -130,10 +131,19 @@ Partial Class frmRemitirDocInt
             itemlbrem.Value = idpersona
             itemlbrem.Text = nombre
             'Call añadeItem(itemlbrem)
-            If Not EstaEnLista(idpersona) Then
-                Me.lbRemitentes.Items.Add(itemlbrem)
+            'Se añada a los listbox los items del datagrid ya sea remitente o destino con copia
+
+            If mvConCopia.ActiveViewIndex = 2 Then
+                If Not EstaEnLista(idpersona) Then
+                    Me.lbRemitentes.Items.Add(itemlbrem)
+                End If
+                Me.UpdatePanel4.Update()
+            Else
+                If Not EstaEnLista(idpersona) Then
+                    Me.lbDestCC.Items.Add(itemlbrem)
+                End If
+                Me.UpdatePanel4.Update()
             End If
-            Me.UpdatePanel4.Update()
         End If
     End Sub
     Protected Sub gvItem_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvItem.PageIndexChanging
@@ -144,11 +154,19 @@ Partial Class frmRemitirDocInt
     End Sub
     Protected Function EstaEnLista(ByVal sidpersona As String) As Boolean
         Dim n As Integer
-        For i As Integer = 0 To lbRemitentes.Items.Count - 1
-            If sidpersona = lbRemitentes.Items(i).Value Then
-                n = n + 1
-            End If
-        Next i
+        If mvConCopia.ActiveViewIndex = 2 Then
+            For i As Integer = 0 To lbRemitentes.Items.Count - 1
+                If sidpersona = lbRemitentes.Items(i).Value Then
+                    n = n + 1
+                End If
+            Next i
+        Else
+            For i As Integer = 0 To lbDestCC.Items.Count - 1
+                If sidpersona = lbDestCC.Items(i).Value Then
+                    n = n + 1
+                End If
+            Next i
+        End If
         If n >= 1 Then
             Return True
         Else
@@ -158,9 +176,11 @@ Partial Class frmRemitirDocInt
     End Function
     Protected Sub LnkBtnRemCC_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnDestCC.Click
         Me.mvConCopia.SetActiveView(View2)
+        UpdatePanel3.Update()
     End Sub
 
     Protected Sub LnkBtnRem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnRem.Click
         Me.mvConCopia.SetActiveView(View3)
+        UpdatePanel3.Update()
     End Sub
 End Class
