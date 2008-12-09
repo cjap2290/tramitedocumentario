@@ -133,17 +133,19 @@ Partial Class frmRemitirDocInt
             'Call añadeItem(itemlbrem)
             'Se añada a los listbox los items del datagrid ya sea remitente o destino con copia
 
-            If mvConCopia.ActiveViewIndex = 2 Then
-                If Not EstaEnLista(idpersona) Then
-                    Me.lbRemitentes.Items.Add(itemlbrem)
-                End If
-                Me.UpdatePanel4.Update()
-            Else
-                If Not EstaEnLista(idpersona) Then
-                    Me.lbDestCC.Items.Add(itemlbrem)
-                End If
-                Me.UpdatePanel4.Update()
-            End If
+            Select Case mvConCopia.ActiveViewIndex
+                Case 0
+                    If Not EstaEnLista(idpersona) Then
+                        Me.lbDestCC.Items.Add(itemlbrem)
+                    End If
+                    Me.UpdatePanel4.Update()
+                Case 1
+                    If Not EstaEnLista(idpersona) Then
+                        Me.lbRemitentes.Items.Add(itemlbrem)
+                    End If
+                    Me.UpdatePanel4.Update()
+                Case Else
+            End Select
         End If
     End Sub
     Protected Sub gvItem_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvItem.PageIndexChanging
@@ -154,19 +156,20 @@ Partial Class frmRemitirDocInt
     End Sub
     Protected Function EstaEnLista(ByVal sidpersona As String) As Boolean
         Dim n As Integer
-        If mvConCopia.ActiveViewIndex = 2 Then
-            For i As Integer = 0 To lbRemitentes.Items.Count - 1
-                If sidpersona = lbRemitentes.Items(i).Value Then
-                    n = n + 1
-                End If
-            Next i
-        Else
-            For i As Integer = 0 To lbDestCC.Items.Count - 1
-                If sidpersona = lbDestCC.Items(i).Value Then
-                    n = n + 1
-                End If
-            Next i
-        End If
+        Select Case mvConCopia.ActiveViewIndex
+            Case 0
+                For i As Integer = 0 To lbDestCC.Items.Count - 1
+                    If sidpersona = lbDestCC.Items(i).Value Then
+                        n = n + 1
+                    End If
+                Next i
+            Case 1
+                For i As Integer = 0 To lbRemitentes.Items.Count - 1
+                    If sidpersona = lbRemitentes.Items(i).Value Then
+                        n = n + 1
+                    End If
+                Next i
+        End Select
         If n >= 1 Then
             Return True
         Else
@@ -175,12 +178,30 @@ Partial Class frmRemitirDocInt
 
     End Function
     Protected Sub LnkBtnRemCC_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnDestCC.Click
-        Me.mvConCopia.SetActiveView(View2)
+        Me.mvConCopia.SetActiveView(vDestCC)
         UpdatePanel3.Update()
     End Sub
 
     Protected Sub LnkBtnRem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LnkBtnRem.Click
-        Me.mvConCopia.SetActiveView(View3)
+        Me.mvConCopia.SetActiveView(vRem)
         UpdatePanel3.Update()
+    End Sub
+
+    Protected Sub btnQuitarRem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        lbRemitentes.Items.RemoveAt(lbRemitentes.SelectedIndex)
+    End Sub
+
+    Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim i As Integer
+        Dim DocAsignado As New CapaLogicaNegocio.AsignaDocInterno
+        For i = 0 To lbRemitentes.Items.Count - 1
+            With DocAsignado
+                .pIdDocInterno = "0001"
+                .pCondicion = "02"
+                .pFechaR = DateTime.Now().Date.ToString
+                .pIdUserR = "JeaCol"
+                .pIdEstAsigDoc = "01"
+            End With
+        Next
     End Sub
 End Class
