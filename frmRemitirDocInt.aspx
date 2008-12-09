@@ -76,7 +76,9 @@
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-&nbsp;<asp:MultiView id="mvConCopia" runat="server" __designer:dtid="562949953421339" __designer:wfdid="w84" ActiveViewIndex="2"><asp:View id="View1" runat="server" __designer:dtid="562949953421340" __designer:wfdid="w85"><BR __designer:dtid="562949953421342" /></asp:View> <asp:View id="View2" runat="server" __designer:dtid="562949953421344" __designer:wfdid="w86">&nbsp;<asp:ListBox id="lbDestCC" runat="server" Height="160px" Width="438px" __designer:dtid="562949953421345" __designer:wfdid="w87"></asp:ListBox><BR /><asp:LinkButton id="LnkBtnRem" runat="server" __designer:dtid="562949953421341" __designer:wfdid="w88">Añadir Remitente</asp:LinkButton></asp:View> <asp:View id="View3" runat="server" __designer:dtid="562949953421346" __designer:wfdid="w89">REMITENTES : <asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px" __designer:wfdid="w90"></asp:ListBox> <asp:Button id="Button5" runat="server" __designer:dtid="562949953421349" Text="Button" __designer:wfdid="w91"></asp:Button> <BR /><asp:LinkButton id="LnkBtnDestCC" runat="server" __designer:dtid="562949953421343" __designer:wfdid="w92">Añadir Destino "Con Copia"</asp:LinkButton></asp:View> </asp:MultiView> 
+&nbsp;<asp:MultiView id="mvConCopia" runat="server" __designer:dtid="562949953421339" __designer:wfdid="w84" ActiveViewIndex="1">&nbsp; <asp:View id="vDestCC" runat="server" __designer:dtid="562949953421344" __designer:wfdid="w6">&nbsp; <asp:ListBox id="lbDestCC" runat="server" Height="160px" Width="438px" __designer:dtid="562949953421345" __designer:wfdid="w7">
+                                        </asp:ListBox><BR /><asp:LinkButton id="LnkBtnRem" runat="server" __designer:dtid="562949953421341" __designer:wfdid="w8">Añadir Remitente
+                                        </asp:LinkButton> </asp:View> <asp:View id="vRem" runat="server" __designer:dtid="562949953421346" __designer:wfdid="w9">REMITENTES : <BR /><asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px" __designer:wfdid="w10"></asp:ListBox> <asp:Button id="btnQuitarRem" runat="server" __designer:dtid="562949953421349" Text="Quitar Remitente de la Lista" __designer:wfdid="w11" OnClick="btnQuitarRem_Click"></asp:Button> <BR /><asp:LinkButton id="LnkBtnDestCC" runat="server" __designer:dtid="562949953421343" __designer:wfdid="w12">Añadir Destino "Con Copia"</asp:LinkButton></asp:View> </asp:MultiView> 
 </ContentTemplate>
                     </asp:UpdatePanel>
                     </td>
@@ -90,8 +92,8 @@
                 <td style="width: 85px; height: 62px">
                     </td>
                 <td style="height: 62px">
-                    <asp:Button ID="Button2" runat="server" Text="Button" />
-                    <asp:Button ID="Button3" runat="server" Text="Button" /></td>
+                    &nbsp;<asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
             </tr>
             <tr>
                 <td style="width: 3px;">

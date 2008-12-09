@@ -8,7 +8,10 @@ Partial Class frmInsertaDocInt
         Dim strStreamW As Stream
         Dim strStreamWriter As StreamWriter
         'Try
-        Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+        'ruta local
+        Dim RutaArchivo As String = "D:\prueba.txt"
+        'ruta de red
+        'Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
         'Se abre el archivo y si este no existe se crea
         strStreamW = File.OpenWrite(RutaArchivo)
         strStreamWriter = New StreamWriter(strStreamW, _
@@ -62,7 +65,7 @@ Partial Class frmInsertaDocInt
             .pFechaR = "13/11/2008"
             .pIdUserR = "JeaCol"
             .pAsiDocInt_Condicion = "18"
-            .pAsiDocInt_IdEstAsigDoc = "12"
+            .pAsiDocInt_IdEstAsigDoc = "1"
             .pAsiDocInt_IdUser = "JeaCol"
             .EC_insertaDocInt(True)
         End With
