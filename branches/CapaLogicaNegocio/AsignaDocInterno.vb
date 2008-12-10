@@ -10,11 +10,11 @@ Public Class AsignaDocInterno
     Private EC_Condicion As String
     Private EC_FechaR As String
     Private EC_IdUserR As String
-    Public Property pIdEstAsigDoc() As String
+    Public Property pIdEstAsigDoc() As Integer
         Get
             Return EC_IdEstAsigDoc
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             EC_IdEstAsigDoc = value
         End Set
     End Property
@@ -50,11 +50,11 @@ Public Class AsignaDocInterno
             EC_IdUSer = value
         End Set
     End Property
-    Public Property pIdDocInterno() As String
+    Public Property pIdDocInterno() As Integer
         Get
             Return EC_IdDocInterno
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             EC_IdDocInterno = value
         End Set
     End Property

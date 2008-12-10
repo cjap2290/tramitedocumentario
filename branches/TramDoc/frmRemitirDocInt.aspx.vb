@@ -196,11 +196,11 @@ Partial Class frmRemitirDocInt
         Dim DocAsignado As New CapaLogicaNegocio.AsignaDocInterno
         For i = 0 To lbRemitentes.Items.Count - 1
             With DocAsignado
-                .pIdDocInterno = "0001"
+                .pIdDocInterno = 5
                 .pCondicion = "02"
                 .pFechaR = DateTime.Now().Date.ToString
                 .pIdUserR = "JeaCol"
-                .pIdEstAsigDoc = "01"
+                .pIdEstAsigDoc = 1
             End With
         Next
     End Sub
