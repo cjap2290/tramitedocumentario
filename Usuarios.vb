@@ -93,7 +93,9 @@ Public Class Usuarios
         End If
     End Function
     Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
-
+        If Where.IdPersona.Value IsNot Nothing Then
+            Me.Where.WhereClauseReset()
+        End If
         Me.Where.IdPersona.Value = sIdPersona
         Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
         If Query.Load() Then
@@ -113,6 +115,5 @@ Public Class Usuarios
         Else
             Return False
         End If
-
     End Function
 End Class
