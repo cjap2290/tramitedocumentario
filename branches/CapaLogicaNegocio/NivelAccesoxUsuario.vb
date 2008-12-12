@@ -17,6 +17,9 @@ Public Class NivelAccesoxUsuario
         End If
     End Function
     Public Function EC_cargaNivAccxUsuAct(ByVal siduser As String) As Boolean
+        If Where.IdUser.Value IsNot Nothing And Where.Activo.Value IsNot Nothing Then
+            Me.Where.WhereClauseReset()
+        End If
         Where.IdUser.Value = siduser
         Where.IdUser.Operator = WhereParameter.Operand.Equal
         'Query.AddConjunction(WhereParameter.Conj.AND_)
