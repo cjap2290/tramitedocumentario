@@ -92,8 +92,8 @@
                 <td style="width: 85px; height: 62px">
                     </td>
                 <td style="height: 62px">
-                    &nbsp;<asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
+                    &nbsp;
+                </td>
             </tr>
             <tr>
                 <td style="width: 3px;">
@@ -103,7 +103,8 @@
                 <td style="width: 85px;">
                 </td>
                 <td>
-                </td>
+                <asp:Button ID="btnAceptar" runat="server" Text=" Siguiente >>" />
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
             </tr>
             <tr>
                 <td colspan="4" style="height: 62px">

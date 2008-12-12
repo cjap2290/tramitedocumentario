@@ -194,6 +194,7 @@ Partial Class frmRemitirDocInt
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim i As Integer
         Dim DocAsignado As New CapaLogicaNegocio.AsignaDocInterno
+        Dim usuarios As New CapaLogicaNegocio.Usuarios
         For i = 0 To lbRemitentes.Items.Count - 1
             With DocAsignado
                 .pIdDocInterno = 5
@@ -201,6 +202,24 @@ Partial Class frmRemitirDocInt
                 .pFechaR = DateTime.Now().Date.ToString
                 .pIdUserR = "JeaCol"
                 .pIdEstAsigDoc = 1
+                If usuarios.EC_cargaUsuario(lbRemitentes.Items(i).Value) Then
+                    .pIdUser = usuarios.obtIdUser
+                End If
+                .EC_insertaAigDocInt()
+            End With
+        Next
+
+        For i = 0 To Me.lbDestCC.Items.Count - 1
+            With DocAsignado
+                .pIdDocInterno = 5
+                .pCondicion = "02"
+                .pFechaR = DateTime.Now().Date.ToString
+                .pIdUserR = "JeaCol"
+                .pIdEstAsigDoc = 3
+                If usuarios.EC_cargaUsuario(lbRemitentes.Items(i).Value) Then
+                    .pIdUser = usuarios.obtIdUser
+                End If
+                .EC_insertaAigDocInt()
             End With
         Next
     End Sub
