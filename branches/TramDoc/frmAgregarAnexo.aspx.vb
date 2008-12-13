@@ -51,4 +51,9 @@ Partial Class frmEnvioDoc
        
     End Sub
 
+    Protected Sub btnQuitarAnexo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnQuitarAnexo.Click
+
+        lbAnexos.Items(lbAnexos.SelectedIndex).Value
+        'lbAnexos.Items.RemoveAt(lbAnexos.SelectedIndex)
+    End Sub
 End Class

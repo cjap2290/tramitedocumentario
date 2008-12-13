@@ -98,5 +98,16 @@ Public Class Anexos
             Return False
         End If
     End Function
-
+    Public Sub CambiaActivoAnexo(ByVal sIDAnexo As Integer)
+        AddNew()
+        With NvoAnexo
+            Me.IdDocInterno = .pIdDocInterno
+            Me.NombreAnexo = .pNombreAnexo
+            Me.RutaAnexo = .pRutaAnexo
+            Me.Activo = .pActivo
+            Me.IdUserR = .pIdUserR
+            Me.FechaR = .pFechaR
+        End With
+        Me.Save()
+    End Sub
 End Class
