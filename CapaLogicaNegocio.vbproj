@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agencias.vb" />
+    <Compile Include="Anexos.vb" />
     <Compile Include="Areas.vb" />
     <Compile Include="AsignaDocInterno.vb" />
     <Compile Include="Cargos.vb" />
