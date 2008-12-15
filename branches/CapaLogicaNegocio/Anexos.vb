@@ -98,16 +98,19 @@ Public Class Anexos
             Return False
         End If
     End Function
-    Public Sub CambiaActivoAnexo(ByVal sIDAnexo As Integer)
-        AddNew()
-        With NvoAnexo
-            Me.IdDocInterno = .pIdDocInterno
-            Me.NombreAnexo = .pNombreAnexo
-            Me.RutaAnexo = .pRutaAnexo
-            Me.Activo = .pActivo
-            Me.IdUserR = .pIdUserR
-            Me.FechaR = .pFechaR
-        End With
-        Me.Save()
+    Public Sub DesactivarAnexo(ByVal sIDAnexo As Integer)
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr()
+        Try
+            tx.BeginTransaction()
+            If LoadByPrimaryKey(sIDAnexo) Then
+                Activo = "0"
+                Save()
+            End If
+            tx.CommitTransaction()
+        Catch ex As Exception
+            tx.RollbackTransaction()
+            TransactionMgr.ThreadTransactionMgrReset()
+        End Try
     End Sub
 End Class
