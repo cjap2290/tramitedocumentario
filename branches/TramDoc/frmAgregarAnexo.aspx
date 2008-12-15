@@ -48,7 +48,7 @@
                 <td style="height: 12px">
                     Insertar Comentarios</td>
                 <td style="height: 12px">
-                    <asp:TextBox ID="TextBox1" runat="server" Height="130px" Width="318px"></asp:TextBox></td>
+                    <asp:TextBox ID="txtObservaciones" runat="server" Height="130px" Width="318px" TextMode="MultiLine"></asp:TextBox></td>
                 <td style="height: 12px; width: 5px;">
                 </td>
             </tr>
@@ -57,7 +57,7 @@
                     Fecha Limite
                 </td>
                 <td style="height: 8px">
-                    &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                    &nbsp;<asp:TextBox ID="txtFechaLimite" runat="server"></asp:TextBox></td>
                 <td style="width: 5px; height: 8px">
                 </td>
             </tr>
