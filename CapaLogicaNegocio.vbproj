@@ -47,6 +47,7 @@
     <Compile Include="Anexos.vb" />
     <Compile Include="Areas.vb" />
     <Compile Include="AsignaDocInterno.vb" />
+    <Compile Include="BuzonInterno.vb" />
     <Compile Include="Cargos.vb" />
     <Compile Include="DocumentoInterno.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

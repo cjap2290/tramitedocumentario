@@ -58,12 +58,10 @@ Public Class AsignaDocInterno
             EC_IdDocInterno = value
         End Set
     End Property
-
     Public Sub EC_insertaAigDocInt()
         Dim tx As TransactionMgr
         tx = TransactionMgr.ThreadTransactionMgr()
         Try
-
             AddNew()
             IdDocInterno = EC_IdDocInterno
             IdUser = EC_IdUSer
@@ -76,11 +74,24 @@ Public Class AsignaDocInterno
             tx.CommitTransaction()
         Catch ex As Exception
             tx.RollbackTransaction()
-            tx.ThreadTransactionMgrReset()
+            TransactionMgr.ThreadTransactionMgrReset()
             Throw ex
         End Try
-
     End Sub
-
-
+    Public Sub ActualizaEstado(ByVal sIdAsignaDoc As Integer, ByVal sEstado As String)
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr
+        Try
+            tx.BeginTransaction()
+            If LoadByPrimaryKey(sIdAsignaDoc) Then
+                IdEstAsigDoc = sEstado
+                Save()
+            End If
+            tx.CommitTransaction()
+        Catch ex As Exception
+            tx.RollbackTransaction()
+            TransactionMgr.ThreadTransactionMgrReset()
+            Throw ex
+        End Try
+    End Sub
 End Class
