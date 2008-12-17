@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmAgregarAnexo.aspx.vb" Inherits="frmEnvioDoc" %>
 
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
+<%@ Register Assembly="obout_Editor" Namespace="OboutInc.Editor" TagPrefix="obout" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,6 +11,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Página sin título</title>
+    <link href="mvwres:1-OboutInc.Editor.Resources.CSS.style.css,obout_Editor, Version=1.8.1209.1, Culture=neutral, PublicKeyToken=3758f1b5e9d8196b"
+        media="all" rel="stylesheet" />
+    <link href="mvwres:1-OboutInc.Editor.Resources.CSS.style.css,obout_Editor, Version=1.8.1209.1, Culture=neutral, PublicKeyToken=3758f1b5e9d8196b"
+        media="all" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -73,6 +81,8 @@
                 <td>
                 </td>
                 <td>
+                    &nbsp;<FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server">
+                    </FCKeditorV2:FCKeditor>
                 </td>
                 <td style="width: 5px">
                 </td>
