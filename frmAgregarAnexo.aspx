@@ -15,6 +15,7 @@
         media="all" rel="stylesheet" />
     <link href="mvwres:1-OboutInc.Editor.Resources.CSS.style.css,obout_Editor, Version=1.8.1209.1, Culture=neutral, PublicKeyToken=3758f1b5e9d8196b"
         media="all" rel="stylesheet" />
+    <script type="text/javascript" src="/editor/_source/fckeditor.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -57,7 +58,7 @@
                     Insertar Comentarios</td>
                 <td style="height: 12px">
                     <asp:TextBox ID="txtObservaciones" runat="server" Height="130px" Width="318px" TextMode="MultiLine"></asp:TextBox></td>
-                <td style="height: 12px; width: 5px;">
+                <td style="height: 12px; width: 1px;">
                 </td>
             </tr>
             <tr>
@@ -66,7 +67,7 @@
                 </td>
                 <td style="height: 8px">
                     &nbsp;<asp:TextBox ID="txtFechaLimite" runat="server"></asp:TextBox></td>
-                <td style="width: 5px; height: 8px">
+                <td style="width: 1px; height: 8px">
                 </td>
             </tr>
             <tr>
@@ -74,17 +75,17 @@
                 </td>
                 <td>
                     <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" /><asp:Button ID="Button2" runat="server" Text="Cancelar" /></td>
-                <td style="width: 5px">
+                <td style="width: 1px">
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
                 <td>
-                    &nbsp;<FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server">
+                    &nbsp;<FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" BasePath="/editor/" Value="NUevo">
                     </FCKeditorV2:FCKeditor>
                 </td>
-                <td style="width: 5px">
+                <td style="width: 1px">
                 </td>
             </tr>
         </table>
