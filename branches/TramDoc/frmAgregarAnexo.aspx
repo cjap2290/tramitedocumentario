@@ -82,8 +82,7 @@
                 <td>
                 </td>
                 <td>
-                    &nbsp;<FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" BasePath="/editor/" Value="NUevo">
-                    </FCKeditorV2:FCKeditor>
+                    &nbsp;
                 </td>
                 <td style="width: 1px">
                 </td>

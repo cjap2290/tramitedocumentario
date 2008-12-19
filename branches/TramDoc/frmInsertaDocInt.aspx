@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmInsertaDocInt.aspx.vb" Inherits="frmInsertaDocInt" MasterPageFile="~/mpInicio.master" %>
 
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+
 <%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -12,16 +14,8 @@
     <div>
         <table style="width: 100%; height: 100%">
             <tr>
-                <td colspan="2" style="width: 59px; height: 29px">
-                </td>
-            </tr>
-            <tr>
-                <td  colspan="2" style="width: 59px; height: 29px; text-align: center;">
-                    Registro de Documento Interno</td>                
-            </tr>
-            <tr>
-                <td colspan="2" style="width: 59px; height: 29px">
-                </td>
+                <td colspan="2" style="width: 400px; height: 29px">
+                    Registro de Documento Interno</td>
             </tr>
             <tr>
                 <td style="width: 59px; height: 6px; text-align: right;">
@@ -60,8 +54,10 @@
                     Cuerpo :</td>
             </tr>
             <tr>
-                <td colspan="2" align="center" style="height: 161px">
-                    <asp:TextBox ID="txtCuerpo" runat="server" Height="128px" Width="697px" TextMode="MultiLine"></asp:TextBox></td>
+                <td colspan="2" align="center" style="height: 544px">
+                    <FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" BasePath="~/fckeditor/" Height="500px">
+                    </FCKeditorV2:FCKeditor>
+                </td>
                 
             </tr>
             <tr>
