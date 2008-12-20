@@ -52,6 +52,8 @@ Partial Class frmInsertaDocInt
                 cboTipDoc.DataTextField = tipdoc.lsTipoDoc.Columns(1).ColumnName
                 cboTipDoc.DataValueField = tipdoc.lsTipoDoc.Columns(0).ColumnName
                 cboTipDoc.DataBind()
+                'Dim a As String
+                Me.FCKeditor1.ToolbarSet = "Documento"
                 RecuperarArchivo()
             End If
         End If
