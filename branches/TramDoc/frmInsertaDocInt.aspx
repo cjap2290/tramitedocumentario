@@ -18,33 +18,33 @@
                     Registro de Documento Interno</td>
             </tr>
             <tr>
-                <td style="width: 59px; height: 6px; text-align: right;">
+                <td style="width: 135px; height: 6px; text-align: right;">
                     Tipo de Documento</td>
                 <td style="height: 6px">
                     <asp:DropDownList ID="cboTipDoc" runat="server" Width="154px">
                     </asp:DropDownList></td>
             </tr>
             <tr>
-                <td style="width: 59px; height: 14px; text-align: right;">
+                <td style="width: 135px; height: 14px; text-align: right;">
                     Nro. Documento</td>
                 <td style="height: 14px; text-align: left;">
                     <asp:TextBox ID="txtNroDoc" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 59px; text-align: right;">
+                <td style="width: 135px; text-align: right;">
                     De
                 </td>
                 <td style="text-align: left">
                     <asp:TextBox ID="txtRemitente" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 59px; height: 25px; text-align: right;">
+                <td style="width: 135px; height: 25px; text-align: right;">
                     Asunto</td>
                 <td style="height: 25px; text-align: left;">
                     <asp:TextBox ID="txtAsunto" runat="server" Width="435px"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 59px; text-align: right;">
+                <td style="width: 135px; text-align: right;">
                     Fecha</td>
                 <td>
                     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
@@ -57,12 +57,11 @@
                 <td colspan="2" align="center" style="height: 544px">
                     <FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" BasePath="~/fckeditor/" Height="500px">
                     </FCKeditorV2:FCKeditor>
-                </td>
+                    <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox></td>
                 
             </tr>
             <tr>
-                <td align="left" style="width: 59px" >
-                    &nbsp;
+                <td align="left" style="width: 135px" >
                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar Borrador" /></td>
                 <td align="right">
                     <asp:Button ID="btnAsignar" runat="server" Text="Siguiente" />

@@ -1,31 +1,32 @@
 ﻿Imports System.IO
+Imports System.Web.UI.HtmlControls
 Partial Class frmInsertaDocInt
     Inherits System.Web.UI.Page
     Dim docInt As New CapaLogicaNegocio.DocumentoInterno
     Dim tipdoc As New CapaLogicaNegocio.TipoDocumento
-    'Private Sub GenerarArchivo()
-    '    'Variables para abrir el archivo en modo de escritura
-    '    Dim strStreamW As Stream
-    '    Dim strStreamWriter As StreamWriter
-    '    'Try
-    '    'ruta local
-    '    Dim RutaArchivo As String = "D:\prueba.txt"
-    '    'ruta de red
-    '    'Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
-    '    'Se abre el archivo y si este no existe se crea
-    '    '------------------------------------------------------
-    '    'strStreamW = File.OpenWrite(RutaArchivo)
-    '    'strStreamWriter = New StreamWriter(strStreamW, _
-    '    '                    System.Text.Encoding.UTF8)
-    '    'strStreamWriter.WriteLine(txtCuerpo.Text)
-    '    'strStreamWriter.Close()
-    '    MsgBox("El archivo se generó con éxito")
-    '    'Catch ex As Exception
-    '    'MsgBox(ex.Message)
-    '    'Finally
-    '    strStreamWriter.Close()
-    '    'End Try
-    'End Sub
+    Private Sub GenerarArchivo()
+        'Variables para abrir el archivo en modo de escritura
+        Dim strStreamW As Stream
+        Dim strStreamWriter As StreamWriter
+        Try
+            'ruta local
+            'Dim RutaArchivo As String = "D:\prueba.txt"
+            'ruta de red
+            Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+            'Se abre el archivo y si este no existe se crea
+            '------------------------------------------------------
+            strStreamW = File.OpenWrite(RutaArchivo)
+            strStreamWriter = New StreamWriter(strStreamW, _
+                                System.Text.Encoding.UTF8)
+            strStreamWriter.WriteLine(HttpUtility.HtmlEncode(FCKeditor1.Value))
+            strStreamWriter.Close()
+            MsgBox("El archivo se generó con éxito")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            'strStreamW.Close()
+        End Try
+    End Sub
 
     Protected Sub btnGuardar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         With docInt
@@ -41,15 +42,18 @@ Partial Class frmInsertaDocInt
             .pIdUserR = "JeaCol"
             .EC_insertaDocInt(False)
         End With
-        'GenerarArchivo()
+        GenerarArchivo()
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If tipdoc.EC_ListarDocMenosReq Then
-            cboTipDoc.DataSource = tipdoc.lsTipoDoc.DefaultView
-            cboTipDoc.DataTextField = tipdoc.lsTipoDoc.Columns(1).ColumnName
-            cboTipDoc.DataValueField = tipdoc.lsTipoDoc.Columns(0).ColumnName
-            cboTipDoc.DataBind()
+        If Not IsPostBack Then
+            If tipdoc.EC_ListarDocMenosReq Then
+                cboTipDoc.DataSource = tipdoc.lsTipoDoc.DefaultView
+                cboTipDoc.DataTextField = tipdoc.lsTipoDoc.Columns(1).ColumnName
+                cboTipDoc.DataValueField = tipdoc.lsTipoDoc.Columns(0).ColumnName
+                cboTipDoc.DataBind()
+                RecuperarArchivo()
+            End If
         End If
     End Sub
 
@@ -71,5 +75,26 @@ Partial Class frmInsertaDocInt
             .EC_insertaDocInt(True)
         End With
         'GenerarArchivo()
+    End Sub
+    Private Sub RecuperarArchivo()
+        'Variables para abrir el archivo en modo de escritura
+        Dim lin As String
+        lin = Nothing
+        'ruta local
+        'Dim RutaArchivo As String = "D:\prueba.txt"
+        'ruta de red
+        Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+        '-------------------------------------------------------
+        'Se abre el archivo y si este no existe se crea
+        '------------------------------------------------------
+        Dim sr As StreamReader = New StreamReader(RutaArchivo)
+
+        Do While sr.Peek() >= 0
+            lin = lin + sr.ReadLine()
+        Loop
+        sr.Close()
+        FCKeditor1.Value = HttpUtility.HtmlDecode(lin)
+        sr.Close()
+        MsgBox("El archivo se regeneró con éxito")
     End Sub
 End Class
