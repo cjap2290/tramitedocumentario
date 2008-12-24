@@ -93,13 +93,14 @@ Public Class BuzonInterno
             AddNew()
             With NuevoBuzonInterno
                 IdAsigDocInterno = .pIdAsignaDocInterno
-                FechaLlegada = CType(.pFechaLeido, Date)
-                FechaLeido = ctype(.pFechaLeido,Date)
+                FechaLlegada = CType(.pFechaLlegada, Date)
+                FechaLimite = CType(.pFechaLimite, Date)
+                'FechaLeido = ctype(.pFechaLeido,Date)
                 IdCondicionEnvio = .pIdCondicionEnvio
                 IdEstBuzonInterno = .pIdEstBuzoninterno
                 Observaciones = .pObservaciones
-                IdUserR = .IdUserR
-                FechaR = .FechaR
+                IdUserR = .pIdUserR
+                FechaR = .pFechaR
             End With
             Save()
             tx.CommitTransaction()

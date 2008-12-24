@@ -25,8 +25,8 @@ Partial Class frmEnvioDoc
                 .pIdAsignaDocInterno = 5 '// ToDo: numero de asignacion correcto
                 .pFechaLlegada = DateTime.Now.ToShortDateString
                 .pFechaLimite = txtFechaLimite.Text
-                .pIdCondicionEnvio = "01"  '// ToDo: numero de condiciond e envio correcto
-                .pIdEstBuzoninterno = "12" '// ToDo: estado de buzon correcto
+                .pIdCondicionEnvio = 1  '// ToDo: numero de condiciond e envio correcto
+                .pIdEstBuzoninterno = 1 '// ToDo: estado de buzon correcto
                 .pObservaciones = txtObservaciones.Text
                 .pIdUserR = "JeaCol" '//ToDo :usuairo correcto
                 .pFechaR = DateTime.Now.ToShortDateString
