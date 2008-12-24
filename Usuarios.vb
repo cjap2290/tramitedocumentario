@@ -15,6 +15,16 @@ Public Class Usuarios
     Private sFecIni As String
     Private sFecFin As String
     Private sNomNivAcc As String
+    Private EC_IdPersona As String
+    Public Property pIdPersona() As String
+        Get
+            Return EC_IdPersona
+        End Get
+        Set(ByVal value As String)
+            EC_IdPersona = value
+        End Set
+    End Property
+
     Public Property obtNomNivAcceso() As String
         Get
             Return sNomNivAcc
@@ -114,6 +124,17 @@ Public Class Usuarios
             End If
         Else
             Return False
+        End If
+    End Function
+    Public Function obtIdpersona(ByVal siduser As String) As Boolean
+        If Where.IdUser.Value IsNot Nothing Then
+            Me.Where.WhereClauseReset()
+        End If
+        Me.Where.IdUser.Value = siduser
+        Me.Where.IdUser.Operator = WhereParameter.Operand.Equal
+        If Query.Load() Then
+            EC_IdPersona = s_IdPersona
+        Else
         End If
     End Function
 End Class
