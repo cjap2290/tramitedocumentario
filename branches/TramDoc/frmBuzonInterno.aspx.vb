@@ -22,7 +22,7 @@ Partial Class frmBuzonInterno
         Dim Prioridad As New BoundField
 
         With remitente
-            .DataField = dtBuzon.Columns(15).ColumnName
+            .DataField = "Nombre"  'dtBuzon.Columns(15).ColumnName
             .HeaderText = " DE "
             gvBuzon.Columns.Add(remitente)
         End With
