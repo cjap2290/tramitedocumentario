@@ -134,7 +134,9 @@ Public Class Usuarios
         Me.Where.IdUser.Operator = WhereParameter.Operand.Equal
         If Query.Load() Then
             EC_IdPersona = s_IdPersona
+            Return True
         Else
+            Return False
         End If
     End Function
 End Class

@@ -216,6 +216,24 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 		
+		Public Shared ReadOnly Property ApePat As SqlParameter
+			Get
+				Return New SqlParameter("ApePat", SqlDbType.VarChar, 35)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property ApeMat As SqlParameter
+			Get
+				Return New SqlParameter("ApeMat", SqlDbType.VarChar, 35)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Nombres As SqlParameter
+			Get
+				Return New SqlParameter("Nombres", SqlDbType.VarChar, 40)
+			End Get
+		End Property
+		
 	End Class
 	#End Region	
 
@@ -251,6 +269,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Observaciones As String = "Observaciones"
         Public Const IdUserRBuzon As String = "IdUserRBuzon"
         Public Const FechaRBuzon As String = "FechaRBuzon"
+        Public Const ApePat As String = "ApePat"
+        Public Const ApeMat As String = "ApeMat"
+        Public Const Nombres As String = "Nombres"
 
 		Shared Public Function ToPropertyName(ByVal columnName As String) As String
 
@@ -287,6 +308,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 				ht(Observaciones) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Observaciones
 				ht(IdUserRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdUserRBuzon
 				ht(FechaRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaRBuzon
+				ht(ApePat) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.ApePat
+				ht(ApeMat) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.ApeMat
+				ht(Nombres) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Nombres
 
 			End If
 			
@@ -330,6 +354,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Observaciones As String = "Observaciones"
         Public Const IdUserRBuzon As String = "IdUserRBuzon"
         Public Const FechaRBuzon As String = "FechaRBuzon"
+        Public Const ApePat As String = "ApePat"
+        Public Const ApeMat As String = "ApeMat"
+        Public Const Nombres As String = "Nombres"
 
 		Shared Public Function ToColumnName(ByVal propertyName As String) As String
 
@@ -366,6 +393,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 				ht(Observaciones) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Observaciones
 				ht(IdUserRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdUserRBuzon
 				ht(FechaRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaRBuzon
+				ht(ApePat) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.ApePat
+				ht(ApeMat) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.ApeMat
+				ht(Nombres) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Nombres
 
 			End If
 			
@@ -410,6 +440,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Observaciones As String = "s_Observaciones"
         Public Const IdUserRBuzon As String = "s_IdUserRBuzon"
         Public Const FechaRBuzon As String = "s_FechaRBuzon"
+        Public Const ApePat As String = "s_ApePat"
+        Public Const ApeMat As String = "s_ApeMat"
+        Public Const Nombres As String = "s_Nombres"
 
 	End Class
 	#End Region		
@@ -673,6 +706,33 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 			Set(ByVal Value As DateTime)
 				MyBase.SetDateTime(ColumnNames.FechaRBuzon, Value)
+			End Set
+		End Property
+
+		Public Overridable Property ApePat As String
+			Get
+				Return MyBase.GetString(ColumnNames.ApePat)
+			End Get
+			Set(ByVal Value As String)
+				MyBase.SetString(ColumnNames.ApePat, Value)
+			End Set
+		End Property
+
+		Public Overridable Property ApeMat As String
+			Get
+				Return MyBase.GetString(ColumnNames.ApeMat)
+			End Get
+			Set(ByVal Value As String)
+				MyBase.SetString(ColumnNames.ApeMat, Value)
+			End Set
+		End Property
+
+		Public Overridable Property Nombres As String
+			Get
+				Return MyBase.GetString(ColumnNames.Nombres)
+			End Get
+			Set(ByVal Value As String)
+				MyBase.SetString(ColumnNames.Nombres, Value)
 			End Set
 		End Property
 
@@ -1174,6 +1234,57 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Set
 		End Property
 
+		Public Overridable Property s_ApePat As String
+			Get
+				If Me.IsColumnNull(ColumnNames.ApePat) Then
+					Return String.Empty
+				Else
+					Return MyBase.GetStringAsString(ColumnNames.ApePat)
+				End If
+			End Get
+			Set(ByVal Value As String)
+				If String.Empty = value Then
+					Me.SetColumnNull(ColumnNames.ApePat)
+				Else
+					Me.ApePat = MyBase.SetStringAsString(ColumnNames.ApePat, Value)
+				End If
+			End Set
+		End Property
+
+		Public Overridable Property s_ApeMat As String
+			Get
+				If Me.IsColumnNull(ColumnNames.ApeMat) Then
+					Return String.Empty
+				Else
+					Return MyBase.GetStringAsString(ColumnNames.ApeMat)
+				End If
+			End Get
+			Set(ByVal Value As String)
+				If String.Empty = value Then
+					Me.SetColumnNull(ColumnNames.ApeMat)
+				Else
+					Me.ApeMat = MyBase.SetStringAsString(ColumnNames.ApeMat, Value)
+				End If
+			End Set
+		End Property
+
+		Public Overridable Property s_Nombres As String
+			Get
+				If Me.IsColumnNull(ColumnNames.Nombres) Then
+					Return String.Empty
+				Else
+					Return MyBase.GetStringAsString(ColumnNames.Nombres)
+				End If
+			End Get
+			Set(ByVal Value As String)
+				If String.Empty = value Then
+					Me.SetColumnNull(ColumnNames.Nombres)
+				Else
+					Me.Nombres = MyBase.SetStringAsString(ColumnNames.Nombres, Value)
+				End If
+			End Set
+		End Property
+
 
 	#End Region 
 
@@ -1429,6 +1540,30 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		Public ReadOnly Property FechaRBuzon() As WhereParameter
 			Get
 				Dim where As WhereParameter = New WhereParameter(ColumnNames.FechaRBuzon, Parameters.FechaRBuzon)
+				Me._clause._entity.Query.AddWhereParemeter(where)
+				Return where
+			End Get
+		End Property
+
+		Public ReadOnly Property ApePat() As WhereParameter
+			Get
+				Dim where As WhereParameter = New WhereParameter(ColumnNames.ApePat, Parameters.ApePat)
+				Me._clause._entity.Query.AddWhereParemeter(where)
+				Return where
+			End Get
+		End Property
+
+		Public ReadOnly Property ApeMat() As WhereParameter
+			Get
+				Dim where As WhereParameter = New WhereParameter(ColumnNames.ApeMat, Parameters.ApeMat)
+				Me._clause._entity.Query.AddWhereParemeter(where)
+				Return where
+			End Get
+		End Property
+
+		Public ReadOnly Property Nombres() As WhereParameter
+			Get
+				Dim where As WhereParameter = New WhereParameter(ColumnNames.Nombres, Parameters.Nombres)
 				Me._clause._entity.Query.AddWhereParemeter(where)
 				Return where
 			End Get
@@ -1700,6 +1835,33 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
+		Public ReadOnly Property ApePat() As WhereParameter 
+			Get
+				If _ApePat_W Is Nothing Then
+					_ApePat_W = TearOff.ApePat
+				End If
+				Return _ApePat_W
+			End Get
+		End Property
+
+		Public ReadOnly Property ApeMat() As WhereParameter 
+			Get
+				If _ApeMat_W Is Nothing Then
+					_ApeMat_W = TearOff.ApeMat
+				End If
+				Return _ApeMat_W
+			End Get
+		End Property
+
+		Public ReadOnly Property Nombres() As WhereParameter 
+			Get
+				If _Nombres_W Is Nothing Then
+					_Nombres_W = TearOff.Nombres
+				End If
+				Return _Nombres_W
+			End Get
+		End Property
+
 		Private _IdDocInterno_W As WhereParameter = Nothing
 		Private _NroDoc_W As WhereParameter = Nothing
 		Private _IdTipoDocumento_W As WhereParameter = Nothing
@@ -1729,6 +1891,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		Private _Observaciones_W As WhereParameter = Nothing
 		Private _IdUserRBuzon_W As WhereParameter = Nothing
 		Private _FechaRBuzon_W As WhereParameter = Nothing
+		Private _ApePat_W As WhereParameter = Nothing
+		Private _ApeMat_W As WhereParameter = Nothing
+		Private _Nombres_W As WhereParameter = Nothing
 
 		Public Sub WhereClauseReset()
 
@@ -1761,6 +1926,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		_Observaciones_W = Nothing
 		_IdUserRBuzon_W = Nothing
 		_FechaRBuzon_W = Nothing
+		_ApePat_W = Nothing
+		_ApeMat_W = Nothing
+		_Nombres_W = Nothing
 			Me._entity.Query.FlushWhereParameters()
 
 		End Sub
@@ -2039,6 +2207,30 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
+		Public ReadOnly Property ApePat() As AggregateParameter
+			Get
+				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.ApePat, Parameters.ApePat)
+				Me._clause._entity.Query.AddAggregateParameter(where)
+				Return where
+			End Get
+		End Property
+
+		Public ReadOnly Property ApeMat() As AggregateParameter
+			Get
+				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.ApeMat, Parameters.ApeMat)
+				Me._clause._entity.Query.AddAggregateParameter(where)
+				Return where
+			End Get
+		End Property
+
+		Public ReadOnly Property Nombres() As AggregateParameter
+			Get
+				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.Nombres, Parameters.Nombres)
+				Me._clause._entity.Query.AddAggregateParameter(where)
+				Return where
+			End Get
+		End Property
+
 
 			Private _clause as AggregateClause
 		End Class
@@ -2305,6 +2497,33 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
+		Public ReadOnly Property ApePat() As AggregateParameter 
+			Get
+				If _ApePat_W Is Nothing Then
+					_ApePat_W = TearOff.ApePat
+				End If
+				Return _ApePat_W
+			End Get
+		End Property
+
+		Public ReadOnly Property ApeMat() As AggregateParameter 
+			Get
+				If _ApeMat_W Is Nothing Then
+					_ApeMat_W = TearOff.ApeMat
+				End If
+				Return _ApeMat_W
+			End Get
+		End Property
+
+		Public ReadOnly Property Nombres() As AggregateParameter 
+			Get
+				If _Nombres_W Is Nothing Then
+					_Nombres_W = TearOff.Nombres
+				End If
+				Return _Nombres_W
+			End Get
+		End Property
+
 		Private _IdDocInterno_W As AggregateParameter = Nothing
 		Private _NroDoc_W As AggregateParameter = Nothing
 		Private _IdTipoDocumento_W As AggregateParameter = Nothing
@@ -2334,6 +2553,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		Private _Observaciones_W As AggregateParameter = Nothing
 		Private _IdUserRBuzon_W As AggregateParameter = Nothing
 		Private _FechaRBuzon_W As AggregateParameter = Nothing
+		Private _ApePat_W As AggregateParameter = Nothing
+		Private _ApeMat_W As AggregateParameter = Nothing
+		Private _Nombres_W As AggregateParameter = Nothing
 
 		Public Sub AggregateClauseReset()
 
@@ -2366,6 +2588,9 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		_Observaciones_W = Nothing
 		_IdUserRBuzon_W = Nothing
 		_FechaRBuzon_W = Nothing
+		_ApePat_W = Nothing
+		_ApeMat_W = Nothing
+		_Nombres_W = Nothing
 			Me._entity.Query.FlushAggregateParameters()
 
 		End Sub
@@ -2397,12 +2622,13 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 	
 	Protected Overrides Function GetDeleteCommand() As IDbCommand
 		Return Nothing
-    End Function
+	End Function
     Public Function obtBuzonxUsuario(ByVal sIdUser As String) As DataTable
         Dim usuario As New Usuarios
         Dim personas As New PersonNat
         Dim nombrecompleto As String
         Dim dtBuzon As New DataTable
+        Dim drNombres As DataRow
         '-- seteamos una nueva columna que sera la columna nombre 
         Dim ColNombre As New DataColumn
         ColNombre.ColumnName = "Nombre"
@@ -2415,14 +2641,15 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
             For Each miFila As DataRow In DataTable.Rows
                 If usuario.obtIdpersona(miFila("IdUser")) Then
                     nombrecompleto = personas.ObtNombreCompleto(usuario.pIdPersona)
+                    drNombres = dtBuzon.NewRow()
+                    drNombres(0) = nombrecompleto
+                    dtBuzon.Rows.Add(drNombres)
                 End If
-
             Next
-            Return DataTable
+            Return dtBuzon
         Else
             Return Nothing
         End If
     End Function
-	
 End Class
 
