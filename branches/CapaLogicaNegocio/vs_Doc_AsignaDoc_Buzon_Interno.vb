@@ -2628,22 +2628,34 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Dim personas As New PersonNat
         Dim nombrecompleto As String
         Dim dtBuzon As New DataTable
-        Dim drNombres As DataRow
-        '-- seteamos una nueva columna que sera la columna nombre 
+        '-- filasque usaremos
+        Dim drFilaBuzon As DataRow
+        '-- end
+        '-- seteamos  nuevas columnas que seran la columna nombre 
         Dim ColNombre As New DataColumn
-        ColNombre.ColumnName = "Nombre"
+        Dim ColAsunto As New DataColumn
+        Dim ColIdAsignacion As New DataColumn
+        ColNombre.ColumnName = "NombreCompleto"
+        ColAsunto.ColumnName = "Asunto"
+        ColIdAsignacion.ColumnName = "IdAsignacion"
         ColNombre.DataType = System.Type.GetType("System.String")
+        ColAsunto.DataType = System.Type.GetType("System.String")
+        ColIdAsignacion.DataType = System.Type.GetType("System.Int16")
         '--fin--
         Where.IdUser.Value = sIdUser
         Where.IdUser.Operator = WhereParameter.Operand.Equal
         If Query.Load Then
             dtBuzon.Columns.Add(ColNombre)
+            dtBuzon.Columns.Add(ColAsunto)
+            dtBuzon.Columns.Add(ColIdAsignacion)
             For Each miFila As DataRow In DataTable.Rows
                 If usuario.obtIdpersona(miFila("IdUser")) Then
                     nombrecompleto = personas.ObtNombreCompleto(usuario.pIdPersona)
-                    drNombres = dtBuzon.NewRow()
-                    drNombres(0) = nombrecompleto
-                    dtBuzon.Rows.Add(drNombres)
+                    drFilaBuzon = dtBuzon.NewRow()
+                    drFilaBuzon(0) = nombrecompleto
+                    drFilaBuzon(1) = miFila("Asunto")
+                    drFilaBuzon(2) = miFila("IdAsigDocInterno")
+                    dtBuzon.Rows.Add(drFilaBuzon)
                 End If
             Next
             Return dtBuzon
