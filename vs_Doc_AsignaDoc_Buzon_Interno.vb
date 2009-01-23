@@ -2635,12 +2635,15 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Dim ColNombre As New DataColumn
         Dim ColAsunto As New DataColumn
         Dim ColIdAsignacion As New DataColumn
+        Dim ColFechaLlegada As New DataColumn
         ColNombre.ColumnName = "NombreCompleto"
         ColAsunto.ColumnName = "Asunto"
         ColIdAsignacion.ColumnName = "IdAsignacion"
+        ColFechaLlegada.ColumnName = "FechaLlegada"
         ColNombre.DataType = System.Type.GetType("System.String")
         ColAsunto.DataType = System.Type.GetType("System.String")
         ColIdAsignacion.DataType = System.Type.GetType("System.Int16")
+        ColFechaLlegada.DataType = System.Type.GetType("System.String")
         '--fin--
         Where.IdUser.Value = sIdUser
         Where.IdUser.Operator = WhereParameter.Operand.Equal
@@ -2648,6 +2651,7 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
             dtBuzon.Columns.Add(ColNombre)
             dtBuzon.Columns.Add(ColAsunto)
             dtBuzon.Columns.Add(ColIdAsignacion)
+            dtBuzon.Columns.Add(ColFechaLlegada)
             For Each miFila As DataRow In DataTable.Rows
                 If usuario.obtIdpersona(miFila("IdUser")) Then
                     nombrecompleto = personas.ObtNombreCompleto(usuario.pIdPersona)
@@ -2655,6 +2659,7 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
                     drFilaBuzon(0) = nombrecompleto
                     drFilaBuzon(1) = miFila("Asunto")
                     drFilaBuzon(2) = miFila("IdAsigDocInterno")
+                    drFilaBuzon(3) = miFila("FechaLlegada")
                     dtBuzon.Rows.Add(drFilaBuzon)
                 End If
             Next
