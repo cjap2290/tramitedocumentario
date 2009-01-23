@@ -13,13 +13,16 @@
             <tr>
                 <td>
                 </td>
-                <td>
+                <td style="width: 281px">
                 </td>
                 <td>
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
+                    Ordenar por :
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                    </asp:DropDownList>&nbsp;<br />
                     <asp:GridView ID="gvBuzon" runat="server" BackColor="White" BorderColor="#336666"
                         BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal"
                         Height="199px" Width="768px" AutoGenerateColumns="False">
@@ -34,23 +37,23 @@
             <tr>
                 <td>
                 </td>
-                <td>
+                <td style="width: 281px">
                 </td>
                 <td>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="height: 25px">
                 </td>
-                <td>
+                <td style="width: 281px; height: 25px">
                 </td>
-                <td>
+                <td style="height: 25px">
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
-                <td>
+                <td style="width: 281px">
                 </td>
                 <td>
                 </td>

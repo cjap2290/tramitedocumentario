@@ -32,7 +32,6 @@ Partial Class frmBuzonInterno
         '    .ShowSelectButton = True
         '    gvBuzon.Columns.Add(chk)
         'End With
-
         With remitente
             .DataField = "NombreCompleto"  'dtBuzon.Columns(15).ColumnName
             .HeaderText = " DE "
@@ -40,8 +39,7 @@ Partial Class frmBuzonInterno
         End With
         With IdAsignacion
             .DataField = "IdAsignacion"
-            .DataFormatString = "~/frmCuerpo.aspx?id={0}"
-            .Visible = True
+            .Visible = False
             gvBuzon.Columns.Add(IdAsignacion)
         End With
         With Asunto
@@ -51,6 +49,11 @@ Partial Class frmBuzonInterno
             .NavigateUrl = "~/frmCuerpo.aspx" ' ?Parameter=" + txtSearch.Text
             .HeaderText = " Asunto "
             gvBuzon.Columns.Add(Asunto)
+        End With
+        With Fecha
+            .DataField = "FechaLLegada"  'dtBuzon.Columns(15).ColumnName
+            .HeaderText = " DE "
+            gvBuzon.Columns.Add(Fecha)
         End With
     End Sub
 
