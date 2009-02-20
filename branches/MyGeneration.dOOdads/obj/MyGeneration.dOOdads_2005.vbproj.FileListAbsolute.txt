@@ -1,0 +1,9 @@
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\bin\MyGeneration.dOOdads.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\bin\MyGeneration.dOOdads.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\bin\MyGeneration.dOOdads.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\Resources.resources
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads_2005.vbproj.GenerateResource.Cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.pdb
