@@ -1,0 +1,15 @@
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\MyGeneration.dOOdads.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\MyGeneration.dOOdads.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\MyGeneration.dOOdads.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.Resources.resources
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.vbproj.GenerateResource.Cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb
