@@ -116,6 +116,7 @@ Public Class Usuarios
                 If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
                     sNomNivAcc = nivelacceso.Descripcion
                     Return True
+
                 Else
                     Return False
                 End If
