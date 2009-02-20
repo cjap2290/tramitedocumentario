@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Imports BusinessLayer.SharedOpe
 Imports Microsoft.Practices.EnterpriseLibrary.Data
 Imports Microsoft.Practices.EnterpriseLibrary.Data.Sql
+Imports CapaLogicaNegocio
 
 Partial Class _Default
     Inherits System.Web.UI.Page
@@ -13,41 +14,9 @@ Partial Class _Default
     Dim xPass As String
     Dim dr As IDataReader = Nothing
     Dim mensaje As String
-
+    Dim usuario As CapaLogicaNegocio.Usuarios
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Aceptar()
-    End Sub
-    Private Sub GetDatosUser(ByVal User As String)
-
-        Try
-            DR = BSLayer.GetDatosUser(User)
-            While DR.Read
-                If DR.Item("Activo").ToString = "0" Then
-                    'MessageBox.Show("El usuario esta desactivado..." + Space(10), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    'Me.LoginOK = False
-                Else
-                    'txtAgencia.Text = DR.Item("Agencia")
-                    xPass = BSLayer.DecryptData(DR.Item("Clave"))
-                    BSLayer.vIdAgencia = dr.Item("IdAgencia")
-                    BSLayer.vIdArea = dr.Item("IdArea")
-                    BSLayer.vIdCargo = dr.Item("IdCargo")
-                    BSLayer.vAgencia = dr.Item("Agencia")
-                    BSLayer.vArea = dr.Item("Area")
-                    BSLayer.vCargo = dr.Item("Cargo")
-                    BSLayer.vDirAgencia = dr.Item("Direccion")
-                    BSLayer.vIdPersona = dr.Item("IdPersona")
-                    BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
-                End If
-            End While
-            DR.Close()
-            DR = Nothing
-        Catch ex As Exception
-            dr = Nothing
-            mensaje = ex.Message
-            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'End
-        End Try
-
     End Sub
     Private Sub Aceptar()
         Me.LoginOK = False
@@ -128,6 +97,45 @@ Partial Class _Default
         'FIN ACTUALIZACION JMLP --> 19/03/2007
     End Sub
 
-    
+    Private Sub GetDatosUser(ByVal User As String)
+        usuario = New Usuarios
+        If usuario.obtIdpersona("ElvMor") Then
+            If usuario.EC_cargaUsuario(usuario.pIdPersona) Then
+
+            End If
+        End If
+
+        Try
+            dr = BSLayer.GetDatosUser(User)
+            While dr.Read
+                If dr.Item("Activo").ToString = "0" Then
+                    'MessageBox.Show("El usuario esta desactivado..." + Space(10), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    'Me.LoginOK = False
+                Else
+                    'txtAgencia.Text = DR.Item("Agencia")
+                    xPass = BSLayer.DecryptData(dr.Item("Clave"))
+                    BSLayer.vIdAgencia = dr.Item("IdAgencia")
+                    BSLayer.vIdArea = dr.Item("IdArea")
+                    BSLayer.vIdCargo = dr.Item("IdCargo")
+                    BSLayer.vAgencia = dr.Item("Agencia")
+                    BSLayer.vArea = dr.Item("Area")
+                    BSLayer.vCargo = dr.Item("Cargo")
+                    BSLayer.vDirAgencia = dr.Item("Direccion")
+                    BSLayer.vIdPersona = dr.Item("IdPersona")
+                    BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
+                End If
+            End While
+            dr.Close()
+            dr = Nothing
+        Catch ex As Exception
+            dr = Nothing
+            mensaje = ex.Message
+            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'End
+        End Try
+
+    End Sub
+
+
     
 End Class
