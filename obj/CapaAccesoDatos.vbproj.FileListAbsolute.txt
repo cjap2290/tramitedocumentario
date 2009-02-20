@@ -1,0 +1,12 @@
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\MyGeneration.dOOdads.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\MyGeneration.dOOdads.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\bin\Debug\MyGeneration.dOOdads.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.Resources.resources
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.vbproj.GenerateResource.Cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb
