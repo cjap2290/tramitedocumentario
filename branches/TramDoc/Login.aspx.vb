@@ -4,7 +4,6 @@ Imports BusinessLayer.SharedOpe
 Imports Microsoft.Practices.EnterpriseLibrary.Data
 Imports Microsoft.Practices.EnterpriseLibrary.Data.Sql
 Imports CapaLogicaNegocio
-
 Partial Class _Default
     Inherits System.Web.UI.Page
     'Dim BSLayer As New BusinessLayer.SharedOpe
@@ -15,6 +14,7 @@ Partial Class _Default
     Dim dr As IDataReader = Nothing
     Dim mensaje As String
     Dim usuario As CapaLogicaNegocio.Usuarios
+    Private decriptador As CEncriptador
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Aceptar()
     End Sub
@@ -101,7 +101,10 @@ Partial Class _Default
         usuario = New Usuarios
         If usuario.obtIdpersona("ElvMor") Then
             If usuario.EC_cargaUsuario(usuario.pIdPersona) Then
-
+                If usuario.p_Activo = "0" Then
+                Else
+                    xPass = decriptador.DecryptData(usuario.p_Password)
+                End If
             End If
         End If
 
@@ -138,4 +141,9 @@ Partial Class _Default
 
 
     
+    Protected Sub form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles form1.Load
+        If 1 = 1 Then
+
+        End If
+    End Sub
 End Class

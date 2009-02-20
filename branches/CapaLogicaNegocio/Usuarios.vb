@@ -16,6 +16,27 @@ Public Class Usuarios
     Private sFecFin As String
     Private sNomNivAcc As String
     Private EC_IdPersona As String
+    Private sActivo As String
+    Private sPassword As String
+
+    Public Property p_Password() As String
+        Get
+            Return sPassword
+        End Get
+        Set(ByVal value As String)
+            sPassword = value
+        End Set
+    End Property
+
+    Public Property p_Activo() As String
+        Get
+            Return sActivo
+        End Get
+        Set(ByVal value As String)
+            sActivo = value
+        End Set
+    End Property
+
     Public Property pIdPersona() As String
         Get
             Return EC_IdPersona
@@ -103,20 +124,21 @@ Public Class Usuarios
         End If
     End Function
     Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
-        If Where.IdPersona.Value IsNot Nothing Then
-            Me.Where.WhereClauseReset()
-        End If
+        'If Where.IdPersona.Value IsNot Nothing Then
+
+        'End If
         Me.Where.IdPersona.Value = sIdPersona
         Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
         If Query.Load() Then
             sIdUser = IdUser
             sFecIni = FechaIni.ToShortDateString
             sFecFin = FechaFin.ToShortDateString
+            sActivo = Activo
+            sPassword = Clave
             If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
                 If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
                     sNomNivAcc = nivelacceso.Descripcion
                     Return True
-
                 Else
                     Return False
                 End If
@@ -126,18 +148,27 @@ Public Class Usuarios
         Else
             Return False
         End If
+        Me.Where.WhereClauseReset()
     End Function
     Public Function obtIdpersona(ByVal siduser As String) As Boolean
-        If Where.IdUser.Value IsNot Nothing Then
+        'If Where.IdUser.Value IsNot Nothing Then
+        Try
+            Me.Where.IdUser.Value = siduser
+            Me.Where.IdUser.Operator = WhereParameter.Operand.Equal
+            If Query.Load() Then
+                EC_IdPersona = s_IdPersona
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As ApplicationException
+            Throw ex
+        Finally
             Me.Where.WhereClauseReset()
-        End If
-        Me.Where.IdUser.Value = siduser
-        Me.Where.IdUser.Operator = WhereParameter.Operand.Equal
-        If Query.Load() Then
-            EC_IdPersona = s_IdPersona
-            Return True
-        Else
-            Return False
-        End If
+        End Try
+
+        'End If
+
+
     End Function
 End Class
