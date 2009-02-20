@@ -1,0 +1,9 @@
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.Resources.resources
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.vbproj.GenerateResource.Cache
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.xml
+C:\Users\JEAN\Tesis\tramite documentario\branches\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.pdb
