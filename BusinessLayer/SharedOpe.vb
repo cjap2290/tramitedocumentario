@@ -325,7 +325,6 @@ ErrorHandler:
         cmd = DB.GetStoredProcCommand("paGetDatosUser", Usuario)
         GetDatosUser = DB.ExecuteReader(cmd)
     End Function
-
     Public Function GetBloqueo(ByVal UserLog As String) As IDataReader
         sSQL = "Select Bloqueo from Usuarios where iduser='" & Trim(UserLog) & "'"
         GetBloqueo = DB.ExecuteReader(CommandType.Text, sSQL)
