@@ -10,32 +10,37 @@ Public Class CEncriptador
         Dim xKeyDefault As String
         Dim xDecryptMsg As String = ""
 
-        If Len(Trim(xKey)) = 0 Then
-            xKeyDefault = gKey
-        Else
-            xKeyDefault = xKey
-        End If
+        Try
+            If Len(Trim(xKey)) = 0 Then
+                xKeyDefault = gKey
+            Else
+                xKeyDefault = xKey
+            End If
 
-        If Len(xTobeDecrypt) > 0 Then
-            obEncrypt.SetSecret(xKeyDefault)
-            obEncrypt.Decrypt(xTobeDecrypt)
-            xDecryptMsg = obEncrypt.Content
-        Else
-            MsgBox("No existe mensaje a ser Desencriptado", vbInformation, "Mensajes ")
-        End If
-        DecryptData = xDecryptMsg
-        obEncrypt = Nothing
+            If Len(xTobeDecrypt) > 0 Then
+                obEncrypt.SetSecret(xKeyDefault)
+                obEncrypt.Decrypt(xTobeDecrypt)
+                xDecryptMsg = obEncrypt.Content
+            Else
+                MsgBox("No existe mensaje a ser Desencriptado", vbInformation, "Mensajes ")
+            End If
+            'DecryptData = xDecryptMsg
+            obEncrypt = Nothing
+            Return xDecryptMsg
+        Catch ex As Exception
+            If Err.Number > 0 Then
+                MsgBox("Visual Basic error found:" & Err.Description)
+            Else
+                If Err.Number = -2146893819 Then
+                    MsgBox("Error. The Clave para desencriptar no es correcta.", vbInformation, "Mensajes ")
+                Else
+                    MsgBox("CAPICOM error found : " & Err.Number, vbInformation, "Mensajes ")
+                End If
+            End If
+        End Try
+
         'Exit Function
         'ErrorHandler:
-        If Err.Number > 0 Then
-            MsgBox("Visual Basic error found:" & Err.Description)
-        Else
-            If Err.Number = -2146893819 Then
-                MsgBox("Error. The Clave para desencriptar no es correcta.", vbInformation, "Mensajes ")
-            Else
-                MsgBox("CAPICOM error found : " & Err.Number, vbInformation, "Mensajes ")
-            End If
-        End If
     End Function
     Function EncryptData(ByVal xTobeEncrypt As String, Optional ByVal xKey As String = "") As String
         Dim obEncrypt As New EncryptedData
