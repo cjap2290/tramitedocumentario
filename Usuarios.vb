@@ -125,30 +125,34 @@ Public Class Usuarios
     End Function
     Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
         'If Where.IdPersona.Value IsNot Nothing Then
-
         'End If
-        Me.Where.IdPersona.Value = sIdPersona
-        Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
-        If Query.Load() Then
-            sIdUser = IdUser
-            sFecIni = FechaIni.ToShortDateString
-            sFecFin = FechaFin.ToShortDateString
-            sActivo = Activo
-            sPassword = Clave
-            If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
-                If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
-                    sNomNivAcc = nivelacceso.Descripcion
-                    Return True
+        Try
+            Me.Where.IdPersona.Value = sIdPersona
+            Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
+            If Query.Load() Then
+                sIdUser = IdUser
+                sFecIni = FechaIni.ToShortDateString
+                sFecFin = FechaFin.ToShortDateString
+                sActivo = Activo
+                sPassword = Clave
+                If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
+                    If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
+                        sNomNivAcc = nivelacceso.Descripcion
+                        Return True
+                    Else
+                        Return False
+                    End If
                 Else
                     Return False
                 End If
             Else
                 Return False
             End If
-        Else
-            Return False
-        End If
-        Me.Where.WhereClauseReset()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            Me.Where.WhereClauseReset()
+        End Try
     End Function
     Public Function obtIdpersona(ByVal siduser As String) As Boolean
         'If Where.IdUser.Value IsNot Nothing Then
@@ -161,7 +165,7 @@ Public Class Usuarios
             Else
                 Return False
             End If
-        Catch ex As ApplicationException
+        Catch ex As Exception
             Throw ex
         Finally
             Me.Where.WhereClauseReset()
