@@ -21,15 +21,15 @@ Partial Class _Default
     Private Sub Aceptar()
         Me.LoginOK = False
 
-        If Trim(txtUsuario.Text) = "" Then
-            'MessageBox.Show("Debe llenar el nombre de usuario ...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End If
+        'If Trim(txtUsuario.Text) = "" Then
+        '    'MessageBox.Show("Debe llenar el nombre de usuario ...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    Exit Sub
+        'End If
 
-        If Trim(txtPassword.Text) = "" Then
-            'MessageBox.Show("La Clave del usuario no puede ser en blanco...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End If
+        'If Trim(txtPassword.Text) = "" Then
+        '    'MessageBox.Show("La Clave del usuario no puede ser en blanco...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    Exit Sub
+        'End If
 
         '-- Verifica nuevamente --'
         GetDatosUser(txtUsuario.Text)
@@ -50,16 +50,16 @@ Partial Class _Default
                 If Trim(txtPassword.Text) = Trim(xPass) Then
                     BSLayer.Login = txtUsuario.Text
                     'Para Identificar Agencia de Usuario con Codigo Agencia de PC'
-                    If BSLayer.CheckAgencia() > 0 Then
-                        Try
-                            BSLayer.BloqueoUsuario(txtUsuario.Text, "0")
-                            Me.LoginOK = True
-                            'Me.Close()
-                        Catch ex As Exception
-                            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            'End
-                        End Try
-                    End If
+                    'If BSLayer.CheckAgencia() > 0 Then
+                    Try
+                        BSLayer.BloqueoUsuario(txtUsuario.Text, "0")
+                        Me.LoginOK = True
+                        'Me.Close()
+                    Catch ex As Exception
+                        'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        'End
+                    End Try
+                    'End If
                 Else
                     If CInt(dr.Item("bloqueo")) < nMaxInt - 1 Then
                         Try
@@ -99,6 +99,7 @@ Partial Class _Default
 
     Private Sub GetDatosUser(ByVal User As String)
         usuario = New Usuarios
+        decriptador = New CEncriptador
         If usuario.obtIdpersona("ElvMor") Then
             If usuario.EC_cargaUsuario(usuario.pIdPersona) Then
                 If usuario.p_Activo = "0" Then
@@ -116,16 +117,16 @@ Partial Class _Default
                     'Me.LoginOK = False
                 Else
                     'txtAgencia.Text = DR.Item("Agencia")
-                    xPass = BSLayer.DecryptData(dr.Item("Clave"))
-                    BSLayer.vIdAgencia = dr.Item("IdAgencia")
-                    BSLayer.vIdArea = dr.Item("IdArea")
-                    BSLayer.vIdCargo = dr.Item("IdCargo")
-                    BSLayer.vAgencia = dr.Item("Agencia")
-                    BSLayer.vArea = dr.Item("Area")
-                    BSLayer.vCargo = dr.Item("Cargo")
-                    BSLayer.vDirAgencia = dr.Item("Direccion")
-                    BSLayer.vIdPersona = dr.Item("IdPersona")
-                    BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
+                    'xPass = BSLayer.DecryptData(dr.Item("Clave"))
+                    'BSLayer.vIdAgencia = dr.Item("IdAgencia")
+                    'BSLayer.vIdArea = dr.Item("IdArea")
+                    'BSLayer.vIdCargo = dr.Item("IdCargo")
+                    'BSLayer.vAgencia = dr.Item("Agencia")
+                    'BSLayer.vArea = dr.Item("Area")
+                    'BSLayer.vCargo = dr.Item("Cargo")
+                    'BSLayer.vDirAgencia = dr.Item("Direccion")
+                    'BSLayer.vIdPersona = dr.Item("IdPersona")
+                    'BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
                 End If
             End While
             dr.Close()

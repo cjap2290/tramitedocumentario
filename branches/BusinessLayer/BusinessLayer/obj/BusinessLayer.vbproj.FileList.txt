@@ -4,10 +4,6 @@ obj\Debug\BusinessLayer.vbproj.GenerateResource.Cache
 bin\Debug\BusinessLayer.dll
 bin\Debug\BusinessLayer.pdb
 bin\Debug\BusinessLayer.xml
-bin\Debug\Microsoft.Practices.ObjectBuilder.dll
-bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-bin\Debug\Microsoft.Practices.ObjectBuilder.xml
 obj\Debug\BusinessLayer.dll
 obj\Debug\BusinessLayer.xml
 obj\Debug\BusinessLayer.pdb

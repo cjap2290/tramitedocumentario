@@ -68,7 +68,8 @@
                             </td>
                         </tr>
                     </table>
-                </td>
+                    <asp:Label ID="lblmensaje" runat="server" BackColor="#C0FFC0" ForeColor="Black" Height="30px"
+                        Width="388px"></asp:Label></td>
             </tr>
             <tr>
                 <td style="height: 22px">
