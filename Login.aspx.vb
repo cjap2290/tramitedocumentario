@@ -19,47 +19,53 @@ Partial Class _Default
         Aceptar()
     End Sub
     Private Sub Aceptar()
-        Me.LoginOK = False
+        usuario = New Usuarios
+        decriptador = New CEncriptador
 
-        'If Trim(txtUsuario.Text) = "" Then
-        '    'MessageBox.Show("Debe llenar el nombre de usuario ...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    Exit Sub
-        'End If
-
-        'If Trim(txtPassword.Text) = "" Then
-        '    'MessageBox.Show("La Clave del usuario no puede ser en blanco...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    Exit Sub
-        'End If
-
-        '-- Verifica nuevamente --'
-        GetDatosUser(txtUsuario.Text)
-        '-------------------------
-
-        'ACTUALIZACION JMLP --> 19/03/2007
         Try
-            dr = BSLayer.GetBloqueo(txtUsuario.Text)
-        Catch ex As Exception
-            dr = Nothing
-            mensaje = ex.Message
+            Me.LoginOK = False
+            nMaxInt = 0
+            'If Trim(txtUsuario.Text) = "" Then
+            '    'MessageBox.Show("Debe llenar el nombre de usuario ...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '    Exit Sub
+            'End If
+
+            'If Trim(txtPassword.Text) = "" Then
+            '    'MessageBox.Show("La Clave del usuario no puede ser en blanco...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '    Exit Sub
+            'End If
+
+            '-- Verifica nuevamente --'
+            'GetDatosUser(txtUsuario.Text)
+            '-------------------------
+            If usuario.obtIdpersona(txtUsuario.Text) Then
+                If usuario.EC_cargaUsuario(usuario.pIdPersona) Then
+                    If usuario.p_Activo = "0" Then
+                    Else
+                        xPass = decriptador.DecryptData(usuario.p_Password)
+                    End If
+                End If
+            End If
+            'ACTUALIZACION JMLP --> 19/03/2007
+            'Try
+            'dr = BSLayer.GetBloqueo(txtUsuario.Text)
+            'Catch ex As Exception
+            'dr = Nothing
+            'mensaje = ex.Message
             'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'End
-        End Try
+            'End Try
 
-        While DR.Read
-            If CInt(DR.Item("Bloqueo")) < nMaxInt Then
+            'While dr.Read
+            If CInt(usuario.p_Bloqueo) < nMaxInt Then
                 If Trim(txtPassword.Text) = Trim(xPass) Then
-                    BSLayer.Login = txtUsuario.Text
-                    'Para Identificar Agencia de Usuario con Codigo Agencia de PC'
-                    'If BSLayer.CheckAgencia() > 0 Then
-                    Try
+                      Try
                         BSLayer.BloqueoUsuario(txtUsuario.Text, "0")
                         Me.LoginOK = True
-                        'Me.Close()
+                        '// todo : redireccionar hacia la pagina de indices
                     Catch ex As Exception
-                        'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        'End
+                        lblmensaje.Text = "ERROR :" + ex.Message
                     End Try
-                    'End If
                 Else
                     If CInt(dr.Item("bloqueo")) < nMaxInt - 1 Then
                         Try
@@ -92,58 +98,51 @@ Partial Class _Default
                 Me.LoginOK = False
                 'Me.Close()
             End If
-        End While
-        DR = Nothing
-        'FIN ACTUALIZACION JMLP --> 19/03/2007
+            'End While
+            'dr = Nothing
+            'FIN ACTUALIZACION JMLP --> 19/03/2007
+        Catch ex As Exception
+            lblmensaje.Text = "ERROR : " + ex.Message
+        End Try
     End Sub
 
     Private Sub GetDatosUser(ByVal User As String)
-        usuario = New Usuarios
-        decriptador = New CEncriptador
-        If usuario.obtIdpersona("ElvMor") Then
-            If usuario.EC_cargaUsuario(usuario.pIdPersona) Then
-                If usuario.p_Activo = "0" Then
-                Else
-                    xPass = decriptador.DecryptData(usuario.p_Password)
-                End If
-            End If
-        End If
-
-        Try
-            dr = BSLayer.GetDatosUser(User)
-            While dr.Read
-                If dr.Item("Activo").ToString = "0" Then
-                    'MessageBox.Show("El usuario esta desactivado..." + Space(10), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    'Me.LoginOK = False
-                Else
-                    'txtAgencia.Text = DR.Item("Agencia")
-                    'xPass = BSLayer.DecryptData(dr.Item("Clave"))
-                    'BSLayer.vIdAgencia = dr.Item("IdAgencia")
-                    'BSLayer.vIdArea = dr.Item("IdArea")
-                    'BSLayer.vIdCargo = dr.Item("IdCargo")
-                    'BSLayer.vAgencia = dr.Item("Agencia")
-                    'BSLayer.vArea = dr.Item("Area")
-                    'BSLayer.vCargo = dr.Item("Cargo")
-                    'BSLayer.vDirAgencia = dr.Item("Direccion")
-                    'BSLayer.vIdPersona = dr.Item("IdPersona")
-                    'BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
-                End If
-            End While
-            dr.Close()
-            dr = Nothing
-        Catch ex As Exception
-            dr = Nothing
-            mensaje = ex.Message
-            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'End
-        End Try
+        
+        'Try
+        'dr = BSLayer.GetDatosUser(User)
+        'While dr.Read
+        'If dr.Item("Activo").ToString = "0" Then
+        'MessageBox.Show("El usuario esta desactivado..." + Space(10), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        'Me.LoginOK = False
+        'Else
+        'txtAgencia.Text = DR.Item("Agencia")
+        'xPass = BSLayer.DecryptData(dr.Item("Clave"))
+        'BSLayer.vIdAgencia = dr.Item("IdAgencia")
+        'BSLayer.vIdArea = dr.Item("IdArea")
+        'BSLayer.vIdCargo = dr.Item("IdCargo")
+        'BSLayer.vAgencia = dr.Item("Agencia")
+        'BSLayer.vArea = dr.Item("Area")
+        'BSLayer.vCargo = dr.Item("Cargo")
+        'BSLayer.vDirAgencia = dr.Item("Direccion")
+        'BSLayer.vIdPersona = dr.Item("IdPersona")
+        'BSLayer.vAgAbrev = Trim(dr.Item("Abrev"))
+        'End If
+        'End While
+        'dr.Close()
+        'dr = Nothing
+        'Catch ex As Exception
+        'dr = Nothing
+        'mensaje = ex.Message
+        'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End
+        'End Try
 
     End Sub
 
 
     
     Protected Sub form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles form1.Load
-        If 1 = 1 Then
+        If IsPostBack Then
 
         End If
     End Sub
