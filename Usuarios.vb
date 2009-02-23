@@ -18,6 +18,16 @@ Public Class Usuarios
     Private EC_IdPersona As String
     Private sActivo As String
     Private sPassword As String
+    Private sBloqueo As String
+    Public Property p_Bloqueo() As String
+        Get
+            Return sBloqueo
+        End Get
+        Set(ByVal value As String)
+            sBloqueo = value
+        End Set
+    End Property
+
 
     Public Property p_Password() As String
         Get
@@ -135,6 +145,7 @@ Public Class Usuarios
                 sFecFin = FechaFin.ToShortDateString
                 sActivo = Activo
                 sPassword = Clave
+                sBloqueo = Bloqueo
                 If nivaccxusu.EC_cargaNivAccxUsuAct(sIdUser) Then
                     If nivelacceso.LoadByPrimaryKey(Trim(nivaccxusu.s_IdNivelAcceso)) Then
                         sNomNivAcc = nivelacceso.Descripcion
@@ -170,9 +181,28 @@ Public Class Usuarios
         Finally
             Me.Where.WhereClauseReset()
         End Try
-
-        'End If
-
-
     End Function
+    Public Sub BloqueoUsuario(ByVal UserLog As String, ByVal vTipo As String)
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr
+        Try
+            If vTipo = "0" Then
+                Bloqueo = "1"
+            ElseIf vTipo = "1" Then
+                Bloqueo = "2"
+            ElseIf vTipo = "2" Then
+                Bloqueo = "3"
+            End If
+            tx.BeginTransaction()
+            Save()
+            tx.CommitTransaction()
+        Catch ex As Exception
+            tx.RollbackTransaction()
+            tx.ThreadTransactionMgrReset()
+            Throw ex
+        End Try
+
+        
+    End Sub
+
 End Class
