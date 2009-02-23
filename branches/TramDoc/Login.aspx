@@ -47,7 +47,7 @@
                                 Nombre de
                                 Usuario</td>
                             <td style="width: 116px; height: 34px">
-                                <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtUsuario" runat="server" MaxLength="6"></asp:TextBox></td>
                             <td style="width: 47px; height: 34px">
                                 <asp:RequiredFieldValidator ID="rvUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
