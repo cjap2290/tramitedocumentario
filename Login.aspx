@@ -55,7 +55,7 @@
                             <td style="width: 301px; height: 34px">
                                 Contraseña</td>
                             <td style="width: 116px; height: 34px">
-                                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
                             <td style="width: 47px; height: 34px">
                                 <asp:RequiredFieldValidator ID="rvContraseña" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
