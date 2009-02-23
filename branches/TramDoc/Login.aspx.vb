@@ -21,10 +21,10 @@ Partial Class _Default
     Private Sub Aceptar()
         usuario = New Usuarios
         decriptador = New CEncriptador
-
+        nMaxInt = 3
         Try
             Me.LoginOK = False
-            nMaxInt = 0
+            nMaxInt = 3
             'If Trim(txtUsuario.Text) = "" Then
             '    'MessageBox.Show("Debe llenar el nombre de usuario ...", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             '    Exit Sub
@@ -46,55 +46,44 @@ Partial Class _Default
                     End If
                 End If
             End If
-            'ACTUALIZACION JMLP --> 19/03/2007
-            'Try
-            'dr = BSLayer.GetBloqueo(txtUsuario.Text)
-            'Catch ex As Exception
-            'dr = Nothing
-            'mensaje = ex.Message
-            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'End
-            'End Try
-
-            'While dr.Read
+            
             If CInt(usuario.p_Bloqueo) < nMaxInt Then
                 If Trim(txtPassword.Text) = Trim(xPass) Then
-                      Try
-                        BSLayer.BloqueoUsuario(txtUsuario.Text, "0")
+                    Try
+                        usuario.BloqueoUsuario(txtUsuario.Text, "0")
                         Me.LoginOK = True
                         '// todo : redireccionar hacia la pagina de indices
                     Catch ex As Exception
                         lblmensaje.Text = "ERROR :" + ex.Message
                     End Try
                 Else
-                    If CInt(dr.Item("bloqueo")) < nMaxInt - 1 Then
+                    If CInt(usuario.p_Bloqueo) < nMaxInt - 1 Then
                         Try
-                            BSLayer.BloqueoUsuario(txtUsuario.Text, "1")
-                            'MessageBox.Show("Clave de Usuario no válida..." + Space(10), "Acceso no permitido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                            txtUsuario.Text = ""
-                            'txtUsuario.Select()
+                            usuario.BloqueoUsuario(txtUsuario.Text, "1")
+                            lblmensaje.Visible = True
+                            lblmensaje.Text = "Acceso no permitido:   Clave de Usuario no válida..."
+                            txtPassword.Text = ""
+
                         Catch ex As Exception
-                            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            'End
+                            lblmensaje.Text = "SYSTEM ERROR : " + ex.Message
                         End Try
                     Else
                         Try
-                            BSLayer.BloqueoUsuario(txtUsuario.Text, "2")
-                            ' MessageBox.Show("Su cuenta ha sido bloqueada porque superó el máximo " + Space(10) + vbCrLf & _
-                            '        Space(16) + "número de intentos permitidos ..." + Space(10) + vbCrLf & _
-                            '       Space(8) + "Póngase en contacto con el Administrador del Sistema" + Space(10), "Acceso no permitido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            usuario.BloqueoUsuario(txtUsuario.Text, "2")
+                            lblmensaje.Text = "Acceso no permitido  :Su cuenta ha sido bloqueada porque superó el máximo " + Space(10) + vbCrLf & _
+                                    Space(16) + "número de intentos permitidos ..." + Space(10) + vbCrLf & _
+                                   Space(8) + "Póngase en contacto con el Administrador del Sistema" + Space(10)
                             Me.LoginOK = False
                             'Me.Close()
                         Catch ex As Exception
-                            'MessageBox.Show(ex.Message, "SIAF - Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            'End
+                            lblmensaje.Text = "SYSTEM ERROR : " + ex.Message
                         End Try
                     End If
                 End If
             Else
-                'MessageBox.Show("Su cuenta ha sido bloqueada porque superó el máximo " + Space(10) + vbCrLf & _
-                '        Space(16) + "número de intentos permitidos ..." + Space(10) + vbCrLf & _
-                '        Space(8) + "Póngase en contacto con el Administrador del Sistema ..." + Space(10), "Acceso no permitido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                lblmensaje.Text = "Acceso no permitido  :Su cuenta ha sido bloqueada porque superó el máximo " + Space(10) + vbCrLf & _
+                                                    Space(16) + "número de intentos permitidos ..." + Space(10) + vbCrLf & _
+                                                   Space(8) + "Póngase en contacto con el Administrador del Sistema" + Space(10)
                 Me.LoginOK = False
                 'Me.Close()
             End If
