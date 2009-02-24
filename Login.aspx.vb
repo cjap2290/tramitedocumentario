@@ -53,6 +53,8 @@ Partial Class _Default
                         usuario.BloqueoUsuario(txtUsuario.Text, "0")
                         Me.LoginOK = True
                         '// todo : redireccionar hacia la pagina de indices
+                        'Response.Redirect("Inicio.aspx")
+                        Server.Transfer("Inicio.aspx")
                     Catch ex As Exception
                         lblmensaje.Text = "ERROR :" + ex.Message
                     End Try
