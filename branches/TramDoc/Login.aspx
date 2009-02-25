@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Login.aspx.vb" Inherits="_Default" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Página sin título</title>
 </head>
 <body>
@@ -25,6 +25,7 @@
                 <td style="text-align: center">
                 </td>
                 <td style="text-align: center">
+                    <div id="alert" class="curved" style=" background-color:Blue ">Curved Corner
                     <table style="width: 286px; height: 168px; text-align: center">
                         <tr>
                             <td style="width: 301px; height: 34px">
@@ -68,6 +69,7 @@
                             </td>
                         </tr>
                     </table>
+                    </div>
                     <asp:Label ID="lblmensaje" runat="server" BackColor="#C0FFC0" ForeColor="Black" Height="65px"
                         Width="475px" Visible="False"></asp:Label></td>
             </tr>

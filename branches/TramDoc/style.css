@@ -481,3 +481,9 @@ body#leftbody {
 {
 	background-image: url(Imagenes/FondoSistema.jpg);
 }
+.curved
+{
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    behavior:url(border-radius.htc);
+}
