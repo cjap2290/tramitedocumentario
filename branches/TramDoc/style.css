@@ -487,3 +487,10 @@ body#leftbody {
     -webkit-border-radius: 10px;
     behavior:url(border-radius.htc);
 }
+#alert {
+    width: 550px;
+    background-color: #A0C7F1;
+    border: #A0C7F1 solid 1px;
+    clear: both;
+    float: left;
+} 

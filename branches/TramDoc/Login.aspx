@@ -25,7 +25,7 @@
                 <td style="text-align: center">
                 </td>
                 <td style="text-align: center">
-                    <div id="alert" class="curved" style=" background-color:Blue ">Curved Corner
+                    <div id="alert" class="curved" >Curved Corner
                     <table style="width: 286px; height: 168px; text-align: center">
                         <tr>
                             <td style="width: 301px; height: 34px">
