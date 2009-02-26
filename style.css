@@ -42,10 +42,17 @@ div#cibertec {
 	height: 70px;
 	background-repeat: no-repeat;
 }
-/***Fondo de barra horizontal***/
-.barlogin {
-	background-color: #5378A8;
+/***Fondo de barra horizontal de la cabecera***/
+.barloginheader {
+	background-color: #24A859;
 }
+.barloginheader2 {
+	background-color: #96FF96;
+	font-family:Times New Roman;
+	font-weight:900;
+	left:100px;
+}
+
 /***Tipo de letra y color del texto(Contenido)***/
 .textlogin {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -481,6 +488,7 @@ body#leftbody {
 {
 	background-image: url(Imagenes/FondoSistema.jpg);
 }
+/** elementos curvos de la pagina de logueo **/
 .curved
 {
 	-moz-border-radius: 10px;
@@ -488,9 +496,10 @@ body#leftbody {
     behavior:url(border-radius.htc);
 }
 #alert {
-    width: 550px;
-    background-color: #A0C7F1;
-    border: #A0C7F1 solid 1px;
+    width: 450px;
+    background-color: #EEFFEE;
+    border: #048447 solid 1px;
     clear: both;
-    float: left;
+    float: center;
 } 
+/** letras de cabecera **/
