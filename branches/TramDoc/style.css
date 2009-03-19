@@ -486,7 +486,8 @@ body#leftbody {
 }
 .body
 {
-	background-image: url(Imagenes/FondoSistema.jpg);
+	background : url(Imagenes/bg.gif);
+	
 }
 /** elementos curvos de la pagina de logueo **/
 .curved
