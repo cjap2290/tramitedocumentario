@@ -13,48 +13,26 @@
             <tr>
                 <td>
                 </td>
-                <td style="width: 3px">
+                <td>
                 </td>
                 <td>
-                    <div style="width: 776px; height: 119px" class="barloginheader">
-                        <table style="width: 280px">
-                            <tr>
-                                <td colspan="3" style="width: 424px; height: 111px" rowspan="2">
-                                    &nbsp;
-                                    <img src="Imagenes/LOGOTIPO%20LEON%20XIII.JPG" /></td>
-                            </tr>
-                            <tr class="text1">
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="width: 774px; height: 42px" class="barloginheader2">
-                        &nbsp; &nbsp;&nbsp;
-                    TU CRECIMIENTO, NUESTRO COMPROMISO
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="height: 21px">
-                </td>
-                <td style="width: 3px; height: 21px;">
-                </td>
-                <td style="height: 21px">
                     &nbsp;
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
-                <td style="text-align: center; width: 3px;">
+                <td style="text-align: center">
                 </td>
-                <td style="text-align: center" align="right">
-                    <div id="alert" class="curved" >
-                    <table style="width: 436px; height: 160px; text-align: center">
+                <td style="text-align: center">
+                    <div id="alert" class="curved" >Curved Corner
+                    <table style="width: 286px; height: 168px; text-align: center">
                         <tr>
-                            <td align="left" colspan="3" style="font-family: 'Arial Black'; height: 34px">
-                                <br />
-                                Inicio de Sesión &nbsp;<br />
-                                <hr />
+                            <td style="width: 301px; height: 34px">
+                            </td>
+                            <td style="width: 116px; height: 34px">
+                                Inicio de Sesión</td>
+                            <td style="width: 47px; height: 34px">
                             </td>
                         </tr>
                         <tr>
@@ -66,7 +44,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 301px; height: 34px; color: green; font-family: Arial;">
+                            <td style="width: 301px; height: 34px">
                                 Nombre de
                                 Usuario</td>
                             <td style="width: 116px; height: 34px">
@@ -75,7 +53,7 @@
                                 <asp:RequiredFieldValidator ID="rvUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td style="width: 301px; height: 34px; color: green; font-family: Arial;">
+                            <td style="width: 301px; height: 34px">
                                 Contraseña</td>
                             <td style="width: 116px; height: 34px">
                                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
@@ -83,18 +61,22 @@
                                 <asp:RequiredFieldValidator ID="rvContraseña" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator></td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td style="width: 301px">
+                            </td>
+                            <td style="width: 116px">
                                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" /></td>
+                            <td style="width: 47px">
+                            </td>
                         </tr>
                     </table>
                     </div>
                     <asp:Label ID="lblmensaje" runat="server" BackColor="#C0FFC0" ForeColor="Black" Height="65px"
-                        Width="450px" Visible="False"></asp:Label></td>
+                        Width="475px" Visible="False"></asp:Label></td>
             </tr>
             <tr>
                 <td style="height: 22px">
                 </td>
-                <td style="height: 22px; width: 3px;">
+                <td style="height: 22px">
                 </td>
                 <td style="height: 22px">
                 </td>

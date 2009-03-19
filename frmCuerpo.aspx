@@ -1,15 +1,46 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCuerpo.aspx.vb" Inherits="frmCuerpo"   ContentType="application/msword"%>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCuerpo.aspx.vb" Inherits="frmCuerpo"   masterpagefile="~/mpInicio.master"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title>Página sin título</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:content id="Cuerpo" ContentPlaceHolderId="SeccionContenidos" runat="server">
     <div>
-        jean paul colquicocha coral</div>
-    </form>
-</body>
-</html>
+        <table style="width: 100%; height: 100%">
+            <tr>
+                <td>
+                </td>
+                <td style="width: 281px">
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td style="width: 281px">
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 25px">
+                </td>
+                <td style="width: 281px; height: 25px">
+                </td>
+                <td style="height: 25px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td style="width: 281px">
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+ </asp:content>
