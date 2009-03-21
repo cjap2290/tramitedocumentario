@@ -112,9 +112,16 @@
 <form id="frmInicio"  runat="server">
     <div>
         <table width="100%"  border="1"  cellpadding="0"  cellspacing="0" align="center">
-              <tr  class="header">
-                  <td colspan="2" class="header"> 
-                  <asp:Image ID="Image1"  ImageUrl= "~/Imagenes/Cabecera.gif" runat="server" Width="513px" Height="103px"/>
+              <tr  class="header" >
+                  <td colspan="2" class="header"  style="background-color:White; height: 40px;" > &nbsp;&nbsp;
+                      <table style="width: 100%; height: 100%">
+                          <tr>
+                              <td style="height: 98px">
+                                  <img src="Imagenes/LOGOTIPO%20LEON%20XIII.JPG" style="height: 92px" /></td>
+                              <td style="height: 98px">
+                                  <img src="Imagenes/CabeceraTramDoc.jpg" style="width: 100%; height: 93px;" /></td>
+                          </tr>
+                      </table>
                   </td>                                    
               </tr>
                <tr valign="top">
