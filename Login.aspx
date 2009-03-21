@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>Página sin título</title>
+    <title>COPERATIVA DE AHORRO Y CREDITO LEON XIII</title>
 </head>
 <body>
     <form id="form1" runat="server">
