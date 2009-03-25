@@ -47,7 +47,7 @@ div#cibertec {
 	background-color: #24A859;
 }
 .barloginheader2 {
-	background-color: #96FF96;
+	background-color: #84C225;
 	font-family:Times New Roman;
 	font-weight:900;
 	left:100px;
@@ -129,7 +129,7 @@ div#cibertec {
 	border-left: #0E668E 1px ridge;
 	border-right: #0E668E 1px ridge;
 	border-bottom: #0E668E 1px ridge;
-	background-color: #F0F8EC;
+	background-color: #EEFFEE;
 }
 .textcelld {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -140,7 +140,7 @@ div#cibertec {
 	border-right: #0E668E 1px ridge;
 	border-bottom: #0E668E 1px ridge;
 	text-align: center;
-	background-color: #7CCB7E;
+	background-color: #84C225;
 }
 .textcellfb {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -217,7 +217,8 @@ div#cibertec {
 	border-left: #002256 1px ridge;
 	border-right: #002256 1px ridge;
 	border-bottom: #002256 1px ridge;
-	background-color: #186600;
+	border-top: #002256 1px ridge;
+	background-color: #F8C300;
 }
 /***Link***/
 .href {
