@@ -36,6 +36,7 @@ Partial Class frmBuzonInterno
             .DataField = "NombreCompleto"  'dtBuzon.Columns(15).ColumnName
             .HeaderText = " DE "
             gvBuzon.Columns.Add(remitente)
+            .ItemStyle.Width = 255
         End With
         With IdAsignacion
             .DataField = "IdAsignacion"
@@ -52,7 +53,8 @@ Partial Class frmBuzonInterno
         End With
         With Fecha
             .DataField = "FechaLLegada"  'dtBuzon.Columns(15).ColumnName
-            .HeaderText = " DE "
+            .HeaderText = " FECHA DE LLEGADA "
+            .ItemStyle.Width = 135
             gvBuzon.Columns.Add(Fecha)
         End With
     End Sub
