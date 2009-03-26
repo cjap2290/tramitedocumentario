@@ -22,16 +22,16 @@
             <tr>
                 <td colspan="3">
                     Ordenar por :
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" Width="116px">
                     </asp:DropDownList>&nbsp;<br />
                     <asp:GridView ID="gvBuzon" runat="server" BackColor="White" BorderColor="#336666"
-                        BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal"
+                        BorderStyle="Double" BorderWidth="3px" CellPadding="1" GridLines="Horizontal"
                         Height="199px" Width="768px" AutoGenerateColumns="False">
                         <FooterStyle BackColor="White" ForeColor="#333333" />
-                        <RowStyle BackColor="White" ForeColor="#333333"  Font-Size="X-Small"  Font-Names="Verdana" />
+                        <RowStyle BackColor="White" ForeColor="#333333"  Font-Size="Small"  Font-Names="Times New Roman" />
                         <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="#84C225" ForeColor="White" HorizontalAlign="Center" />
-                        <HeaderStyle BackColor="#84C225" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#84C225" Font-Bold="True" ForeColor="White"   />
                     </asp:GridView>
                 </td>
             </tr>
