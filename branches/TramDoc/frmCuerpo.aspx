@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCuerpo.aspx.vb" Inherits="frmCuerpo"   masterpagefile="~/mpInicio.master"%>
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 
 <asp:content id="Cuerpo" ContentPlaceHolderId="SeccionContenidos" runat="server">
     <div>
@@ -13,7 +14,8 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    
+                    <FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" BasePath="~/fckeditor/" Height="500px">
+                    </FCKeditorV2:FCKeditor>
                 </td>
             </tr>
             <tr>
