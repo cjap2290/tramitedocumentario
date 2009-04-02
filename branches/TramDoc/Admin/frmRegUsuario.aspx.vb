@@ -45,14 +45,14 @@ Partial Class Default2
         End If
         'sidpersona = Request.QueryString("variable")-- codigo usando query string
         '*******------------  Metodos utuilizados para pasar variables usando el postback()--*********
-        '--Metodo 3 codigo par autilizar interface ifrmbuscador
+        '--Metodo 3 codigo para utilizar interface ifrmbuscador
         'Dim form As IFrmBuscador = TryCast(PreviousPage, IFrmBuscador)
         'If form IsNot Nothing Then
         '    'sIdPersona = txtidpersona.Text
         '    Dim sidpersona As String = form.IdPersona
         'End If
         '-- fin metodo 3
-        '--metodo 2 codigo para utilizar interface ifrmbuscador
+        '--metodo 2 codigo para no utilizar interface ifrmbuscador
         'Dim txtidpersona As TextBox = CType(Page.PreviousPage.FindControl("txtselec"), TextBox)
         '-- fin metodo 2
         '*******-------------     FIN     -------------************************************
