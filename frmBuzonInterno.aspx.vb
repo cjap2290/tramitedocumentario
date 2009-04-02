@@ -7,12 +7,26 @@ Partial Class frmBuzonInterno
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim dtBuzon As New DataTable
-        dtBuzon = oBuzoninterno.obtBuzonxUsuario("ElvMor")
-        crearColBuzonInt(dtBuzon)
-        With gvBuzon
-            .DataSource = dtBuzon.DefaultView
-            .DataBind()
-        End With
+        Dim siduser As String
+        siduser = Session.Item("IDUSER")
+        dtBuzon = oBuzoninterno.obtBuzonxUsuario(siduser)
+        If dtBuzon IsNot Nothing Then
+            crearColBuzonInt(dtBuzon)
+            With gvBuzon
+                .DataSource = dtBuzon.DefaultView
+                .DataBind()
+            End With
+        Else
+
+        End If
+        '--Metodo 3 codigo para utilizar interface ifrmbuscador
+        'Dim form As IFrmBuscador = TryCast(Master, IFrmBuscador)
+        'If form IsNot Nothing Then
+        '    'sIdPersona = txtidpersona.Text
+        '    Dim sidpersona As String = form.IdPersona
+        'End If
+        '-- fin metodo 3
+
     End Sub
     Private Sub crearColBuzonInt(ByVal dtBuzon As DataTable)
         Dim chk As New HyperLinkField
