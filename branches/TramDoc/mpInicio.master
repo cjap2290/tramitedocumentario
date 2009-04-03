@@ -176,7 +176,7 @@
                                                     <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
                                                             <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="frmInsertaDocInt.aspx" runat="server">Gestion</a></td></tr>
                                                             <tr><td style ="height:4px" class="text"></td></tr>
-                                                            <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="javascript:ejecutarMenu('frmInsTipDoc.aspx'">Requerimientos</a></td></tr>
+                                                            <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="javascript:fnLink('frmInsertaDocInt.aspx')">Requerimientos</a></td></tr>
                                                             <tr><td style ="height:4px" class="text"></td></tr>
                                             </table>
                                             </div>
