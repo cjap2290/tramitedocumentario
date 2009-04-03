@@ -14,43 +14,43 @@
     <div>
         <table style="width: 100%; height: 100%">
             <tr>
-                <td colspan="2" style="width: 400px; height: 29px">
+                <td class="titform" colspan="2" style="width: 400px; height: 29px">
                     Registro de Documento Interno</td>
             </tr>
             <tr>
-                <td style="width: 135px; height: 6px; text-align: right;">
+                <td class="lblform" style="width: 135px; height: 6px; text-align: right;">
                     Tipo de Documento</td>
                 <td style="height: 6px">
                     <asp:DropDownList ID="cboTipDoc" runat="server" Width="154px">
                     </asp:DropDownList></td>
             </tr>
             <tr>
-                <td style="width: 135px; height: 14px; text-align: right;">
+                <td class="lblform" style="width: 135px; height: 14px; text-align: right;">
                     Nro. Documento</td>
                 <td style="height: 14px; text-align: left;">
                     <asp:TextBox ID="txtNroDoc" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 135px; text-align: right;">
+                <td class="lblform" style="width: 135px; text-align: right;">
                     De
                 </td>
                 <td style="text-align: left">
                     <asp:TextBox ID="txtRemitente" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 135px; height: 25px; text-align: right;">
+                <td class="lblform" style="width: 135px; height: 25px; text-align: right;">
                     Asunto</td>
                 <td style="height: 25px; text-align: left;">
                     <asp:TextBox ID="txtAsunto" runat="server" Width="435px"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 135px; text-align: right;">
+                <td class="lblform" style="width: 135px; text-align: right;">
                     Fecha</td>
                 <td>
                     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td align="left" colspan="2">
+                <td class="lblform" align="left" colspan="2">
                     Cuerpo :</td>
             </tr>
             <tr>
