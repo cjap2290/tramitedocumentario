@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
   <link rel="stylesheet" href="Style.css" type="text/css" />
+  <link href="JavaCalendar/FSdateSelect.css" rel="stylesheet" type="text/css" />
   <title> Gestion de Tramite Documentario</title>
   <script type="text/javascript">
 //Funcion que inicializa ocultando lo que esta dentro del div borrar
@@ -181,7 +182,7 @@
                                             </table>
                                             </div>
                                              </td></tr>
-                                            <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
+                                            <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fnLink('frmRemitirDocInt.aspx')">&nbsp;Opcion2</a></td></tr>
                                             <tr><td style ="height:4px" class="text"></td></tr>
                                             <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:ejecutarMenu('Opcion2()'">&nbsp;Opcion2</a></td></tr>
                                             <tr><td style ="height:4px" class="text"></td></tr>

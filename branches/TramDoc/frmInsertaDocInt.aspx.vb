@@ -6,6 +6,7 @@ Partial Class frmInsertaDocInt
     Dim tipdoc As New CapaLogicaNegocio.TipoDocumento
     Private Sub GenerarArchivo()
         'Variables para abrir el archivo en modo de escritura
+
         Dim strStreamW As Stream
         Dim strStreamWriter As StreamWriter
         Try
@@ -43,6 +44,7 @@ Partial Class frmInsertaDocInt
             .EC_insertaDocInt(False)
         End With
         GenerarArchivo()
+
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -54,7 +56,7 @@ Partial Class frmInsertaDocInt
                 cboTipDoc.DataBind()
                 'Dim a As String
                 Me.FCKeditor1.ToolbarSet = "Documento"
-                RecuperarArchivo()
+                'RecuperarArchivo()
             End If
         End If
     End Sub
