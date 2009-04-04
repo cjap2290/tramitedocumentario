@@ -1,9 +1,12 @@
 ﻿Imports System.IO
 Imports System.Web.UI.HtmlControls
+Imports CapaLogicaNegocio
 Partial Class frmInsertaDocInt
     Inherits System.Web.UI.Page
     Dim docInt As New CapaLogicaNegocio.DocumentoInterno
     Dim tipdoc As New CapaLogicaNegocio.TipoDocumento
+    Dim usuario As New Usuarios
+    Dim personal As New Personal
     Private Sub GenerarArchivo()
         'Variables para abrir el archivo en modo de escritura
 
@@ -30,20 +33,37 @@ Partial Class frmInsertaDocInt
     End Sub
 
     Protected Sub btnGuardar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
-        With docInt
-            .pNroDocu = txtNroDoc.Text
-            .pIdTipDocumento = 1
-            .pIdArea = "06"
-            .pIdAgencia = "01"
-            .pPeriodo = "2004"
-            .pAsunto = Me.txtAsunto.Text
-            .pEncabezado = ""
-            .pPrioridad = "1"
-            .pFechaR = DateTime.Now().Date.ToString
-            .pIdUserR = "JeaCol"
-            .EC_insertaDocInt(False)
-        End With
-        GenerarArchivo()
+        Dim sArea As String
+        Dim sIdAgencia As String
+
+        Try
+            If usuario.obtIdpersona(Session("IDUSER")) Then
+                If personal.obtPersonal(usuario.pIdPersona) Then
+                    sArea = personal.p_Area
+                    sIdAgencia = personal.p_IdAgencia
+
+                    With docInt
+                        .pNroDocu = txtNroDoc.Text
+                        .pIdTipDocumento = 1
+                        .pIdArea = sArea
+                        .pIdAgencia = sIdAgencia
+                        .pPeriodo = "2004"
+                        .pAsunto = Me.txtAsunto.Text
+                        .pEncabezado = ""
+                        .pPrioridad = "1"
+                        .pFechaR = DateTime.Now().Date.ToString
+                        .pIdUserR = Session("iduser")
+                        .EC_insertaDocInt(False)
+                    End With
+                    GenerarArchivo()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(e.ToString)
+        End Try
+
+
+
 
     End Sub
 
@@ -78,7 +98,7 @@ Partial Class frmInsertaDocInt
             .pAsiDocInt_IdUser = "JeaCol"
             .EC_insertaDocInt(True)
         End With
-        'GenerarArchivo()
+        GenerarArchivo()
     End Sub
     Private Sub RecuperarArchivo()
         'Variables para abrir el archivo en modo de escritura
