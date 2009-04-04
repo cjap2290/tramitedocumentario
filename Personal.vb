@@ -11,6 +11,26 @@ Public Class Personal
     Dim Areas As New CapaLogicaNegocio.Areas
     Dim Agencias As New CapaLogicaNegocio.Agencias
     Dim Personas As New CapaLogicaNegocio.PersonNat
+    Private sIdArea As String
+    Private sIdAgencia As String
+    Public Property p_IdAgencia() As String
+        Get
+            Return sIdAgencia
+        End Get
+        Set(ByVal value As String)
+            sIdAgencia = value
+        End Set
+    End Property
+
+    Public Property p_Area() As String
+        Get
+            Return sIdArea
+        End Get
+        Set(ByVal value As String)
+            sIdArea = value
+        End Set
+    End Property
+
 
     Public ReadOnly Property NombreCompleto()
         Get
@@ -32,7 +52,7 @@ Public Class Personal
             Return sNomAgencia
         End Get
     End Property
-    Public Function obtCargoPersonal(ByVal sIdpersona As String)
+    Public Function obtCargoPersonal(ByVal sIdpersona As String) As Boolean
         If EobtCargo_Area_Agencia(sIdpersona) Then
             sNomCargo = Cargos.EC_obtCargo(IdCargo)
             sNomArea = Areas.EC_obtArea(IdArea)
@@ -43,6 +63,15 @@ Public Class Personal
             Return False
         End If
 
+    End Function
+    Public Function obtPersonal(ByVal sIdPersona As String) As Boolean
+        If LoadByPrimaryKey(sIdPersona) Then
+            sIdArea = s_IdArea
+            sIdAgencia = s_Idagencia
+            Return True
+        Else
+            Return False
+        End If
     End Function
     'Public Function obtAreaPersonal(ByVal sIdpersona As String)
     '    Dim sIdArea As String
