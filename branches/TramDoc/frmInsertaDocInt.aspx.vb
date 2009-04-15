@@ -14,9 +14,9 @@ Partial Class frmInsertaDocInt
         Dim strStreamWriter As StreamWriter
         Try
             'ruta local
-            'Dim RutaArchivo As String = "D:\prueba.txt"
+            Dim RutaArchivo As String = "C:\prueba.txt"
             'ruta de red
-            Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
+            'Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
             'Se abre el archivo y si este no existe se crea
             '------------------------------------------------------
             strStreamW = File.OpenWrite(RutaArchivo)
@@ -41,8 +41,8 @@ Partial Class frmInsertaDocInt
                 If personal.obtPersonal(usuario.pIdPersona) Then
                     sArea = personal.p_Area
                     sIdAgencia = personal.p_IdAgencia
-
                     With docInt
+                        .pIdTipDocumento = cboTipDoc.SelectedValue
                         .pNroDocu = txtNroDoc.Text
                         .pIdTipDocumento = 1
                         .pIdArea = sArea
@@ -59,12 +59,8 @@ Partial Class frmInsertaDocInt
                 End If
             End If
         Catch ex As Exception
-            MsgBox(e.ToString)
+            MsgBox(ex.ToString)
         End Try
-
-
-
-
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -82,23 +78,40 @@ Partial Class frmInsertaDocInt
     End Sub
 
     Protected Sub btnAsignar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAsignar.Click
-        With docInt
-            .pNroDocu = txtNroDoc.Text
-            .pIdTipDocumento = 1
-            .pIdArea = "06"
-            .pIdAgencia = "01"
-            .pPeriodo = "2004"
-            .pAsunto = Me.txtAsunto.Text
-            .pEncabezado = ""
-            .pPrioridad = "1"
-            .pFechaR = "13/11/2008"
-            .pIdUserR = "JeaCol"
-            .pAsiDocInt_Condicion = "18"
-            .pAsiDocInt_IdEstAsigDoc = "1"
-            .pAsiDocInt_IdUser = "JeaCol"
-            .EC_insertaDocInt(True)
-        End With
-        GenerarArchivo()
+        Dim sArea As String
+        Dim sIdAgencia As String
+        Dim surl As String = "frmRemitirDocInt.aspx?id="
+        Try
+            If usuario.obtIdpersona(Session("IDUSER")) Then
+                If personal.obtPersonal(usuario.pIdPersona) Then
+                    sArea = personal.p_Area
+                    sIdAgencia = personal.p_IdAgencia
+                    With docInt
+                        .pNroDocu = txtNroDoc.Text
+                        .pIdTipDocumento = 1
+                        .pIdArea = sArea
+                        .pIdAgencia = sIdAgencia
+                        .pPeriodo = DateTime.Now().Year.ToString
+                        .pAsunto = Me.txtAsunto.Text
+                        .pEncabezado = ""
+                        .pPrioridad = "1"
+                        .pFechaR = DateTime.Now().Date.ToString
+                        .pIdUserR = Session("IDUSER")
+                        .pAsiDocInt_Condicion = "18"
+                        .pAsiDocInt_IdEstAsigDoc = "1"
+                        .pAsiDocInt_IdUser = Session("IDUSER")
+                        .EC_insertaDocInt(True)
+                        surl = surl + CType(.IdInsertado, String)
+                    End With
+                    GenerarArchivo()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            Response.Redirect(surl)
+        End Try
+
     End Sub
     Private Sub RecuperarArchivo()
         'Variables para abrir el archivo en modo de escritura

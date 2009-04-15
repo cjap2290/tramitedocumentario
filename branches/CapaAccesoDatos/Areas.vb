@@ -467,14 +467,6 @@ Public MustInherit Class _Areas
 
 
 	End Sub	
-    Public Function E_obtArea(ByVal sIdArea As String) As Boolean
-        Me.Where.IdArea.Value = sIdArea
-        Me.Where.IdArea.Operator = WhereParameter.Operand.Equal
-        If Not (Me.Query.Load) Then
-            Return False
-        Else
-            Return True
-        End If
-    End Function
+    
 End Class
 

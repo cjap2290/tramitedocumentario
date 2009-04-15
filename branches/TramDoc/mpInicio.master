@@ -1,19 +1,31 @@
-﻿<%@ Master Language="VB" CodeFile="mpInicio.master.vb" Inherits="mpInicio" %>
+﻿<%@ Master Language="VB" CodeFile="mpInicio.master.vb" Inherits="mpInicio"  %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head id="Head1" runat="server">
+<head id="Head1" runat="server" >
+
   <link rel="stylesheet" href="Style.css" type="text/css" />
   <link href="JavaCalendar/FSdateSelect.css" rel="stylesheet" type="text/css" />
   <title> Gestion de Tramite Documentario</title>
   <script type="text/javascript">
 //Funcion que inicializa ocultando lo que esta dentro del div borrar
  function fnLink(ruta)
- {
-    
+ {    
     var sUrl= ruta ;
-    location.href= sUrl;
+    alert(sUrl);
+    var actUrl= location.href;
+    alert(actUrl);
+    //var m = document.referrer;        
+    //alert(m);
+    if( actUrl.indexOf("Admin")!=-1){self.location="Inicio.aspx" }
+        //;
+    // location.replace("Inicio.aspx");    
+    else{location.replace(sUrl) };
+     //   location.href= sUrl;
+    
+    
+    
  }
  function fncInicia(){
    document.all.item("opc1").style.display="none";
@@ -119,13 +131,13 @@
     <div>
         <table width="100%"  border="0"  cellpadding="0"  cellspacing="0" align="center">
               <tr  class="header" >
-                  <td colspan="2" class="header"  style="background-color:White; height: 40px; width: 100%" > &nbsp;&nbsp;
-                      <table style="width: 100%; height: 100%; background-repeat: no-repeat; background-image: url(Imagenes/Cabecera_Leon.jpg);">
+                  <td colspan="2" class="header"  style="background-color:White; height: 40px; width: 100%" align="right" > &nbsp;&nbsp;
+                      <table style="width: 100%; height: 100%; background-repeat: no-repeat; background-image: url('<%= ResolveClientUrl("~/Imagenes/Cabecera_Leon.jpg" ) %>');">
                           <tr>
                               <td style="height: 98px">
                                   </td>
-                              <td style="height: 98px" align="right">
-                                  &nbsp;<img src="Imagenes/Logo_Leon.jpg" style="width: 226px; height: 91px" /></td>
+                              <td style="height: 98px" align="center">
+                                  &nbsp;<img src='<%= ResolveClientUrl("~/Imagenes/Logo_Leon.jpg" ) %>' style="width: 226px; height: 91px" /></td>
                           </tr>
                       </table>
                   </td>                                    
@@ -177,7 +189,7 @@
                                                     <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
                                                             <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="frmInsertaDocInt.aspx" runat="server">Gestion</a></td></tr>
                                                             <tr><td style ="height:4px" class="text"></td></tr>
-                                                            <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="javascript:fnLink('frmInsertaDocInt.aspx')">Requerimientos</a></td></tr>
+                                                            <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="~/frmInsertaDocInt.aspx" runat="server">Requerimientos</a></td></tr>
                                                             <tr><td style ="height:4px" class="text"></td></tr>
                                             </table>
                                             </div>
@@ -194,13 +206,13 @@
                           </div>
                           </td>
                           </tr>
-                          <tr><td id="Menu3" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(3);">Reportes Gestion Yepo</a></td></tr>
+                          <tr><td id="Menu3" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(3);">Administracion</a></td></tr>
                           <tr><td style="height:3px; width: 162px;" class="text"></td></tr>
                           <tr><td style="width: 162px"><div id="opc3">
                             <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="reportelibros.html" target="fracuerpo">Libros Asignados</a></td></tr>
+                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="~/Admin/frmInsTipDoc.aspx" runat="server" >Registrar Documento</a></td></tr>
                                 <tr><td style ="height:4px" class="text"></td></tr>
-                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="reporteclientes.html" target="fracuerpo">Informacion de Clientes</a></td></tr>
+                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fnLink('Admin/frmRegUsuario.aspx')" >Registrar Usuario</a></td></tr>
                                 <tr><td style ="height:4px" class="text"></td></tr>
                             </table>
                           </div>
