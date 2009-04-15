@@ -135,31 +135,42 @@ Public Class DocumentoInterno
 
 
     Public Sub EC_insertaDocInt(ByVal bAsigna As Boolean)
-        AddNew()
-        IdTipoDocumento = sIdTipDocumento
-        NroDoc = sNrodoc
-        IdArea = sIdArea
-        IdAgencia = sIdAgencia
-        Periodo = sPeriodo
-        Asunto = sAsunto
-        Encabezado = sEncabezado
-        Prioridad = sPrioridad
-        FechaR = CType(sFechaR, Date)
-        IdUserR = sIdUserR
-        IdEstDoc = "01"
-        Save()
-        If bAsigna Then
-            With AsignacionDocInt
-                .AddNew()
-                .IdUser = AsiDocInt_IdUser
-                .IdDocInterno = Me.IdDocInterno
-                .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
-                .Condicion = AsiDocInt_Condicion
-                .IdUserR = sIdUserR
-                .FechaR = CType(sFechaR, Date)
-                .Save()
-            End With
-        End If
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr()
+        Try
+            tx.BeginTransaction()
+            AddNew()
+            IdTipoDocumento = sIdTipDocumento
+            NroDoc = sNrodoc
+            IdArea = sIdArea
+            IdAgencia = sIdAgencia
+            Periodo = sPeriodo
+            Asunto = sAsunto
+            Encabezado = sEncabezado
+            Prioridad = sPrioridad
+            FechaR = CType(sFechaR, Date)
+            IdUserR = sIdUserR
+            IdEstDoc = "01"
+            Save()
+            nIdInsertado = Me.IdDocInterno
+            If bAsigna Then
+                With AsignacionDocInt
+                    .AddNew()
+                    .IdUser = AsiDocInt_IdUser
+                    .IdDocInterno = Me.IdDocInterno
+                    .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
+                    .Condicion = AsiDocInt_Condicion
+                    .IdUserR = sIdUserR
+                    .FechaR = CType(sFechaR, Date)
+                    .Save()
+                End With
+            End If
+            tx.CommitTransaction()
+        Catch ex As Exception
+
+        End Try
+
+        
     End Sub
    
 End Class

@@ -16,11 +16,27 @@ Public Class Areas
     End Property
 
     Public Function EC_obtArea(ByVal sEIdArea As String) As String
-        If E_obtArea(sEIdArea) Then
-            Return Me.Area
-        Else
-            Return False
-        End If
+        'Public Function E_obtArea(ByVal sIdArea As String) As Boolean
+
+        Try
+            Me.Where.IdArea.Value = sEIdArea
+            Me.Where.IdArea.Operator = WhereParameter.Operand.Equal
+            If Me.Query.Load Then
+                Return Me.Area
+            Else
+                Return " "
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            Where.WhereClauseReset()
+        End Try
+        'End Function
+        'If E_obtArea(sEIdArea) Then
+        '    Return Me.Area
+        'Else
+        '    Return False
+        'End If
     End Function
     Public Function EC_ListaAreas() As Boolean
         If LoadAll() Then

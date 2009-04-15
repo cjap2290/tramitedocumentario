@@ -70,6 +70,7 @@
     <Compile Include="Personal.vb" />
     <Compile Include="PersonNat.vb" />
     <Compile Include="TipoDocumento.vb" />
+    <Compile Include="TipoDocumentoxAreasxAgencia.vb" />
     <Compile Include="Usuarios.vb" />
     <Compile Include="vs_Doc_AsignaDoc_Buzon_Interno.vb" />
     <Compile Include="vs_Personal_Usuario_PersonNat.vb" />
