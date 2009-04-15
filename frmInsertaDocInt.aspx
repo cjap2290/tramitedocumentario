@@ -50,7 +50,7 @@
                 <td>                    
                     <asp:TextBox ID="txtfecha" runat="server" Width="79px"></asp:TextBox>
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/calendar.gif" />
-                       <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtfecha" PopupButtonID="Image1">
+                       <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtfecha" PopupButtonID="Image1" Format="dd/MM/yyyy">
                 </cc1:CalendarExtender>
             <tr>
                 <td class="lblform" align="left" colspan="2" style="height: 11px">

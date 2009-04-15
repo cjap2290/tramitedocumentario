@@ -8,6 +8,7 @@ Partial Class frmRemitirDocInt
     Private areas As New Areas
     Private listaTrabxCargo As New vs_Personal_Usuario_PersonNat
     Dim esRemitente As Boolean
+    Dim sIdasignacion As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'CargaLista("06")
         If Not (IsPostBack) Then
@@ -15,6 +16,7 @@ Partial Class frmRemitirDocInt
             Me.UpdatePanel2.Update()
             Me.UpdatePanel3.Update()
             cbotipBusq_SelectedIndexChanged(Me, Nothing)
+            txtidasig.Text = Request.QueryString("id")
         End If
 
     End Sub
@@ -195,12 +197,13 @@ Partial Class frmRemitirDocInt
         Dim i As Integer
         Dim DocAsignado As New CapaLogicaNegocio.AsignaDocInterno
         Dim usuarios As New CapaLogicaNegocio.Usuarios
+
         For i = 0 To lbRemitentes.Items.Count - 1
             With DocAsignado
-                .pIdDocInterno = 5
+                .pIdDocInterno = CInt(Trim(txtidasig.Text))
                 .pCondicion = "02"
                 .pFechaR = DateTime.Now().Date.ToString
-                .pIdUserR = "JeaCol"
+                .pIdUserR = Session("IDUSER")
                 .pIdEstAsigDoc = 1
                 If usuarios.EC_cargaUsuario(lbRemitentes.Items(i).Value) Then
                     .pIdUser = usuarios.obtIdUser
@@ -211,10 +214,10 @@ Partial Class frmRemitirDocInt
 
         For i = 0 To Me.lbDestCC.Items.Count - 1
             With DocAsignado
-                .pIdDocInterno = 5
+                .pIdDocInterno = CInt(Trim(txtidasig.Text))
                 .pCondicion = "02"
                 .pFechaR = DateTime.Now().Date.ToString
-                .pIdUserR = "JeaCol"
+                .pIdUserR = Session("IDUSER")
                 .pIdEstAsigDoc = 3
                 If usuarios.EC_cargaUsuario(lbRemitentes.Items(i).Value) Then
                     .pIdUser = usuarios.obtIdUser
@@ -222,5 +225,7 @@ Partial Class frmRemitirDocInt
                 .EC_insertaAigDocInt()
             End With
         Next
+        Response.Redirect("frmAgregarAnexo.aspx?id=" + sIdasignacion)
     End Sub
+
 End Class

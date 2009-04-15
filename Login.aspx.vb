@@ -54,7 +54,7 @@ Partial Class _Default
                         Me.LoginOK = True
                         '// todo : redireccionar hacia la pagina de indices
                         Session("IDUSER") = Trim(txtUsuario.Text)
-                        Response.Redirect("Inicio.aspx?id=")
+                        Response.Redirect("Inicio.aspx")
                         'Server.Transfer("Inicio.aspx")
                     Catch ex As Exception
                         lblmensaje.Text = "ERROR :" + ex.Message

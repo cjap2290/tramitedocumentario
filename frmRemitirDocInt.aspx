@@ -20,7 +20,7 @@
             </tr>            
             <tr>
                 <td colspan="2" style="height: 23px">
-                </td>
+                    Tipo de Busqueda</td>
                 <td colspan="2" style="height: 23px">
                     &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
@@ -38,7 +38,7 @@
                 <td colspan="2">
                     &nbsp;<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
-<asp:DropDownList id="cboitemBusq" runat="server" Width="152px" AutoPostBack="True" __designer:wfdid="w7"></asp:DropDownList> 
+<asp:DropDownList id="cboitemBusq" runat="server" Width="152px" AutoPostBack="True"></asp:DropDownList> 
 </ContentTemplate>
                             </asp:UpdatePanel>
                 </td>
@@ -48,19 +48,15 @@
                 </td>                
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="4" align="center">
                     &nbsp; &nbsp; &nbsp;<asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
 &nbsp;<asp:GridView id="gvItem" runat="server" GridLines="Horizontal" CellPadding="4" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px">
-<FooterStyle BackColor="White" ForeColor="#333333"></FooterStyle>
-
-<RowStyle BackColor="White" ForeColor="#333333"></RowStyle>
-
-<SelectedRowStyle BackColor="#339966" ForeColor="White" Font-Bold="True"></SelectedRowStyle>
-
-<PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center"></PagerStyle>
-
-<HeaderStyle BackColor="#336666" ForeColor="White" Font-Bold="True"></HeaderStyle>
+<FooterStyle BackColor="White" ForeColor="#333333" />
+                        <RowStyle BackColor="White" ForeColor="#333333"  Font-Size="Small"  Font-Names="Times New Roman" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#84C225" ForeColor="White" HorizontalAlign="Center" />
+                        <HeaderStyle BackColor="#84C225" Font-Bold="True" ForeColor="White"   />
 </asp:GridView> 
 </ContentTemplate>
                             </asp:UpdatePanel>
@@ -76,9 +72,9 @@
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-&nbsp;<asp:MultiView id="mvConCopia" runat="server" __designer:dtid="562949953421339" __designer:wfdid="w84" ActiveViewIndex="1">&nbsp; <asp:View id="vDestCC" runat="server" __designer:dtid="562949953421344" __designer:wfdid="w6">&nbsp; <asp:ListBox id="lbDestCC" runat="server" Height="160px" Width="438px" __designer:dtid="562949953421345" __designer:wfdid="w7">
-                                        </asp:ListBox><BR /><asp:LinkButton id="LnkBtnRem" runat="server" __designer:dtid="562949953421341" __designer:wfdid="w8">Añadir Remitente
-                                        </asp:LinkButton> </asp:View> <asp:View id="vRem" runat="server" __designer:dtid="562949953421346" __designer:wfdid="w9">REMITENTES : <BR /><asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px" __designer:wfdid="w10"></asp:ListBox> <asp:Button id="btnQuitarRem" runat="server" __designer:dtid="562949953421349" Text="Quitar Remitente de la Lista" __designer:wfdid="w11" OnClick="btnQuitarRem_Click"></asp:Button> <BR /><asp:LinkButton id="LnkBtnDestCC" runat="server" __designer:dtid="562949953421343" __designer:wfdid="w12">Añadir Destino "Con Copia"</asp:LinkButton></asp:View> </asp:MultiView> 
+&nbsp;<asp:MultiView id="mvConCopia" runat="server" ActiveViewIndex="1">&nbsp; <asp:View id="vDestCC" runat="server">&nbsp; <asp:ListBox id="lbDestCC" runat="server" Height="160px" Width="438px">
+                                        </asp:ListBox><BR /><asp:LinkButton id="LnkBtnRem" runat="server">Añadir Remitente
+                                        </asp:LinkButton> </asp:View> <asp:View id="vRem" runat="server">REMITENTES : <BR /><asp:ListBox id="lbRemitentes" runat="server" Height="162px" Width="447px"></asp:ListBox> <asp:Button id="btnQuitarRem" runat="server" Text="Quitar Remitente de la Lista" OnClick="btnQuitarRem_Click"></asp:Button> <BR /><asp:LinkButton id="LnkBtnDestCC" runat="server">Añadir Destino "Con Copia"</asp:LinkButton></asp:View> </asp:MultiView> 
 </ContentTemplate>
                     </asp:UpdatePanel>
                     </td>
@@ -97,7 +93,7 @@
             </tr>
             <tr>
                 <td style="width: 3px;">
-                </td>
+                    <asp:TextBox ID="txtidasig" runat="server" Visible="False"></asp:TextBox></td>
                 <td>
                     </td>
                 <td style="width: 85px;">
