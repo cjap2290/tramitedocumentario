@@ -110,4 +110,44 @@ Public Class BuzonInterno
             Throw ex
         End Try
     End Sub
+    Function obtienebuzoninterno(ByVal sidbuzoninterno As Integer) As Boolean
+        Try
+            'Where.IdBuzonInterno.Value = sidbuzoninterno
+            'Where.IdBuzonInterno.Operator = WhereParameter.Operand.Equal
+            If LoadByPrimaryKey(sidbuzoninterno) Then
+                pIdAsignaDocInterno = IdAsigDocInterno
+                pFechaLlegada = FechaLlegada
+                pFechaLimite = FechaLimite
+                pIdEstBuzoninterno = IdEstBuzonInterno
+                pIdCondicionEnvio = IdCondicionEnvio
+                pObservaciones = Observaciones
+                pFechaR = FechaR
+                pIdUserR = IdUserR
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            Where.WhereClauseReset()
+        End Try
+    End Function
+    Public Sub actualizaEstado(ByVal sIdBuzonInterno As Integer, ByVal sIdestado As Integer)
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr
+        Try
+            tx.BeginTransaction()
+            If LoadByPrimaryKey(sIdBuzonInterno) Then
+                IdBuzonInterno = sIdestado
+                Save()
+            End If
+            tx.CommitTransaction()
+        Catch ex As Exception
+            tx.RollbackTransaction()
+            TransactionMgr.ThreadTransactionMgrReset()
+            Throw ex
+        End Try
+    End Sub
+
 End Class

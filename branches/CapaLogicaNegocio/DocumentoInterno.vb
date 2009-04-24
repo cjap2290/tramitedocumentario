@@ -16,34 +16,45 @@ Public Class DocumentoInterno
     Private sPrioridad As String
     Private sFechaR As String
     Private sIdUserR As String
-    Private AsiDocInt_IdUser As String
-    'Private AsiDocInt_IdDocInterno	4	int
-    Private AsiDocInt_IdEstAsigDoc As Integer
-    Private AsiDocInt_Condicion As String
-    Public Property pAsiDocInt_Condicion() As String
+    'Private AsiDocInt_IdUser As String
+    ''Private AsiDocInt_IdDocInterno	4	int
+    'Private AsiDocInt_IdEstAsigDoc As Integer
+    'Private AsiDocInt_Condicion As String
+    'Public Property pAsiDocInt_Condicion() As String
+    '    Get
+    '        Return AsiDocInt_Condicion
+    '    End Get
+    '    Set(ByVal value As String)
+    '        AsiDocInt_Condicion = value
+    '    End Set
+    'End Property
+    'Public Property pAsiDocInt_IdEstAsigDoc() As Integer
+    '    Get
+    '        Return AsiDocInt_IdEstAsigDoc
+    '    End Get
+    '    Set(ByVal value As Integer)
+    '        AsiDocInt_IdEstAsigDoc = value
+    '    End Set
+    'End Property
+    'Public Property pAsiDocInt_IdUser() As String
+    '    Get
+    '        Return AsiDocInt_IdUser
+    '    End Get
+    '    Set(ByVal value As String)
+    '        AsiDocInt_IdUser = value
+    '    End Set
+    'End Property
+
+    Private sIdEstDoc As Integer
+    Public Property pIdestDoc() As Integer
         Get
-            Return AsiDocInt_Condicion
-        End Get
-        Set(ByVal value As String)
-            AsiDocInt_Condicion = value
-        End Set
-    End Property
-    Public Property pAsiDocInt_IdEstAsigDoc() As Integer
-        Get
-            Return AsiDocInt_IdEstAsigDoc
+            Return sIdEstDoc
         End Get
         Set(ByVal value As Integer)
-            AsiDocInt_IdEstAsigDoc = value
+            sIdEstDoc = value
         End Set
     End Property
-    Public Property pAsiDocInt_IdUser() As String
-        Get
-            Return AsiDocInt_IdUser
-        End Get
-        Set(ByVal value As String)
-            AsiDocInt_IdUser = value
-        End Set
-    End Property
+
     Public Property pIdUserR() As String
         Get
             Return sIdUserR
@@ -150,27 +161,63 @@ Public Class DocumentoInterno
             Prioridad = sPrioridad
             FechaR = CType(sFechaR, Date)
             IdUserR = sIdUserR
-            IdEstDoc = "01"
+            IdEstDoc = sIdEstDoc
             Save()
             nIdInsertado = Me.IdDocInterno
-            If bAsigna Then
-                With AsignacionDocInt
-                    .AddNew()
-                    .IdUser = AsiDocInt_IdUser
-                    .IdDocInterno = Me.IdDocInterno
-                    .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
-                    .Condicion = AsiDocInt_Condicion
-                    .IdUserR = sIdUserR
-                    .FechaR = CType(sFechaR, Date)
-                    .Save()
-                End With
-            End If
+            'If bAsigna Then
+            '    With AsignacionDocInt
+            '        .AddNew()
+            '        .IdUser = AsiDocInt_IdUser
+            '        .IdDocInterno = Me.IdDocInterno
+            '        .IdEstAsigDoc = AsiDocInt_IdEstAsigDoc
+            '        .Condicion = AsiDocInt_Condicion
+            '        .IdUserR = sIdUserR
+            '        .FechaR = CType(sFechaR, Date)
+            '        .Save()
+            '    End With
+            'End If
             tx.CommitTransaction()
         Catch ex As Exception
             Throw ex
         End Try
-
-        
     End Sub
-   
+    Public Function obtieneDocumentoInterno(ByVal sIdDocInterno As Integer) As Boolean
+        Try
+            If Me.LoadByPrimaryKey(sIdDocInterno) Then
+                pPrioridad = Prioridad
+                pNroDocu = NroDoc
+                pIdUserR = IdUserR
+                pIdTipDocumento = IdTipoDocumento
+                pIdestDoc = IdEstDoc
+                pIdArea = IdArea
+                pIdAgencia = IdAgencia
+                pFechaR = FechaR
+                pEncabezado = Encabezado
+                pAsunto = Asunto
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+    Sub cambiaestado(ByVal nIdDocinterno As Integer, ByVal nEstado As Integer)
+        Dim tx As TransactionMgr
+        tx = TransactionMgr.ThreadTransactionMgr
+        Try
+            tx.BeginTransaction()
+            If LoadByPrimaryKey(nIdDocinterno) Then
+                IdEstDoc = nEstado
+                Save()
+            End If
+            tx.CommitTransaction()
+        Catch ex As Exception
+            tx.RollbackTransaction()
+            TransactionMgr.ThreadTransactionMgrReset()
+            Throw ex
+        End Try
+    End Sub
+
 End Class

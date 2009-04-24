@@ -106,12 +106,12 @@ Public Class Usuarios
     '    'dcoll.Add(rs, "NombreCol")
     '    Return dt
     'End Function
-    Public Function EC_obtIdCargo(ByVal sEIdPersona As String) As String
-        If Me.E_obtIdCargo(sEIdPersona) Then
-            sECIdCargo = Me.E_sIdCargo
-        End If
-        Return sECIdCargo
-    End Function
+    'Public Function EC_obtIdCargo(ByVal sEIdPersona As String) As String
+    '    If Me.E_obtIdCargo(sEIdPersona) Then
+    '        sECIdCargo = Me.E_sIdCargo
+    '    End If
+    '    Return sECIdCargo
+    'End Function
     Public Function EC_ingresaUsuario(ByVal sIdUser As String, ByVal sIdPersona As String, _
                                     ByVal dFecProR As String, ByVal HoraR As String, _
                                     ByVal dFechaIni As String, ByVal dFechaFin As String, _
