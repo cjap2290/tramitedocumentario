@@ -5,6 +5,36 @@ Imports MyGeneration.dOOdads
 Public Class TipoDocumento 
     Inherits _TipoDocumento
     Private dtTipDoc As DataTable
+    Private sDescripcion As String
+    Private sFechaR As String
+    Private sIdUserR As String
+    Public Property pIdUserR() As String
+        Get
+            Return sIdUserR
+        End Get
+        Set(ByVal value As String)
+            sIdUserR = value
+        End Set
+    End Property
+
+    Public Property pFechaR() As String
+        Get
+            Return sFechaR
+        End Get
+        Set(ByVal value As String)
+            sFechaR = value
+        End Set
+    End Property
+
+    Public Property pDescripcion() As String
+        Get
+            Return sDescripcion
+        End Get
+        Set(ByVal value As String)
+            sDescripcion = value
+        End Set
+    End Property
+
     Public Property lsTipoDoc() As DataTable
         Get
             Return dtTipDoc
@@ -39,5 +69,20 @@ Public Class TipoDocumento
         Else
             Return False
         End If
+    End Function
+    Public Function obtTipoDocumento(ByVal sIdTipDoc As Integer) As Boolean
+        Try
+            If LoadByPrimaryKey(sIdTipDoc) Then
+                pDescripcion = Descripcion
+                pIdUserR = IdUserR
+                pFechaR = s_FechaR
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 End Class

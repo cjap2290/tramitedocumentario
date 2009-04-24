@@ -16,12 +16,12 @@ Imports System.Collections.Specialized
 
 Imports MyGeneration.dOOdads
 
-Public Class vs_Doc_AsignaDoc_Buzon_Interno
+Public Class vs_Borradores
 	Inherits  SqlClientEntity
 	
 		Public Sub New() 
-			Me.QuerySource = "vs_Doc_AsignaDoc_Buzon_Interno"
-			Me.MappingName = "vs_Doc_AsignaDoc_Buzon_Interno"
+			Me.QuerySource = "vs_Borradores"
+			Me.MappingName = "vs_Borradores"
 		End Sub
 
 	'=================================================================
@@ -44,196 +44,142 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		
 		Public Shared ReadOnly Property IdDocInterno As SqlParameter
 			Get
-                Return New SqlParameter("IdDocInterno", SqlDbType.Int, 0)
-            End Get
-        End Property
+				Return New SqlParameter("IdDocInterno", SqlDbType.Int, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property NroDoc As SqlParameter
+			Get
+				Return New SqlParameter("NroDoc", SqlDbType.Char, 6)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdTipoDocumento As SqlParameter
+			Get
+				Return New SqlParameter("IdTipoDocumento", SqlDbType.Int, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdArea As SqlParameter
+			Get
+				Return New SqlParameter("IdArea", SqlDbType.Char, 2)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdAgencia As SqlParameter
+			Get
+				Return New SqlParameter("IdAgencia", SqlDbType.Char, 2)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Periodo As SqlParameter
+			Get
+				Return New SqlParameter("Periodo", SqlDbType.Char, 6)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Asunto As SqlParameter
+			Get
+				Return New SqlParameter("Asunto", SqlDbType.VarChar, 50)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Encabezado As SqlParameter
+			Get
+				Return New SqlParameter("Encabezado", SqlDbType.VarChar, 30)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Prioridad As SqlParameter
+			Get
+				Return New SqlParameter("Prioridad", SqlDbType.Char, 1)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property NombreArchivo As SqlParameter
+			Get
+				Return New SqlParameter("NombreArchivo", SqlDbType.VarChar, 30)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property RutaArchivo As SqlParameter
+			Get
+				Return New SqlParameter("RutaArchivo", SqlDbType.VarChar, 30)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property FechaR As SqlParameter
+			Get
+				Return New SqlParameter("FechaR", SqlDbType.DateTime, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdUserR As SqlParameter
+			Get
+				Return New SqlParameter("IdUserR", SqlDbType.Char, 6)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdEstDoc As SqlParameter
+			Get
+				Return New SqlParameter("IdEstDoc", SqlDbType.Int, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdAsigDocInterno As SqlParameter
+			Get
+				Return New SqlParameter("IdAsigDocInterno", SqlDbType.Int, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdUser As SqlParameter
+			Get
+				Return New SqlParameter("IdUser", SqlDbType.Char, 6)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdEstAsigDoc As SqlParameter
+			Get
+				Return New SqlParameter("IdEstAsigDoc", SqlDbType.Int, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Condicion As SqlParameter
+			Get
+				Return New SqlParameter("Condicion", SqlDbType.Char, 1)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property FechaRAsigna As SqlParameter
+			Get
+				Return New SqlParameter("FechaRAsigna", SqlDbType.DateTime, 0)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property IdUserAsigna As SqlParameter
+			Get
+				Return New SqlParameter("IdUserAsigna", SqlDbType.Char, 6)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property NombreCompleto As SqlParameter
+			Get
+				Return New SqlParameter("NombreCompleto", SqlDbType.VarChar, 112)
+			End Get
+		End Property
+		
+		Public Shared ReadOnly Property Idcargo As SqlParameter
+			Get
+				Return New SqlParameter("Idcargo", SqlDbType.Char, 2)
+			End Get
+		End Property
+		
+	End Class
+	#End Region	
 
-        Public Shared ReadOnly Property NroDoc() As SqlParameter
-            Get
-                Return New SqlParameter("NroDoc", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdTipoDocumento() As SqlParameter
-            Get
-                Return New SqlParameter("IdTipoDocumento", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdArea() As SqlParameter
-            Get
-                Return New SqlParameter("IdArea", SqlDbType.Char, 2)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdAgencia() As SqlParameter
-            Get
-                Return New SqlParameter("IdAgencia", SqlDbType.Char, 2)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Periodo() As SqlParameter
-            Get
-                Return New SqlParameter("Periodo", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Asunto() As SqlParameter
-            Get
-                Return New SqlParameter("Asunto", SqlDbType.VarChar, 50)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Encabezado() As SqlParameter
-            Get
-                Return New SqlParameter("Encabezado", SqlDbType.VarChar, 30)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Prioridad() As SqlParameter
-            Get
-                Return New SqlParameter("Prioridad", SqlDbType.Char, 1)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property NombreArchivo() As SqlParameter
-            Get
-                Return New SqlParameter("NombreArchivo", SqlDbType.VarChar, 30)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property RutaArchivo() As SqlParameter
-            Get
-                Return New SqlParameter("RutaArchivo", SqlDbType.VarChar, 30)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaR() As SqlParameter
-            Get
-                Return New SqlParameter("FechaR", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdUserR() As SqlParameter
-            Get
-                Return New SqlParameter("IdUserR", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdEstDoc() As SqlParameter
-            Get
-                Return New SqlParameter("IdEstDoc", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdAsigDocInterno() As SqlParameter
-            Get
-                Return New SqlParameter("IdAsigDocInterno", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdUser() As SqlParameter
-            Get
-                Return New SqlParameter("IdUser", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdEstAsigDoc() As SqlParameter
-            Get
-                Return New SqlParameter("IdEstAsigDoc", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Condicion() As SqlParameter
-            Get
-                Return New SqlParameter("Condicion", SqlDbType.Char, 1)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaRAsigna() As SqlParameter
-            Get
-                Return New SqlParameter("FechaRAsigna", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdUserAsigna() As SqlParameter
-            Get
-                Return New SqlParameter("IdUserAsigna", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdBuzonInterno() As SqlParameter
-            Get
-                Return New SqlParameter("IdBuzonInterno", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaLlegada() As SqlParameter
-            Get
-                Return New SqlParameter("FechaLlegada", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaLeido() As SqlParameter
-            Get
-                Return New SqlParameter("FechaLeido", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaLimite() As SqlParameter
-            Get
-                Return New SqlParameter("FechaLimite", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdCondicionEnvio() As SqlParameter
-            Get
-                Return New SqlParameter("IdCondicionEnvio", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdEstBuzonInterno() As SqlParameter
-            Get
-                Return New SqlParameter("IdEstBuzonInterno", SqlDbType.Int, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Observaciones() As SqlParameter
-            Get
-                Return New SqlParameter("Observaciones", SqlDbType.VarChar, 250)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property IdUserRBuzon() As SqlParameter
-            Get
-                Return New SqlParameter("IdUserRBuzon", SqlDbType.Char, 6)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property FechaRBuzon() As SqlParameter
-            Get
-                Return New SqlParameter("FechaRBuzon", SqlDbType.DateTime, 0)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property NombreCompleto() As SqlParameter
-            Get
-                Return New SqlParameter("NombreCompleto", SqlDbType.VarChar, 112)
-            End Get
-        End Property
-
-        Public Shared ReadOnly Property Idcargo() As SqlParameter
-            Get
-                Return New SqlParameter("Idcargo", SqlDbType.Char, 2)
-            End Get
-        End Property
-
-    End Class
-#End Region
-
-#Region "ColumnNames"
-    Public Class ColumnNames
-
+	#Region "ColumnNames"
+	Public class ColumnNames
+		
         Public Const IdDocInterno As String = "IdDocInterno"
         Public Const NroDoc As String = "NroDoc"
         Public Const IdTipoDocumento As String = "IdTipoDocumento"
@@ -254,69 +200,51 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Condicion As String = "Condicion"
         Public Const FechaRAsigna As String = "FechaRAsigna"
         Public Const IdUserAsigna As String = "IdUserAsigna"
-        Public Const IdBuzonInterno As String = "IdBuzonInterno"
-        Public Const FechaLlegada As String = "FechaLlegada"
-        Public Const FechaLeido As String = "FechaLeido"
-        Public Const FechaLimite As String = "FechaLimite"
-        Public Const IdCondicionEnvio As String = "IdCondicionEnvio"
-        Public Const IdEstBuzonInterno As String = "IdEstBuzonInterno"
-        Public Const Observaciones As String = "Observaciones"
-        Public Const IdUserRBuzon As String = "IdUserRBuzon"
-        Public Const FechaRBuzon As String = "FechaRBuzon"
         Public Const NombreCompleto As String = "NombreCompleto"
         Public Const Idcargo As String = "idcargo"
 
-        Public Shared Function ToPropertyName(ByVal columnName As String) As String
+		Shared Public Function ToPropertyName(ByVal columnName As String) As String
 
-            If ht Is Nothing Then
+			If ht Is Nothing Then
+			
+				ht = new Hashtable
+				
+				ht(IdDocInterno) = vs_Borradores.PropertyNames.IdDocInterno
+				ht(NroDoc) = vs_Borradores.PropertyNames.NroDoc
+				ht(IdTipoDocumento) = vs_Borradores.PropertyNames.IdTipoDocumento
+				ht(IdArea) = vs_Borradores.PropertyNames.IdArea
+				ht(IdAgencia) = vs_Borradores.PropertyNames.IdAgencia
+				ht(Periodo) = vs_Borradores.PropertyNames.Periodo
+				ht(Asunto) = vs_Borradores.PropertyNames.Asunto
+				ht(Encabezado) = vs_Borradores.PropertyNames.Encabezado
+				ht(Prioridad) = vs_Borradores.PropertyNames.Prioridad
+				ht(NombreArchivo) = vs_Borradores.PropertyNames.NombreArchivo
+				ht(RutaArchivo) = vs_Borradores.PropertyNames.RutaArchivo
+				ht(FechaR) = vs_Borradores.PropertyNames.FechaR
+				ht(IdUserR) = vs_Borradores.PropertyNames.IdUserR
+				ht(IdEstDoc) = vs_Borradores.PropertyNames.IdEstDoc
+				ht(IdAsigDocInterno) = vs_Borradores.PropertyNames.IdAsigDocInterno
+				ht(IdUser) = vs_Borradores.PropertyNames.IdUser
+				ht(IdEstAsigDoc) = vs_Borradores.PropertyNames.IdEstAsigDoc
+				ht(Condicion) = vs_Borradores.PropertyNames.Condicion
+				ht(FechaRAsigna) = vs_Borradores.PropertyNames.FechaRAsigna
+				ht(IdUserAsigna) = vs_Borradores.PropertyNames.IdUserAsigna
+				ht(NombreCompleto) = vs_Borradores.PropertyNames.NombreCompleto
+				ht(Idcargo) = vs_Borradores.PropertyNames.Idcargo
 
-                ht = New Hashtable
-
-                ht(IdDocInterno) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdDocInterno
-                ht(NroDoc) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.NroDoc
-                ht(IdTipoDocumento) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdTipoDocumento
-                ht(IdArea) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdArea
-                ht(IdAgencia) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdAgencia
-                ht(Periodo) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Periodo
-                ht(Asunto) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Asunto
-                ht(Encabezado) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Encabezado
-                ht(Prioridad) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Prioridad
-                ht(NombreArchivo) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.NombreArchivo
-                ht(RutaArchivo) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.RutaArchivo
-                ht(FechaR) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaR
-                ht(IdUserR) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdUserR
-                ht(IdEstDoc) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdEstDoc
-                ht(IdAsigDocInterno) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdAsigDocInterno
-                ht(IdUser) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdUser
-                ht(IdEstAsigDoc) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdEstAsigDoc
-                ht(Condicion) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Condicion
-                ht(FechaRAsigna) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaRAsigna
-                ht(IdUserAsigna) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdUserAsigna
-                ht(IdBuzonInterno) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdBuzonInterno
-                ht(FechaLlegada) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaLlegada
-                ht(FechaLeido) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaLeido
-                ht(FechaLimite) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaLimite
-                ht(IdCondicionEnvio) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdCondicionEnvio
-                ht(IdEstBuzonInterno) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdEstBuzonInterno
-                ht(Observaciones) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Observaciones
-                ht(IdUserRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.IdUserRBuzon
-                ht(FechaRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.FechaRBuzon
-                ht(NombreCompleto) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.NombreCompleto
-                ht(Idcargo) = vs_Doc_AsignaDoc_Buzon_Interno.PropertyNames.Idcargo
-
-            End If
-
-            Return CType(ht(columnName), String)
-
-        End Function
-
-        Private Shared ht As Hashtable = Nothing
-    End Class
-#End Region
-
-#Region "PropertyNames"
-    Public Class PropertyNames
-
+			End If
+			
+			Return CType(ht(columnName), String)
+			
+		End Function
+		
+		Shared Private ht  As Hashtable = Nothing		 
+	End Class
+	#End Region	
+	
+	#Region "PropertyNames"
+	Public class PropertyNames
+		
         Public Const IdDocInterno As String = "IdDocInterno"
         Public Const NroDoc As String = "NroDoc"
         Public Const IdTipoDocumento As String = "IdTipoDocumento"
@@ -337,70 +265,52 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Condicion As String = "Condicion"
         Public Const FechaRAsigna As String = "FechaRAsigna"
         Public Const IdUserAsigna As String = "IdUserAsigna"
-        Public Const IdBuzonInterno As String = "IdBuzonInterno"
-        Public Const FechaLlegada As String = "FechaLlegada"
-        Public Const FechaLeido As String = "FechaLeido"
-        Public Const FechaLimite As String = "FechaLimite"
-        Public Const IdCondicionEnvio As String = "IdCondicionEnvio"
-        Public Const IdEstBuzonInterno As String = "IdEstBuzonInterno"
-        Public Const Observaciones As String = "Observaciones"
-        Public Const IdUserRBuzon As String = "IdUserRBuzon"
-        Public Const FechaRBuzon As String = "FechaRBuzon"
         Public Const NombreCompleto As String = "NombreCompleto"
         Public Const Idcargo As String = "Idcargo"
 
-        Public Shared Function ToColumnName(ByVal propertyName As String) As String
+		Shared Public Function ToColumnName(ByVal propertyName As String) As String
 
-            If ht Is Nothing Then
+			If ht Is Nothing Then
+			
+				ht = new Hashtable
+				
+				ht(IdDocInterno) = vs_Borradores.ColumnNames.IdDocInterno
+				ht(NroDoc) = vs_Borradores.ColumnNames.NroDoc
+				ht(IdTipoDocumento) = vs_Borradores.ColumnNames.IdTipoDocumento
+				ht(IdArea) = vs_Borradores.ColumnNames.IdArea
+				ht(IdAgencia) = vs_Borradores.ColumnNames.IdAgencia
+				ht(Periodo) = vs_Borradores.ColumnNames.Periodo
+				ht(Asunto) = vs_Borradores.ColumnNames.Asunto
+				ht(Encabezado) = vs_Borradores.ColumnNames.Encabezado
+				ht(Prioridad) = vs_Borradores.ColumnNames.Prioridad
+				ht(NombreArchivo) = vs_Borradores.ColumnNames.NombreArchivo
+				ht(RutaArchivo) = vs_Borradores.ColumnNames.RutaArchivo
+				ht(FechaR) = vs_Borradores.ColumnNames.FechaR
+				ht(IdUserR) = vs_Borradores.ColumnNames.IdUserR
+				ht(IdEstDoc) = vs_Borradores.ColumnNames.IdEstDoc
+				ht(IdAsigDocInterno) = vs_Borradores.ColumnNames.IdAsigDocInterno
+				ht(IdUser) = vs_Borradores.ColumnNames.IdUser
+				ht(IdEstAsigDoc) = vs_Borradores.ColumnNames.IdEstAsigDoc
+				ht(Condicion) = vs_Borradores.ColumnNames.Condicion
+				ht(FechaRAsigna) = vs_Borradores.ColumnNames.FechaRAsigna
+				ht(IdUserAsigna) = vs_Borradores.ColumnNames.IdUserAsigna
+				ht(NombreCompleto) = vs_Borradores.ColumnNames.NombreCompleto
+				ht(Idcargo) = vs_Borradores.ColumnNames.Idcargo
 
-                ht = New Hashtable
-
-                ht(IdDocInterno) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdDocInterno
-                ht(NroDoc) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.NroDoc
-                ht(IdTipoDocumento) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdTipoDocumento
-                ht(IdArea) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdArea
-                ht(IdAgencia) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdAgencia
-                ht(Periodo) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Periodo
-                ht(Asunto) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Asunto
-                ht(Encabezado) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Encabezado
-                ht(Prioridad) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Prioridad
-                ht(NombreArchivo) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.NombreArchivo
-                ht(RutaArchivo) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.RutaArchivo
-                ht(FechaR) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaR
-                ht(IdUserR) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdUserR
-                ht(IdEstDoc) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdEstDoc
-                ht(IdAsigDocInterno) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdAsigDocInterno
-                ht(IdUser) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdUser
-                ht(IdEstAsigDoc) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdEstAsigDoc
-                ht(Condicion) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Condicion
-                ht(FechaRAsigna) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaRAsigna
-                ht(IdUserAsigna) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdUserAsigna
-                ht(IdBuzonInterno) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdBuzonInterno
-                ht(FechaLlegada) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaLlegada
-                ht(FechaLeido) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaLeido
-                ht(FechaLimite) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaLimite
-                ht(IdCondicionEnvio) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdCondicionEnvio
-                ht(IdEstBuzonInterno) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdEstBuzonInterno
-                ht(Observaciones) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Observaciones
-                ht(IdUserRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.IdUserRBuzon
-                ht(FechaRBuzon) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.FechaRBuzon
-                ht(NombreCompleto) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.NombreCompleto
-                ht(Idcargo) = vs_Doc_AsignaDoc_Buzon_Interno.ColumnNames.Idcargo
-
-            End If
-
-            Return CType(ht(propertyName), String)
-
-        End Function
-
-        Private Shared ht As Hashtable = Nothing
-
-    End Class
-#End Region
-
-#Region "StringPropertyNames"
-    Public Class StringPropertyNames
-
+			End If
+			
+			Return CType(ht(propertyName), String)
+			
+		End Function
+		
+		Shared Private ht  As Hashtable = Nothing
+		
+	End Class
+	#End Region	
+	
+	#Region "StringPropertyNames"
+	Public class StringPropertyNames
+		
         Public Const IdDocInterno As String = "s_IdDocInterno"
         Public Const NroDoc As String = "s_NroDoc"
         Public Const IdTipoDocumento As String = "s_IdTipoDocumento"
@@ -421,22 +331,13 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Public Const Condicion As String = "s_Condicion"
         Public Const FechaRAsigna As String = "s_FechaRAsigna"
         Public Const IdUserAsigna As String = "s_IdUserAsigna"
-        Public Const IdBuzonInterno As String = "s_IdBuzonInterno"
-        Public Const FechaLlegada As String = "s_FechaLlegada"
-        Public Const FechaLeido As String = "s_FechaLeido"
-        Public Const FechaLimite As String = "s_FechaLimite"
-        Public Const IdCondicionEnvio As String = "s_IdCondicionEnvio"
-        Public Const IdEstBuzonInterno As String = "s_IdEstBuzonInterno"
-        Public Const Observaciones As String = "s_Observaciones"
-        Public Const IdUserRBuzon As String = "s_IdUserRBuzon"
-        Public Const FechaRBuzon As String = "s_FechaRBuzon"
         Public Const NombreCompleto As String = "s_NombreCompleto"
         Public Const Idcargo As String = "s_Idcargo"
 
-    End Class
-#End Region
-
-#Region "Properties"
+	End Class
+	#End Region		
+	
+	#Region "Properties" 
     Public Overridable Property IdDocInterno() As Integer
         Get
             Return MyBase.GetInteger(ColumnNames.IdDocInterno)
@@ -590,134 +491,53 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         End Set
     End Property
 
-    Public Overridable Property Condicion() As String
-        Get
-            Return MyBase.GetString(ColumnNames.Condicion)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.Condicion, Value)
-        End Set
-    End Property
+		Public Overridable Property Condicion As string
+			Get
+				Return MyBase.Getstring(ColumnNames.Condicion)
+			End Get
+			Set(ByVal Value As string)
+				MyBase.Setstring(ColumnNames.Condicion, Value)
+			End Set
+		End Property
 
-    Public Overridable Property FechaRAsigna() As DateTime
-        Get
-            Return MyBase.GetDateTime(ColumnNames.FechaRAsigna)
-        End Get
-        Set(ByVal Value As DateTime)
-            MyBase.SetDateTime(ColumnNames.FechaRAsigna, Value)
-        End Set
-    End Property
+		Public Overridable Property FechaRAsigna As DateTime
+			Get
+				Return MyBase.GetDateTime(ColumnNames.FechaRAsigna)
+			End Get
+			Set(ByVal Value As DateTime)
+				MyBase.SetDateTime(ColumnNames.FechaRAsigna, Value)
+			End Set
+		End Property
 
-    Public Overridable Property IdUserAsigna() As String
-        Get
-            Return MyBase.GetString(ColumnNames.IdUserAsigna)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.IdUserAsigna, Value)
-        End Set
-    End Property
+		Public Overridable Property IdUserAsigna As string
+			Get
+				Return MyBase.Getstring(ColumnNames.IdUserAsigna)
+			End Get
+			Set(ByVal Value As string)
+				MyBase.Setstring(ColumnNames.IdUserAsigna, Value)
+			End Set
+		End Property
 
-    Public Overridable Property IdBuzonInterno() As Integer
-        Get
-            Return MyBase.GetInteger(ColumnNames.IdBuzonInterno)
-        End Get
-        Set(ByVal Value As Integer)
-            MyBase.SetInteger(ColumnNames.IdBuzonInterno, Value)
-        End Set
-    End Property
+		Public Overridable Property NombreCompleto As string
+			Get
+				Return MyBase.Getstring(ColumnNames.NombreCompleto)
+			End Get
+			Set(ByVal Value As string)
+				MyBase.Setstring(ColumnNames.NombreCompleto, Value)
+			End Set
+		End Property
 
-    Public Overridable Property FechaLlegada() As DateTime
-        Get
-            Return MyBase.GetDateTime(ColumnNames.FechaLlegada)
-        End Get
-        Set(ByVal Value As DateTime)
-            MyBase.SetDateTime(ColumnNames.FechaLlegada, Value)
-        End Set
-    End Property
-
-    Public Overridable Property FechaLeido() As DateTime
-        Get
-            Return MyBase.GetDateTime(ColumnNames.FechaLeido)
-        End Get
-        Set(ByVal Value As DateTime)
-            MyBase.SetDateTime(ColumnNames.FechaLeido, Value)
-        End Set
-    End Property
-
-    Public Overridable Property FechaLimite() As DateTime
-        Get
-            Return MyBase.GetDateTime(ColumnNames.FechaLimite)
-        End Get
-        Set(ByVal Value As DateTime)
-            MyBase.SetDateTime(ColumnNames.FechaLimite, Value)
-        End Set
-    End Property
-
-    Public Overridable Property IdCondicionEnvio() As Integer
-        Get
-            Return MyBase.GetInteger(ColumnNames.IdCondicionEnvio)
-        End Get
-        Set(ByVal Value As Integer)
-            MyBase.SetInteger(ColumnNames.IdCondicionEnvio, Value)
-        End Set
-    End Property
-
-    Public Overridable Property IdEstBuzonInterno() As Integer
-        Get
-            Return MyBase.GetInteger(ColumnNames.IdEstBuzonInterno)
-        End Get
-        Set(ByVal Value As Integer)
-            MyBase.SetInteger(ColumnNames.IdEstBuzonInterno, Value)
-        End Set
-    End Property
-
-    Public Overridable Property Observaciones() As String
-        Get
-            Return MyBase.GetString(ColumnNames.Observaciones)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.Observaciones, Value)
-        End Set
-    End Property
-
-    Public Overridable Property IdUserRBuzon() As String
-        Get
-            Return MyBase.GetString(ColumnNames.IdUserRBuzon)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.IdUserRBuzon, Value)
-        End Set
-    End Property
-
-    Public Overridable Property FechaRBuzon() As DateTime
-        Get
-            Return MyBase.GetDateTime(ColumnNames.FechaRBuzon)
-        End Get
-        Set(ByVal Value As DateTime)
-            MyBase.SetDateTime(ColumnNames.FechaRBuzon, Value)
-        End Set
-    End Property
-
-    Public Overridable Property NombreCompleto() As String
-        Get
-            Return MyBase.GetString(ColumnNames.NombreCompleto)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.NombreCompleto, Value)
-        End Set
-    End Property
-
-    Public Overridable Property Idcargo() As String
-        Get
-            Return MyBase.GetString(ColumnNames.Idcargo)
-        End Get
-        Set(ByVal Value As String)
-            MyBase.SetString(ColumnNames.Idcargo, Value)
-        End Set
-    End Property
+		Public Overridable Property Idcargo As string
+			Get
+				Return MyBase.Getstring(ColumnNames.Idcargo)
+			End Get
+			Set(ByVal Value As string)
+				MyBase.Setstring(ColumnNames.Idcargo, Value)
+			End Set
+		End Property
 
 
-#End Region
+	#End Region  
 	
 	#Region "String Properties" 
 
@@ -1010,206 +830,53 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         End Set
     End Property
 
-    Public Overridable Property s_Condicion() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.Condicion) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetStringAsString(ColumnNames.Condicion)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.Condicion)
-            Else
-                Me.Condicion = MyBase.SetStringAsString(ColumnNames.Condicion, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_FechaRAsigna() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.FechaRAsigna) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetDateTimeAsString(ColumnNames.FechaRAsigna)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.FechaRAsigna)
-            Else
-                Me.FechaRAsigna = MyBase.SetDateTimeAsString(ColumnNames.FechaRAsigna, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_IdUserAsigna() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.IdUserAsigna) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetStringAsString(ColumnNames.IdUserAsigna)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.IdUserAsigna)
-            Else
-                Me.IdUserAsigna = MyBase.SetStringAsString(ColumnNames.IdUserAsigna, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_IdBuzonInterno() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.IdBuzonInterno) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetIntegerAsString(ColumnNames.IdBuzonInterno)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.IdBuzonInterno)
-            Else
-                Me.IdBuzonInterno = MyBase.SetIntegerAsString(ColumnNames.IdBuzonInterno, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_FechaLlegada() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.FechaLlegada) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetDateTimeAsString(ColumnNames.FechaLlegada)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.FechaLlegada)
-            Else
-                Me.FechaLlegada = MyBase.SetDateTimeAsString(ColumnNames.FechaLlegada, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_FechaLeido() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.FechaLeido) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetDateTimeAsString(ColumnNames.FechaLeido)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.FechaLeido)
-            Else
-                Me.FechaLeido = MyBase.SetDateTimeAsString(ColumnNames.FechaLeido, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_FechaLimite() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.FechaLimite) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetDateTimeAsString(ColumnNames.FechaLimite)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.FechaLimite)
-            Else
-                Me.FechaLimite = MyBase.SetDateTimeAsString(ColumnNames.FechaLimite, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_IdCondicionEnvio() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.IdCondicionEnvio) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetIntegerAsString(ColumnNames.IdCondicionEnvio)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.IdCondicionEnvio)
-            Else
-                Me.IdCondicionEnvio = MyBase.SetIntegerAsString(ColumnNames.IdCondicionEnvio, Value)
-            End If
-        End Set
-    End Property
-
-    Public Overridable Property s_IdEstBuzonInterno() As String
-        Get
-            If Me.IsColumnNull(ColumnNames.IdEstBuzonInterno) Then
-                Return String.Empty
-            Else
-                Return MyBase.GetIntegerAsString(ColumnNames.IdEstBuzonInterno)
-            End If
-        End Get
-        Set(ByVal Value As String)
-            If String.Empty = Value Then
-                Me.SetColumnNull(ColumnNames.IdEstBuzonInterno)
-            Else
-                Me.IdEstBuzonInterno = MyBase.SetIntegerAsString(ColumnNames.IdEstBuzonInterno, Value)
-            End If
-        End Set
-    End Property
-
-		Public Overridable Property s_Observaciones As String
+		Public Overridable Property s_Condicion As String
 			Get
-				If Me.IsColumnNull(ColumnNames.Observaciones) Then
+				If Me.IsColumnNull(ColumnNames.Condicion) Then
 					Return String.Empty
 				Else
-					Return MyBase.GetstringAsString(ColumnNames.Observaciones)
+					Return MyBase.GetstringAsString(ColumnNames.Condicion)
 				End If
 			End Get
 			Set(ByVal Value As String)
 				If String.Empty = value Then
-					Me.SetColumnNull(ColumnNames.Observaciones)
+					Me.SetColumnNull(ColumnNames.Condicion)
 				Else
-					Me.Observaciones = MyBase.SetstringAsString(ColumnNames.Observaciones, Value)
+					Me.Condicion = MyBase.SetstringAsString(ColumnNames.Condicion, Value)
 				End If
 			End Set
 		End Property
 
-		Public Overridable Property s_IdUserRBuzon As String
+		Public Overridable Property s_FechaRAsigna As String
 			Get
-				If Me.IsColumnNull(ColumnNames.IdUserRBuzon) Then
+				If Me.IsColumnNull(ColumnNames.FechaRAsigna) Then
 					Return String.Empty
 				Else
-					Return MyBase.GetstringAsString(ColumnNames.IdUserRBuzon)
+					Return MyBase.GetDateTimeAsString(ColumnNames.FechaRAsigna)
 				End If
 			End Get
 			Set(ByVal Value As String)
 				If String.Empty = value Then
-					Me.SetColumnNull(ColumnNames.IdUserRBuzon)
+					Me.SetColumnNull(ColumnNames.FechaRAsigna)
 				Else
-					Me.IdUserRBuzon = MyBase.SetstringAsString(ColumnNames.IdUserRBuzon, Value)
+					Me.FechaRAsigna = MyBase.SetDateTimeAsString(ColumnNames.FechaRAsigna, Value)
 				End If
 			End Set
 		End Property
 
-		Public Overridable Property s_FechaRBuzon As String
+		Public Overridable Property s_IdUserAsigna As String
 			Get
-				If Me.IsColumnNull(ColumnNames.FechaRBuzon) Then
+				If Me.IsColumnNull(ColumnNames.IdUserAsigna) Then
 					Return String.Empty
 				Else
-					Return MyBase.GetDateTimeAsString(ColumnNames.FechaRBuzon)
+					Return MyBase.GetstringAsString(ColumnNames.IdUserAsigna)
 				End If
 			End Get
 			Set(ByVal Value As String)
 				If String.Empty = value Then
-					Me.SetColumnNull(ColumnNames.FechaRBuzon)
+					Me.SetColumnNull(ColumnNames.IdUserAsigna)
 				Else
-					Me.FechaRBuzon = MyBase.SetDateTimeAsString(ColumnNames.FechaRBuzon, Value)
+					Me.IdUserAsigna = MyBase.SetstringAsString(ColumnNames.IdUserAsigna, Value)
 				End If
 			End Set
 		End Property
@@ -1436,78 +1103,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
-		Public ReadOnly Property IdBuzonInterno() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.IdBuzonInterno, Parameters.IdBuzonInterno)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLlegada() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.FechaLlegada, Parameters.FechaLlegada)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLeido() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.FechaLeido, Parameters.FechaLeido)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLimite() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.FechaLimite, Parameters.FechaLimite)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdCondicionEnvio() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.IdCondicionEnvio, Parameters.IdCondicionEnvio)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdEstBuzonInterno() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.IdEstBuzonInterno, Parameters.IdEstBuzonInterno)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property Observaciones() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.Observaciones, Parameters.Observaciones)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdUserRBuzon() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.IdUserRBuzon, Parameters.IdUserRBuzon)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaRBuzon() As WhereParameter
-			Get
-				Dim where As WhereParameter = New WhereParameter(ColumnNames.FechaRBuzon, Parameters.FechaRBuzon)
-				Me._clause._entity.Query.AddWhereParemeter(where)
-				Return where
-			End Get
-		End Property
-
 		Public ReadOnly Property NombreCompleto() As WhereParameter
 			Get
 				Dim where As WhereParameter = New WhereParameter(ColumnNames.NombreCompleto, Parameters.NombreCompleto)
@@ -1709,87 +1304,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
-		Public ReadOnly Property IdBuzonInterno() As WhereParameter 
-			Get
-				If _IdBuzonInterno_W Is Nothing Then
-					_IdBuzonInterno_W = TearOff.IdBuzonInterno
-				End If
-				Return _IdBuzonInterno_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLlegada() As WhereParameter 
-			Get
-				If _FechaLlegada_W Is Nothing Then
-					_FechaLlegada_W = TearOff.FechaLlegada
-				End If
-				Return _FechaLlegada_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLeido() As WhereParameter 
-			Get
-				If _FechaLeido_W Is Nothing Then
-					_FechaLeido_W = TearOff.FechaLeido
-				End If
-				Return _FechaLeido_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLimite() As WhereParameter 
-			Get
-				If _FechaLimite_W Is Nothing Then
-					_FechaLimite_W = TearOff.FechaLimite
-				End If
-				Return _FechaLimite_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdCondicionEnvio() As WhereParameter 
-			Get
-				If _IdCondicionEnvio_W Is Nothing Then
-					_IdCondicionEnvio_W = TearOff.IdCondicionEnvio
-				End If
-				Return _IdCondicionEnvio_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdEstBuzonInterno() As WhereParameter 
-			Get
-				If _IdEstBuzonInterno_W Is Nothing Then
-					_IdEstBuzonInterno_W = TearOff.IdEstBuzonInterno
-				End If
-				Return _IdEstBuzonInterno_W
-			End Get
-		End Property
-
-		Public ReadOnly Property Observaciones() As WhereParameter 
-			Get
-				If _Observaciones_W Is Nothing Then
-					_Observaciones_W = TearOff.Observaciones
-				End If
-				Return _Observaciones_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdUserRBuzon() As WhereParameter 
-			Get
-				If _IdUserRBuzon_W Is Nothing Then
-					_IdUserRBuzon_W = TearOff.IdUserRBuzon
-				End If
-				Return _IdUserRBuzon_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaRBuzon() As WhereParameter 
-			Get
-				If _FechaRBuzon_W Is Nothing Then
-					_FechaRBuzon_W = TearOff.FechaRBuzon
-				End If
-				Return _FechaRBuzon_W
-			End Get
-		End Property
-
 		Public ReadOnly Property NombreCompleto() As WhereParameter 
 			Get
 				If _NombreCompleto_W Is Nothing Then
@@ -1828,15 +1342,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		Private _Condicion_W As WhereParameter = Nothing
 		Private _FechaRAsigna_W As WhereParameter = Nothing
 		Private _IdUserAsigna_W As WhereParameter = Nothing
-		Private _IdBuzonInterno_W As WhereParameter = Nothing
-		Private _FechaLlegada_W As WhereParameter = Nothing
-		Private _FechaLeido_W As WhereParameter = Nothing
-		Private _FechaLimite_W As WhereParameter = Nothing
-		Private _IdCondicionEnvio_W As WhereParameter = Nothing
-		Private _IdEstBuzonInterno_W As WhereParameter = Nothing
-		Private _Observaciones_W As WhereParameter = Nothing
-		Private _IdUserRBuzon_W As WhereParameter = Nothing
-		Private _FechaRBuzon_W As WhereParameter = Nothing
 		Private _NombreCompleto_W As WhereParameter = Nothing
 		Private _Idcargo_W As WhereParameter = Nothing
 
@@ -1862,15 +1367,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		_Condicion_W = Nothing
 		_FechaRAsigna_W = Nothing
 		_IdUserAsigna_W = Nothing
-		_IdBuzonInterno_W = Nothing
-		_FechaLlegada_W = Nothing
-		_FechaLeido_W = Nothing
-		_FechaLimite_W = Nothing
-		_IdCondicionEnvio_W = Nothing
-		_IdEstBuzonInterno_W = Nothing
-		_Observaciones_W = Nothing
-		_IdUserRBuzon_W = Nothing
-		_FechaRBuzon_W = Nothing
 		_NombreCompleto_W = Nothing
 		_Idcargo_W = Nothing
 			Me._entity.Query.FlushWhereParameters()
@@ -2079,78 +1575,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
-		Public ReadOnly Property IdBuzonInterno() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.IdBuzonInterno, Parameters.IdBuzonInterno)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLlegada() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.FechaLlegada, Parameters.FechaLlegada)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLeido() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.FechaLeido, Parameters.FechaLeido)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLimite() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.FechaLimite, Parameters.FechaLimite)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdCondicionEnvio() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.IdCondicionEnvio, Parameters.IdCondicionEnvio)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdEstBuzonInterno() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.IdEstBuzonInterno, Parameters.IdEstBuzonInterno)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property Observaciones() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.Observaciones, Parameters.Observaciones)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property IdUserRBuzon() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.IdUserRBuzon, Parameters.IdUserRBuzon)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaRBuzon() As AggregateParameter
-			Get
-				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.FechaRBuzon, Parameters.FechaRBuzon)
-				Me._clause._entity.Query.AddAggregateParameter(where)
-				Return where
-			End Get
-		End Property
-
 		Public ReadOnly Property NombreCompleto() As AggregateParameter
 			Get
 				Dim where As AggregateParameter = New AggregateParameter(ColumnNames.NombreCompleto, Parameters.NombreCompleto)
@@ -2352,87 +1776,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 			End Get
 		End Property
 
-		Public ReadOnly Property IdBuzonInterno() As AggregateParameter 
-			Get
-				If _IdBuzonInterno_W Is Nothing Then
-					_IdBuzonInterno_W = TearOff.IdBuzonInterno
-				End If
-				Return _IdBuzonInterno_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLlegada() As AggregateParameter 
-			Get
-				If _FechaLlegada_W Is Nothing Then
-					_FechaLlegada_W = TearOff.FechaLlegada
-				End If
-				Return _FechaLlegada_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLeido() As AggregateParameter 
-			Get
-				If _FechaLeido_W Is Nothing Then
-					_FechaLeido_W = TearOff.FechaLeido
-				End If
-				Return _FechaLeido_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaLimite() As AggregateParameter 
-			Get
-				If _FechaLimite_W Is Nothing Then
-					_FechaLimite_W = TearOff.FechaLimite
-				End If
-				Return _FechaLimite_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdCondicionEnvio() As AggregateParameter 
-			Get
-				If _IdCondicionEnvio_W Is Nothing Then
-					_IdCondicionEnvio_W = TearOff.IdCondicionEnvio
-				End If
-				Return _IdCondicionEnvio_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdEstBuzonInterno() As AggregateParameter 
-			Get
-				If _IdEstBuzonInterno_W Is Nothing Then
-					_IdEstBuzonInterno_W = TearOff.IdEstBuzonInterno
-				End If
-				Return _IdEstBuzonInterno_W
-			End Get
-		End Property
-
-		Public ReadOnly Property Observaciones() As AggregateParameter 
-			Get
-				If _Observaciones_W Is Nothing Then
-					_Observaciones_W = TearOff.Observaciones
-				End If
-				Return _Observaciones_W
-			End Get
-		End Property
-
-		Public ReadOnly Property IdUserRBuzon() As AggregateParameter 
-			Get
-				If _IdUserRBuzon_W Is Nothing Then
-					_IdUserRBuzon_W = TearOff.IdUserRBuzon
-				End If
-				Return _IdUserRBuzon_W
-			End Get
-		End Property
-
-		Public ReadOnly Property FechaRBuzon() As AggregateParameter 
-			Get
-				If _FechaRBuzon_W Is Nothing Then
-					_FechaRBuzon_W = TearOff.FechaRBuzon
-				End If
-				Return _FechaRBuzon_W
-			End Get
-		End Property
-
 		Public ReadOnly Property NombreCompleto() As AggregateParameter 
 			Get
 				If _NombreCompleto_W Is Nothing Then
@@ -2471,15 +1814,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		Private _Condicion_W As AggregateParameter = Nothing
 		Private _FechaRAsigna_W As AggregateParameter = Nothing
 		Private _IdUserAsigna_W As AggregateParameter = Nothing
-		Private _IdBuzonInterno_W As AggregateParameter = Nothing
-		Private _FechaLlegada_W As AggregateParameter = Nothing
-		Private _FechaLeido_W As AggregateParameter = Nothing
-		Private _FechaLimite_W As AggregateParameter = Nothing
-		Private _IdCondicionEnvio_W As AggregateParameter = Nothing
-		Private _IdEstBuzonInterno_W As AggregateParameter = Nothing
-		Private _Observaciones_W As AggregateParameter = Nothing
-		Private _IdUserRBuzon_W As AggregateParameter = Nothing
-		Private _FechaRBuzon_W As AggregateParameter = Nothing
 		Private _NombreCompleto_W As AggregateParameter = Nothing
 		Private _Idcargo_W As AggregateParameter = Nothing
 
@@ -2505,15 +1839,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 		_Condicion_W = Nothing
 		_FechaRAsigna_W = Nothing
 		_IdUserAsigna_W = Nothing
-		_IdBuzonInterno_W = Nothing
-		_FechaLlegada_W = Nothing
-		_FechaLeido_W = Nothing
-		_FechaLimite_W = Nothing
-		_IdCondicionEnvio_W = Nothing
-		_IdEstBuzonInterno_W = Nothing
-		_Observaciones_W = Nothing
-		_IdUserRBuzon_W = Nothing
-		_FechaRBuzon_W = Nothing
 		_NombreCompleto_W = Nothing
 		_Idcargo_W = Nothing
 			Me._entity.Query.FlushAggregateParameters()
@@ -2547,82 +1872,27 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
 	
 	Protected Overrides Function GetDeleteCommand() As IDbCommand
 		Return Nothing
-	End Function
-    Public Function obtBuzonxUsuario(ByVal sIdUser As String, Optional ByVal sIdEsdtadoBuzon As String = "1", Optional ByVal sIdestDocint As Integer = 3) As DataTable
-        Dim usuario As New Usuarios
-        Dim personas As New PersonNat
-        Dim nombrecompleto As String
-        Dim dtBuzon As New DataTable
-        '-- filasque usaremos
-        Dim drFilaBuzon As DataRow
-        '-- end
-        '-- seteamos  nuevas columnas que seran la columna nombre 
-        Dim ColNombre As New DataColumn
-        Dim ColAsunto As New DataColumn
-        Dim ColIdAsignacion As New DataColumn
-        Dim ColFechaLlegada As New DataColumn
-        Dim ColIdDocInterno As New DataColumn
-        Dim ColIdBuzonInterno As New DataColumn
-        ColNombre.ColumnName = "NombreCompleto"
-        ColAsunto.ColumnName = "Asunto"
-        ColIdAsignacion.ColumnName = "IdAsignacion"
-        ColFechaLlegada.ColumnName = "FechaLlegada"
-        ColIdDocInterno.ColumnName = "IdDocInterno"
-        ColIdBuzonInterno.ColumnName = "IdBuzonInterno"
-        ColNombre.DataType = System.Type.GetType("System.String")
-        ColAsunto.DataType = System.Type.GetType("System.String")
-        ColIdAsignacion.DataType = System.Type.GetType("System.Int16")
-        ColFechaLlegada.DataType = System.Type.GetType("System.String")
-        ColIdDocInterno.DataType = System.Type.GetType("System.Int16")
-        ColIdBuzonInterno.DataType = System.Type.GetType("System.Int16")
-        '--fin--
-        '----se forma la consulta
-        Where.IdUser.Value = sIdUser
-        Where.IdUser.Operator = WhereParameter.Operand.Equal
-        If Len(sIdEsdtadoBuzon) > 0 Then
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
-        End If
-        If Len(sIdestDocint) > 0 Then
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
-        End If
-        '--fin : se forma la consulta 
-        If Query.Load Then
-            dtBuzon.Columns.Add(ColNombre)
-            dtBuzon.Columns.Add(ColAsunto)
-            dtBuzon.Columns.Add(ColIdAsignacion)
-            dtBuzon.Columns.Add(ColFechaLlegada)
-            dtBuzon.Columns.Add(ColIdDocInterno)
-            dtBuzon.Columns.Add(ColIdBuzonInterno)
-            For Each miFila As DataRow In DataTable.Rows
-                If usuario.obtIdpersona(miFila("IdUserAsigna")) Then
-                    nombrecompleto = personas.ObtNombreCompleto(usuario.pIdPersona)
-                    drFilaBuzon = dtBuzon.NewRow()
-                    drFilaBuzon(0) = nombrecompleto
-                    drFilaBuzon(1) = miFila("Asunto")
-                    drFilaBuzon(2) = miFila("IdAsigDocInterno")
-                    drFilaBuzon(3) = miFila("FechaLlegada")
-                    drFilaBuzon(4) = miFila("IdDocInterno")
-                    drFilaBuzon(5) = miFila("IdBuzonInterno")
-                    dtBuzon.Rows.Add(drFilaBuzon)
-                End If
-            Next
-            Return dtBuzon
-        Else
-            Return Nothing
-        End If
     End Function
-    Public Function obtBuzonxtipodoc(ByVal sIdUser As String, ByVal sIdEsdtadoBuzon As String, ByVal sIdestDocint As Integer, ByVal sIdTipDoc As Integer) As DataTable
+    Public Function obtBuzonxUsuario(ByVal sIdUser As String) As DataTable
         Try
             Where.IdUser.Value = sIdUser
             Where.IdUser.Operator = WhereParameter.Operand.Equal
 
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
+            If Query.Load Then
+                Return DataTable
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
 
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
+    End Function
+
+    Public Function obtBuzonxtipodoc(ByVal sIdUser As String, ByVal sIdTipDoc As Integer) As DataTable
+        Try
+            Where.IdUser.Value = sIdUser
+            Where.IdUser.Operator = WhereParameter.Operand.Equal
 
             Where.IdTipoDocumento.Value = sIdTipDoc
             Where.IdTipoDocumento.Operator = WhereParameter.Operand.Equal
@@ -2637,16 +1907,10 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         End Try
 
     End Function
-    Public Function obtBuzonxArea(ByVal sIdUser As String, ByVal sIdEsdtadoBuzon As String, ByVal sIdestDocint As Integer, ByVal sIdArea As Integer) As DataTable
+    Public Function obtBuzonxArea(ByVal sIdUser As String, ByVal sIdArea As Integer) As DataTable
         Try
             Where.IdUser.Value = sIdUser
             Where.IdUser.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
 
             Where.IdArea.Value = sIdArea
             Where.IdArea.Operator = WhereParameter.Operand.Equal
@@ -2661,16 +1925,10 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         End Try
 
     End Function
-    Public Function obtBuzonxCargo(ByVal sIdUser As String, ByVal sIdEsdtadoBuzon As String, ByVal sIdestDocint As Integer, ByVal sIdCargo As Integer) As DataTable
+    Public Function obtBuzonxCargo(ByVal sIdUser As String, ByVal sIdCargo As Integer) As DataTable
         Try
             Where.IdUser.Value = sIdUser
             Where.IdUser.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
 
             Where.Idcargo.Value = sIdCargo
             Where.Idcargo.Operator = WhereParameter.Operand.Equal
@@ -2684,16 +1942,10 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
             Throw ex
         End Try
     End Function
-    Public Function obtBuzonxPrioridad(ByVal sIdUser As String, ByVal sIdEsdtadoBuzon As String, ByVal sIdestDocint As Integer, ByVal sPrioridad As Integer) As DataTable
+    Public Function obtBuzonxPrioridad(ByVal sIdUser As String, ByVal sPrioridad As Integer) As DataTable
         Try
             Where.IdUser.Value = sIdUser
             Where.IdUser.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
-
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
 
             Where.Prioridad.Value = sPrioridad
             Where.Prioridad.Operator = WhereParameter.Operand.Equal
@@ -2706,81 +1958,6 @@ Public Class vs_Doc_AsignaDoc_Buzon_Interno
         Catch ex As Exception
             Throw ex
         End Try
-    End Function
-    Public Function obtBuzonxUsuAsi(ByVal sIdUser As String, ByVal sIdEsdtadoBuzon As String, ByVal sIdestDocint As Integer) As DataTable
-        Dim usuario As New Usuarios
-        Dim personas As New PersonNat
-        Dim estadobuzint As New EstadoBuzonInterno
-        Dim nombrecompleto As String
-        Dim dtBuzon As New DataTable
-        '-- filasque usaremos
-        Dim drFilaBuzon As DataRow
-        '-- end
-        '-- seteamos  nuevas columnas que seran la columna nombre 
-        Dim ColNombre As New DataColumn
-        Dim ColAsunto As New DataColumn
-        Dim ColIdAsignacion As New DataColumn
-        Dim ColFechaLlegada As New DataColumn
-        Dim ColIdDocInterno As New DataColumn
-        Dim ColIdBuzonInterno As New DataColumn
-        Dim ColEstBuzonInterno As New DataColumn
-        ColNombre.ColumnName = "NombreCompleto"
-        ColAsunto.ColumnName = "Asunto"
-        ColIdAsignacion.ColumnName = "IdAsignacion"
-        ColFechaLlegada.ColumnName = "FechaLlegada"
-        ColIdDocInterno.ColumnName = "IdDocInterno"
-        ColIdBuzonInterno.ColumnName = "IdBuzonInterno"
-        ColNombre.DataType = System.Type.GetType("System.String")
-        ColAsunto.DataType = System.Type.GetType("System.String")
-        ColIdAsignacion.DataType = System.Type.GetType("System.Int16")
-        ColFechaLlegada.DataType = System.Type.GetType("System.String")
-        ColIdDocInterno.DataType = System.Type.GetType("System.Int16")
-        ColIdBuzonInterno.DataType = System.Type.GetType("System.Int16")
-        ColEstBuzonInterno.DataType = System.Type.GetType("System.String")
-        '--fin--
-        '----se forma la consulta
-        Where.IdUser.Value = sIdUser
-        Where.IdUser.Operator = WhereParameter.Operand.Equal
-        If Len(sIdEsdtadoBuzon) > 0 Then
-            Where.IdEstBuzonInterno.Value = sIdEsdtadoBuzon
-            Where.IdEstBuzonInterno.Operator = WhereParameter.Operand.Equal
-        End If
-        If Len(sIdestDocint) > 0 Then
-            Where.IdEstDoc.Value = sIdestDocint
-            Where.IdEstDoc.Operator = WhereParameter.Operand.Equal
-        End If
-        '--fin : se forma la consulta 
-        If Query.Load Then
-            dtBuzon.Columns.Add(ColNombre)
-            dtBuzon.Columns.Add(ColAsunto)
-            dtBuzon.Columns.Add(ColIdAsignacion)
-            dtBuzon.Columns.Add(ColFechaLlegada)
-            dtBuzon.Columns.Add(ColIdDocInterno)
-            dtBuzon.Columns.Add(ColIdBuzonInterno)
-            dtBuzon.Columns.Add(ColEstBuzonInterno)
-            For Each miFila As DataRow In DataTable.Rows
-                If usuario.obtIdpersona(miFila("IdUser")) Then
-                    nombrecompleto = personas.ObtNombreCompleto(usuario.pIdPersona)
-                    drFilaBuzon = dtBuzon.NewRow()
-                    drFilaBuzon(0) = nombrecompleto
-                    drFilaBuzon(1) = miFila("Asunto")
-                    drFilaBuzon(2) = miFila("IdAsigDocInterno")
-                    drFilaBuzon(3) = miFila("FechaLlegada")
-                    drFilaBuzon(4) = miFila("IdDocInterno")
-                    drFilaBuzon(5) = miFila("IdBuzonInterno")
-                    If estadobuzint.obtEstDocInt(miFila("IdEstBuzonInterno")) Then
-                        drFilaBuzon(6) = estadobuzint.pEstado
-                    Else
-                        drFilaBuzon(6) = ""
-                    End If
-
-                    dtBuzon.Rows.Add(drFilaBuzon)
-                End If
-            Next
-            Return dtBuzon
-        Else
-            Return Nothing
-        End If
     End Function
 End Class
 

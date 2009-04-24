@@ -10,6 +10,16 @@ Public Class AsignaDocInterno
     Private EC_Condicion As String
     Private EC_FechaR As String
     Private EC_IdUserR As String
+    Private EC_dtAsixDocI As DataTable
+    Public Property lsAsixDocI() As DataTable
+        Get
+            Return EC_dtAsixDocI
+        End Get
+        Set(ByVal value As DataTable)
+            EC_dtAsixDocI = value
+        End Set
+    End Property
+
     Public Property pIdEstAsigDoc() As Integer
         Get
             Return EC_IdEstAsigDoc
@@ -94,4 +104,34 @@ Public Class AsignaDocInterno
             Throw ex
         End Try
     End Sub
+    Public Sub obtAsignacionxDocInt(ByVal sIdDocInt As String)
+        Try
+            Where.IdDocInterno.Value = sIdDocInt
+            Where.IdDocInterno.Operator = WhereParameter.Operand.Equal
+            If Query.Load Then
+                EC_dtAsixDocI = DataTable
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            Where.WhereClauseReset()
+        End Try
+
+    End Sub
+    Public Function obtieneAsignacionDocInt(ByVal sidasignaDocInt As Integer) As Boolean
+        Try
+            If LoadByPrimaryKey(sidasignaDocInt) Then
+                pIdDocInterno = IdDocInterno
+                pIdUser = IdUser
+                pCondicion = Condicion
+                pFechaR = FechaR
+                pIdUserR = IdUserR
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

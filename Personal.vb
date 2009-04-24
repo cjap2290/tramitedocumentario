@@ -13,6 +13,16 @@ Public Class Personal
     Dim Personas As New CapaLogicaNegocio.PersonNat
     Private sIdArea As String
     Private sIdAgencia As String
+    Private sIdCargo As String
+    Public Property pIdCargo() As String
+        Get
+            Return sIdCargo
+        End Get
+        Set(ByVal value As String)
+            sIdCargo = value
+        End Set
+    End Property
+
     Public Property p_IdAgencia() As String
         Get
             Return sIdAgencia
@@ -53,7 +63,7 @@ Public Class Personal
         End Get
     End Property
     Public Function obtCargoPersonal(ByVal sIdpersona As String) As Boolean
-        If EobtCargo_Area_Agencia(sIdpersona) Then
+        If LoadByPrimaryKey(sIdpersona) Then
             sNomCargo = Cargos.EC_obtCargo(IdCargo)
             sNomArea = Areas.EC_obtArea(IdArea)
             sNomAgencia = Agencias.EC_obtAgencia(Idagencia)
@@ -68,6 +78,7 @@ Public Class Personal
         If LoadByPrimaryKey(sIdPersona) Then
             sIdArea = s_IdArea
             sIdAgencia = s_Idagencia
+            sIdCargo = s_IdCargo
             Return True
         Else
             Return False
