@@ -1199,20 +1199,6 @@ Public MustInherit Class _Usuarios
         Return Me.DataTable
 
     End Function
-    Public Function E_obtIdCargo(ByVal sIdPersona As String) As Boolean
-        Me.Where.IdPersona.Value = sIdPersona
-        Me.Where.IdPersona.Operator = WhereParameter.Operand.Equal
-        If Not (Me.Query.Load) Then
-            Return False
-        Else
-            'E_sIdCargo = Me.DataTable.Rows(0).Item(0).ToString
-            'E_sIdCargo = Me.DataTable.Rows(0).Item(1).ToString
-            'E_sIdCargo = Me.DataTable.Rows(0).Item(2).ToString
-            'E_sIdCargo = Me.DataTable.Rows(0).Item(3).ToString
-            'E_sIdCargo = Me.DataTable.Rows(0).Item(4).ToString
-            Return True
-        End If
-    End Function
     Public Function E_actActivo(ByVal sIdUser As String) As Boolean
         If LoadByPrimaryKey(sIdUser) Then
             Activo = "1"
