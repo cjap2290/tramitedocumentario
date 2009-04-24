@@ -10,21 +10,10 @@
   <title> Gestion de Tramite Documentario</title>
   <script type="text/javascript">
 //Funcion que inicializa ocultando lo que esta dentro del div borrar
- function fnLink(ruta)
+ function fnInsTipo(tipo)
  {    
-    var sUrl= ruta ;
-    alert(sUrl);
-    var actUrl= location.href;
-    alert(actUrl);
-    //var m = document.referrer;        
-    //alert(m);
-    if( actUrl.indexOf("Admin")!=-1){self.location="Inicio.aspx" }
-        //;
-    // location.replace("Inicio.aspx");    
-    else{location.replace(sUrl) };
-     //   location.href= sUrl;
-    
-    
+    var sTipo= tipo ;
+    document.getElementById("txtIdTipo").text= sTipo  
     
  }
  function fncInicia(){
@@ -144,7 +133,7 @@
               </tr>              
             <tr class="header">
                 <td align="right" class="header" colspan="2" style="width: 100%; height: 19px; background-color: white">
-                    <asp:Label ID="lblMenUsu" runat="server" Text="Label" Width="593px" Font-Names="Arial Black" Font-Size="Small" ForeColor="#004000"></asp:Label></td>
+                    &nbsp;<asp:Label ID="lblMenUsu" runat="server" Text="Label" Width="593px" Font-Names="Arial Black" Font-Size="Small" ForeColor="#004000"></asp:Label></td>
             </tr>
                <tr valign="top">
                 <td class="sidebar" rowspan="1"  style="width: 67px">
@@ -162,37 +151,68 @@
                     <table width="160" border="0" cellspacing="0" cellpadding="0" >
                         <tr>
                         <td valign="top" style="background-color: #FBFFFF ;width: 162px">
-                        <table width="160" border="0" cellspacing="0" cellpadding="0">
-                          <tr><td style="height: 22px; width: 162px;" align="center" class="textcellexit"> <a class="href" href="~/Inicio.aspx" target="fracuerpo">Menu Principal</a></td></tr>
-                          <tr><td style="height: 4px; width: 162px;" class="text"></td></tr>
-                          <tr><td id="Menu1" style="height: 20px; width: 162px;" align="center" class="textcelld">Bandeja</td></tr>
-                          <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
-                          <tr><td style="width: 162px"><div id="opc1">
-                                <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr><td style="height: 19px; width: 160px;" align="left" class="textcellc">
-                        &nbsp;<a class="hrefb" href="javascript:fnLink('frmBuzonInterno.aspx')" runat="server"> Documentos Internos</a></td></tr>
-                                            <tr><td style="height: 4px; width: 160px;" class="text"></td></tr>
-                                            <tr><td style="height:19px; width: 160px;" align="left" class="textcellc">
-                        &nbsp;<a id="A1" class="hrefb" href="~/frmBuzonInterno.aspx'"  runat="server">Documentos Externos </a></td></tr>
-                                            <tr><td style="height:4px; width: 160px;" class="text"></td></tr>
-                                           
-                                </table>
-                                </div></td>
-                          </tr>
-                          <tr><td id="Menu2" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(2);">Redactar</a></td></tr>
-                          <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
-                          <tr><td style="width: 162px"><div id="opc2">
-                                <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
-                                            <tr><td style ="height: 19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fncMnu2a(opc2a);">Documento Interno</a></td></tr>
-                                            <tr><td style ="height:4px" class="text"> 
-                                            <div id="opc2a">
-                                                    <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
-                                                            <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="frmInsertaDocInt.aspx" runat="server">Gestion</a></td></tr>
-                                                            <tr><td style ="height:4px" class="text"></td></tr>
-                                                            <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="~/frmInsertaDocInt.aspx" runat="server">Requerimientos</a></td></tr>
-                                                            <tr><td style ="height:4px" class="text"></td></tr>
+                            <table width="160" border="0" cellspacing="0" cellpadding="0">
+                              <tr><td style="height: 22px; width: 162px;" align="center" class="textcellexit"> <a class="href" href="~/Inicio.aspx" target="fracuerpo">Menu Principal</a></td></tr>
+                              <tr><td style="height: 4px; width: 162px;" class="text"></td></tr>
+                              <tr><td id="Menu1" style="height: 20px; width: 162px;" align="center" class="textcelld">Recibidos</td></tr>
+                              <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                              <tr><td style="width: 162px">
+                                    <div id="opc1">
+                                            <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr><td style="height: 19px; width: 160px;" align="left" class="textcellc">
+                                    &nbsp;<a class="hrefb" href="~/frmBuzonInterno.aspx?tipo=1" runat="server"> Documentos Internos</a></td></tr>
+                                                        <tr><td style="height: 4px; width: 160px;" class="text"></td></tr>
+                                                        <tr><td style="height:19px; width: 160px;" align="left" class="textcellc">
+                                    &nbsp;<a id="A1" class="hrefb" href="~/frmBuzonInterno.aspx"  runat="server">Documentos Externos </a></td></tr>
+                                                        <tr><td style="height:4px; width: 160px;" class="text"></td></tr>                                          
                                             </table>
-                                            </div>
+                                    </div></td>
+                                </tr>                                
+                          <%--hasta quie esyta el menu de recibidos--%>
+                                <tr><td id="Td1" style="height: 20px; width: 162px;" align="center" class="textcelld">Enviados</td></tr>
+                                <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                                <tr><td style="width: 162px">
+                                        <div id="DivRecibidos">
+                                                <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr><td style="height: 19px; width: 160px;" align="left" class="textcellc">
+                                        &nbsp;<a id="hrBuzIntEnv" class="hrefb" href="~/frmBuzonInterno.aspx?tipo=2" runat="server" > Documentos Internos</a></td></tr>
+                                                            <tr><td style="height: 4px; width: 160px;" class="text"></td></tr>
+                                                            <tr><td style="height:19px; width: 160px;" align="left" class="textcellc">
+                                        &nbsp;<a id="hrBuzExtEnv" class="hrefb" href="~/frmBuzonInterno.aspx"  runat="server">Documentos Externos </a></td></tr>
+                                                            <tr><td style="height:4px; width: 160px;" class="text"></td></tr>                                          
+                                                </table>
+                                        </div></td>
+                                  </tr>
+                                <%--hasta quie esyta el menu de enviados--%>
+                                <tr><td id="Td2" style="height: 20px; width: 162px;" align="center" class="textcelld">Borradores</td></tr>
+                                <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                                <tr><td style="width: 162px">
+                                        <div id="Div1">
+                                                <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr><td style="height: 19px; width: 160px;" align="left" class="textcellc">
+                                        &nbsp;<a id="A2" class="hrefb" href="~/frmBuzonInterno.aspx?tipo=3" runat="server" > Documentos Internos</a></td></tr>
+                                                            <tr><td style="height: 4px; width: 160px;" class="text"></td></tr>
+                                                            <tr><td style="height:19px; width: 160px;" align="left" class="textcellc">
+                                        &nbsp;<a id="A3" class="hrefb" href="~/frmBuzonInterno.aspx"  runat="server">Documentos Externos </a></td></tr>
+                                                            <tr><td style="height:4px; width: 160px;" class="text"></td></tr>                                          
+                                                </table>
+                                        </div></td>
+                                  </tr>
+                                <%--hasta quie esyta el menu de borradores--%>
+                              <tr><td id="Menu2" style="height:20px; width: 162px;" align="center" class="textcelld"><a class="href" href="javascript:fncMnu(2);">Redactar</a></td></tr>
+                              <tr><td style="height: 3px; width: 162px;" class="text"></td></tr>
+                              <tr><td style="width: 162px"><div id="opc2">
+                                    <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
+                                                <tr><td style ="height: 19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fncMnu2a(opc2a);">Documento Interno</a></td></tr>
+                                                <tr><td style ="height:4px" class="text"> 
+                                                <div id="opc2a">
+                                                        <table width="160" border="0" style ="height: 100%" cellspacing="0" cellpadding="0">
+                                                                <tr><td style ="height:19px" align="left" class="textcella"><a class="hrefb" href="frmInsertaDocInt.aspx" runat="server">Gestion</a></td></tr>
+                                                                <tr><td style ="height:4px" class="text"></td></tr>
+                                                                <tr><td style="height:7px" align="left" class="textcella"><a class="hrefb" href="~/frmInsertaDocInt.aspx" runat="server">Requerimientos</a></td></tr>
+                                                                <tr><td style ="height:4px" class="text"></td></tr>
+                                                </table>
+                                                </div>
                                              </td></tr>
                                             <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fnLink('frmRemitirDocInt.aspx')">&nbsp;Opcion2</a></td></tr>
                                             <tr><td style ="height:4px" class="text"></td></tr>
@@ -212,7 +232,7 @@
                             <table width="160" style ="height: 100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="~/Admin/frmInsTipDoc.aspx" runat="server" >Registrar Documento</a></td></tr>
                                 <tr><td style ="height:4px" class="text"></td></tr>
-                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="javascript:fnLink('Admin/frmRegUsuario.aspx')" >Registrar Usuario</a></td></tr>
+                                <tr><td style ="height:19px" align="left" class="textcellc"><a class="hrefb" href="~/Admin/frmRegUsuario.aspx" runat="server">Registrar Usuario</a></td></tr>
                                 <tr><td style ="height:4px" class="text"></td></tr>
                             </table>
                           </div>
@@ -227,12 +247,20 @@
                      </table>
                 </td>
                 <td  style ="height:100% ; width:100%">
+                    &nbsp;<asp:Label ID="Label1" runat="server" Height="33px" Text="Label" Visible="False"
+                        Width="796px"></asp:Label>
                    <asp:ContentPlaceHolder   id="SeccionContenidos" runat="server">
                          <%-- <h3>Welcome to my florist website!</h3>
                           We have an enormous selection of quality flowers and seeds, available for shipping to any location worldwide.  Let us handle all you gardening needs!<br/><br/>
                         <asp:Image ID="Image1" AlternateText="Water Lillies" ImageUrl="~/Images/Waterlilies.jpg" runat="server"/>
  --%>                   </asp:ContentPlaceHolder>
                  </td>
+            </tr>
+            <tr valign="top">
+                <td class="sidebar" rowspan="1" style="width: 67px">
+                </td>
+                <td style="width: 100%; height: 100%">
+                </td>
             </tr>
             <tr>
                 <td class="textcellc3" colspan="2">

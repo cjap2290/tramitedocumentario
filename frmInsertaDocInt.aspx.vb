@@ -1,12 +1,21 @@
 ﻿Imports System.IO
 Imports System.Web.UI.HtmlControls
 Imports CapaLogicaNegocio
+Imports System.Diagnostics
 Partial Class frmInsertaDocInt
     Inherits System.Web.UI.Page
     Dim docInt As New CapaLogicaNegocio.DocumentoInterno
     Dim tipdoc As New CapaLogicaNegocio.TipoDocumento
+    Dim asignacion As New AsignaDocInterno
     Dim usuario As New Usuarios
     Dim personal As New Personal
+    ' Creates the text file that the trace listener will write to.
+    'Dim myTraceLog As New System.IO.FileStream("C:\myTraceLog.txt", _
+    '   IO.FileMode.OpenOrCreate)
+    '' Creates the new trace listener
+    'Dim myListener As New TextWriterTraceListener(myTraceLog)
+
+
     Private Sub GenerarArchivo()
         'Variables para abrir el archivo en modo de escritura
 
@@ -14,7 +23,8 @@ Partial Class frmInsertaDocInt
         Dim strStreamWriter As StreamWriter
         Try
             'ruta local
-            Dim RutaArchivo As String = "C:\prueba.txt"
+            'Dim RutaArchivo As String = "C:\TramiteDocumentario\DocumentosInternos\Documentos"
+            Dim RutaArchivo As String = "C:\" + docInt.IdInsertado.ToString + ".txt"
             'ruta de red
             'Dim RutaArchivo As String = "\\svrdesarrollo\PruebasYepo\prueba.txt"
             'Se abre el archivo y si este no existe se crea
@@ -24,7 +34,6 @@ Partial Class frmInsertaDocInt
                                 System.Text.Encoding.UTF8)
             strStreamWriter.WriteLine(HttpUtility.HtmlEncode(FCKeditor1.Value))
             strStreamWriter.Close()
-            MsgBox("El archivo se generó con éxito")
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -51,7 +60,7 @@ Partial Class frmInsertaDocInt
                         .pAsunto = Me.txtAsunto.Text
                         .pEncabezado = ""
                         .pPrioridad = "1"
-                        .pFechaR = DateTime.Now().Date.ToString
+                        .pFechaR = "13/03/2009" 'DateTime.Now().Date.ToString
                         .pIdUserR = Session("iduser")
                         .EC_insertaDocInt(False)
                     End With
@@ -97,11 +106,21 @@ Partial Class frmInsertaDocInt
                         .pPrioridad = "1"
                         .pFechaR = DateTime.Now().Date.ToString
                         .pIdUserR = Session("IDUSER")
-                        .pAsiDocInt_Condicion = "18"
-                        .pAsiDocInt_IdEstAsigDoc = "1"
-                        .pAsiDocInt_IdUser = Session("IDUSER")
+                        .pIdestDoc = 1
+                        '.pAsiDocInt_Condicion = "18"
+                        '.pAsiDocInt_IdEstAsigDoc = "3"
+                        '.pAsiDocInt_IdUser = Session("IDUSER")
                         .EC_insertaDocInt(True)
                         surl = surl + CType(.IdInsertado, String)
+                    End With
+                    With asignacion
+                        .pIdDocInterno = docInt.IdInsertado
+                        .pCondicion = "1"
+                        .pIdEstAsigDoc = 1
+                        .pIdUserR = Session("IDUSER")
+                        .pIdUser = Session("IDUSER")
+                        .pFechaR = DateTime.Now().Date.ToString
+                        .EC_insertaAigDocInt()
                     End With
                     GenerarArchivo()
                 End If

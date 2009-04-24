@@ -12,7 +12,6 @@ Partial Class mpInicio
     Private siduser As String
     Private usuario As New Usuarios
     Private persona As New PersonNat
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             siduser = Session("IDUSER")

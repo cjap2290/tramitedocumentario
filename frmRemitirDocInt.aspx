@@ -93,7 +93,7 @@
             </tr>
             <tr>
                 <td style="width: 3px;">
-                    <asp:TextBox ID="txtidasig" runat="server" Visible="False"></asp:TextBox></td>
+                    <asp:TextBox ID="txtiddocint" runat="server" Visible="False"></asp:TextBox></td>
                 <td>
                     </td>
                 <td style="width: 85px;">
