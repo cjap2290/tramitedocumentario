@@ -1,5 +1,6 @@
 ﻿Imports CapaLogicaNegocio
 Imports System.Data
+Imports System.IO
 
 Partial Class frmRemitirDocInt
     Inherits System.Web.UI.Page
@@ -7,6 +8,7 @@ Partial Class frmRemitirDocInt
     Private cargos As New Cargos
     Private areas As New Areas
     Private listaTrabxCargo As New vs_Personal_Usuario_PersonNat
+    Private docint As New DocumentoInterno
     Dim esRemitente As Boolean
     Dim sIdasignacion As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -16,7 +18,7 @@ Partial Class frmRemitirDocInt
             Me.UpdatePanel2.Update()
             Me.UpdatePanel3.Update()
             cbotipBusq_SelectedIndexChanged(Me, Nothing)
-            txtidasig.Text = Request.QueryString("id")
+            txtiddocint.Text = Request.QueryString("id")
         End If
 
     End Sub
@@ -76,7 +78,7 @@ Partial Class frmRemitirDocInt
         End If
     End Sub
 
-   
+
     Sub iniGrid(ByRef dtPersonas As DataTable)
         Dim idpersona As New BoundField
         Dim apepat As New BoundField
@@ -200,11 +202,11 @@ Partial Class frmRemitirDocInt
 
         For i = 0 To lbRemitentes.Items.Count - 1
             With DocAsignado
-                .pIdDocInterno = CInt(Trim(txtidasig.Text))
+                .pIdDocInterno = CInt(Trim(txtiddocint.Text))
                 .pCondicion = "02"
                 .pFechaR = DateTime.Now().Date.ToString
                 .pIdUserR = Session("IDUSER")
-                .pIdEstAsigDoc = 1
+                .pIdEstAsigDoc = 2
                 If usuarios.EC_cargaUsuario(lbRemitentes.Items(i).Value) Then
                     .pIdUser = usuarios.obtIdUser
                 End If
@@ -214,7 +216,7 @@ Partial Class frmRemitirDocInt
 
         For i = 0 To Me.lbDestCC.Items.Count - 1
             With DocAsignado
-                .pIdDocInterno = CInt(Trim(txtidasig.Text))
+                .pIdDocInterno = CInt(Trim(txtiddocint.Text))
                 .pCondicion = "02"
                 .pFechaR = DateTime.Now().Date.ToString
                 .pIdUserR = Session("IDUSER")
@@ -225,7 +227,7 @@ Partial Class frmRemitirDocInt
                 .EC_insertaAigDocInt()
             End With
         Next
-        Response.Redirect("frmAgregarAnexo.aspx?id=" + sIdasignacion)
+        docint.cambiaestado(txtiddocint.Text, 3)
+        Response.Redirect("frmAgregarAnexo.aspx?id=" + Trim(txtiddocint.Text))
     End Sub
-
 End Class

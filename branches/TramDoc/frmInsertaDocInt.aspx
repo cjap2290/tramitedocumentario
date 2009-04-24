@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmInsertaDocInt.aspx.vb" Inherits="frmInsertaDocInt" MasterPageFile="~/mpInicio.master" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmInsertaDocInt.aspx.vb" Inherits="frmInsertaDocInt" MasterPageFile="~/mpInicio.master" Trace="true" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 <%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports CapaLogicaNegocio
 
-Partial Class frmCuerpo
+Partial Class frmCuerpoEnviados
     Inherits System.Web.UI.Page
     Dim docint As New DocumentoInterno
     Dim buzoninterno As New BuzonInterno

@@ -1,10 +1,13 @@
 ﻿Imports System.IO
 Imports CapaLogicaNegocio
+Imports System.Data
 
 Partial Class frmEnvioDoc
     Inherits System.Web.UI.Page
     Dim NuevoAnexo As New Anexos
     Dim NuevoBuzon As New BuzonInterno
+    Dim Asignacion As New AsignaDocInterno
+    Dim docint As DocumentoInterno
 
     Private Sub CargarAnexos(ByVal sIdDocInterno)
         If NuevoAnexo.obtenerAnexosActivo(sIdDocInterno) Then
@@ -18,20 +21,46 @@ Partial Class frmEnvioDoc
         End If
     End Sub
     Protected Sub btnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim dtRemite As New DataTable
+        Dim idestado As Integer
         '// Actualizar documento interno
         '// Registrar buzon interno
         Try
-            With NuevoBuzon
-                .pIdAsignaDocInterno = 5 '// ToDo: numero de asignacion correcto
-                .pFechaLlegada = DateTime.Now.ToShortDateString
-                .pFechaLimite = txtFechaLimite.Text
-                .pIdCondicionEnvio = 1  '// ToDo: numero de condiciond e envio correcto
-                .pIdEstBuzoninterno = 1 '// ToDo: estado de buzon correcto
-                .pObservaciones = txtObservaciones.Text
-                .pIdUserR = "JeaCol" '//ToDo :usuairo correcto
-                .pFechaR = DateTime.Now.ToShortDateString
-                .insertarBuzon(NuevoBuzon)
-            End With
+            'With NuevoBuzon
+            '    .pIdAsignaDocInterno = CType(IdAsiDocInt.Text, Integer) '// ToDo: numero de asignacion correcto
+            '    .pFechaLlegada = DateTime.Now.ToShortDateString
+            '    .pFechaLimite = CType(txtFechaLimite.Text, Date)
+            '    .pIdCondicionEnvio = 1  '// ToDo: numero de condiciond e envio correcto
+            '    .pIdEstBuzoninterno = 1 '// ToDo: estado de buzon correcto
+            '    .pObservaciones = txtObservaciones.Text
+            '    .pIdUserR = Session("IdUser")
+            '    .pFechaR = DateTime.Now.ToShortDateString
+            '    .insertarBuzon(NuevoBuzon)
+            'End With
+            'inserta en buzon de remitentes
+            Asignacion.obtAsignacionxDocInt(IdAsiDocInt.Text)
+            dtRemite = Asignacion.lsAsixDocI
+            If dtRemite IsNot Nothing Then
+                For Each fila As DataRow In dtRemite.Rows
+                    If fila("IdEstAsigDoc") = 1 Then
+                        idestado = 1
+                    Else
+                        idestado = 6
+                    End If
+                    With NuevoBuzon
+                        .pIdAsignaDocInterno = fila("IdAsigDocInterno") '// ToDo: numero de asignacion correcto
+                        .pFechaLlegada = DateTime.Now.ToShortDateString
+                        .pFechaLimite = CType(txtFechaLimite.Text, Date)
+                        .pIdCondicionEnvio = 1  '// ToDo: numero de condiciond e envio correcto
+                        .pIdEstBuzoninterno = idestado '// ToDo: estado de buzon correcto
+                        .pObservaciones = txtObservaciones.Text
+                        .pIdUserR = Session("IdUser")
+                        .pFechaR = DateTime.Now.ToShortDateString
+                        .insertarBuzon(NuevoBuzon)
+                    End With
+                Next
+                docint.cambiaestado(IdAsiDocInt.Text, 2)
+            End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -46,14 +75,15 @@ Partial Class frmEnvioDoc
                 '//ruta de red
                 'Dim rutaarchivo = "\\svrdesarrollo\PruebasYepo\" & Path.GetFileName(Me.fuSubeAnexo.PostedFile.FileName)
                 '//ruta local
-                Dim rutaarchivo = "D:\PruebasYepo\" & Path.GetFileName(Me.fuSubeAnexo.PostedFile.FileName)
+                'Dim rutaarchivo = "C:\TramiteDocumentario\DocumentoInterno\Documentos\" & Path.GetFileName(Me.fuSubeAnexo.PostedFile.FileName)
+                Dim rutaarchivo = "C:\" & Path.GetFileName(Me.fuSubeAnexo.PostedFile.FileName)
                 '// Guardar Anexo  
                 With NuevoAnexo
-                    '.pIdDocInterno = 5 '--- ToDo : insertar codigo correcto
+                    .pIdDocInterno = CType(Trim(IdAsiDocInt.Text), Integer)
                     .pNombreAnexo = nombre
                     .pRutaAnexo = rutaarchivo
                     .pActivo = "1"
-                    .pIdUserR = "JeaCol"  '----ToDo  : inserta iduser del usuario que accedio
+                    .pIdUserR = Session("IdUser")  '----ToDo  : inserta iduser del usuario que accedio
                     .pFechaR = DateTime.Now.ToShortDateString
                     .InsertaAnexo(NuevoAnexo)
                 End With
@@ -65,6 +95,7 @@ Partial Class frmEnvioDoc
             Else
             End If
         Catch ex As Exception
+            'ex.InnerException.ToString()
             MsgBox(ex.Message.ToString())
         End Try
     End Sub
@@ -79,8 +110,9 @@ Partial Class frmEnvioDoc
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        NuevoAnexo.pIdDocInterno = 5 '--- ToDo : insertar codigo correcto
         If Not (IsPostBack) Then
+            NuevoAnexo.pIdDocInterno = CType(Request.QueryString("id"), Integer)
+            IdAsiDocInt.Text = CType(Request.QueryString("id"), Integer)
             CargarAnexos(NuevoAnexo.pIdDocInterno)
         End If
     End Sub

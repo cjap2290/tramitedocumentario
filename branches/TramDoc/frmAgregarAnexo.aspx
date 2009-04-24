@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmAgregarAnexo.aspx.vb" Inherits="frmEnvioDoc" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmAgregarAnexo.aspx.vb" Inherits="frmEnvioDoc" MasterPageFile="~/mpInicio.master" %>
 
 <%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 
@@ -6,7 +6,7 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
@@ -18,7 +18,8 @@
     <script type="text/javascript" src="/editor/_source/fckeditor.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server">--%>
+    <asp:Content ID="frmAgregarAnexo" ContentPlaceHolderID="SeccionContenidos" runat="server" >
     <div>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
@@ -66,7 +67,11 @@
                     Fecha Limite
                 </td>
                 <td style="height: 8px">
-                    &nbsp;<asp:TextBox ID="txtFechaLimite" runat="server"></asp:TextBox></td>
+                    &nbsp;<asp:TextBox ID="txtFechaLimite" runat="server"></asp:TextBox>
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/calendar.gif" />
+                       <cc1:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtFechaLimite" PopupButtonID="Image1" Format="dd/MM/yyyy">
+                    </cc1:CalendarExtender>
+                    </td>
                 <td style="width: 1px; height: 8px">
                 </td>
             </tr>
@@ -80,7 +85,7 @@
             </tr>
             <tr>
                 <td>
-                </td>
+                    <asp:TextBox ID="IdAsiDocInt" runat="server" Visible="False"></asp:TextBox></td>
                 <td>
                     &nbsp;
                 </td>
@@ -90,6 +95,7 @@
         </table>
     
     </div>
-    </form>
+</asp:Content>
+    <%--</form>
 </body>
-</html>
+</html>--%>

@@ -147,7 +147,6 @@ Partial Class frmBuscador
     Protected Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
         'Response.Redirect("frmRegUsuario.aspx?id=" + txtIdPers.Value)
     End Sub
-
 End Class
 
 

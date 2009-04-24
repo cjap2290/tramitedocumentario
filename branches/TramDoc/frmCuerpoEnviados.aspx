@@ -1,4 +1,6 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCuerpo.aspx.vb" Inherits="frmCuerpo"   masterpagefile="~/mpInicio.master"%>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmCuerpoEnviados.aspx.vb" Inherits="frmCuerpoEnviados"   masterpagefile="~/mpInicio.master"%>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 
 <asp:content id="Cuerpo" ContentPlaceHolderId="SeccionContenidos" runat="server">
@@ -6,6 +8,8 @@
         <table style="width: 100%; height: 100%">
             <tr>
                 <td style="width: 120px">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
                     </td>
                 <td style="width: 281px">
                 </td>
@@ -15,11 +19,28 @@
             <tr>
                 <td style="width: 120px">
                     <asp:HyperLink ID="hpResponder" runat="server" NavigateUrl="~/frmInsertaDocInt.aspx"
-                        Width="76px">Responder</asp:HyperLink></td>
+                        Width="101px">Enviar Alerta</asp:HyperLink></td>
                 <td style="width: 281px">
                 </td>
                 <td>
                 </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;<cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0">
+                        <cc1:TabPanel ID="TabPanel1" runat="server" HeaderText="TabPanel1">
+                            <ContentTemplate>
+                                <asp:GridView ID="gvasignados" runat="server">
+                                </asp:GridView>
+                            </ContentTemplate>
+                        </cc1:TabPanel>
+                        <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="TabPanel2">
+                            <ContentTemplate>
+                                <asp:GridView ID="gvasignadocopia" runat="server">
+                                </asp:GridView>
+                            </ContentTemplate>
+                        </cc1:TabPanel>
+                    </cc1:TabContainer></td>
             </tr>
             <tr>
                 <td align="center" colspan="3">
