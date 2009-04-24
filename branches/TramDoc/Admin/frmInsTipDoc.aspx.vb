@@ -152,11 +152,11 @@ Partial Class frmInsTipDoc
                     .insertaTipDocxAreaxAge(tipdocxareaxage)
                 End With
             Else
-                sMensaje = "Es necesario escoger un elemento de la Lista"
+                MsgBox("Es necesario escoger un elemento de la Lista")
             End If
 
         Catch ex As Exception
-
+            MsgBox(ex.ToString)
         End Try
 
     End Sub

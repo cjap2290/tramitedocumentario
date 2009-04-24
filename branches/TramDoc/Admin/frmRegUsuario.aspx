@@ -114,7 +114,7 @@ function llamaBuscador()
             <tr>                
                 <td style="width: 202px; text-align: right; height: 21px;">
                     <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" Width="84px" /></td>
-                <td style="width: 47px; text-align: center; height: 21px;">
+                <td style="width: 49px; text-align: center; height: 21px;">
                     <asp:Button ID="btnSalir" runat="server" Text="Salir" Width="84px" />&nbsp;&nbsp;
                 </td>
             </tr>

@@ -167,7 +167,7 @@ Public Class DocumentoInterno
             End If
             tx.CommitTransaction()
         Catch ex As Exception
-
+            Throw ex
         End Try
 
         
