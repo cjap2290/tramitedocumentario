@@ -49,7 +49,9 @@
     <Compile Include="AsignaDocInterno.vb" />
     <Compile Include="BuzonInterno.vb" />
     <Compile Include="Cargos.vb" />
+    <Compile Include="CARGOSXAREAXAGENCIA.vb" />
     <Compile Include="DocumentoInterno.vb" />
+    <Compile Include="EstadoBuzonInterno.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -69,6 +71,7 @@
     <Compile Include="NivelAccesoxUsuario.vb" />
     <Compile Include="Personal.vb" />
     <Compile Include="PersonNat.vb" />
+    <Compile Include="Tablas.vb" />
     <Compile Include="TipoDocumento.vb" />
     <Compile Include="TipoDocumentoxAreasxAgencia.vb" />
     <Compile Include="Usuarios.vb" />
