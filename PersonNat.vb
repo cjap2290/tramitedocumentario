@@ -9,7 +9,7 @@ Public Class PersonNat
  
     Public Function ObtNombreCompleto(ByVal sIdPersona As String) As String
         Dim sNomComp As String
-        If LoadByPrimaryKey(sIdPersona) Then
+        If LoadByPrimaryKey(CType(sIdPersona, Integer)) Then
             sNomComp = ApePat + " " + ApeMat + " " + Nombres
             Return sNomComp
         Else

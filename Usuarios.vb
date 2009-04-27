@@ -10,6 +10,7 @@ Public Class Usuarios
     Public NombreColumna As String
     Dim nivelacceso As New CapaLogicaNegocio.NivelAcceso
     Dim nivaccxusu As New CapaLogicaNegocio.NivelAccesoxUsuario
+    Dim personal As New Personal
     Dim sECIdCargo As String
     Private sIdUser As String
     Private sFecIni As String
@@ -117,21 +118,31 @@ Public Class Usuarios
                                     ByVal dFechaIni As String, ByVal dFechaFin As String, _
                                     ByVal sIdUserR As String, ByVal sClave As String _
                                     ) As Boolean
-        If sIdUser.Length > 0 Then
-            AddNew()
-            IdUser = sIdUser
-            IdPersona = sIdPersona
-            FecProR = CType(dFecProR, Date)
-            FechaIni = CType(dFechaIni, Date)
-            FechaFin = CType(dFechaFin, Date)
-            HoraR = HoraR
-            IdUser = sIdUser
-            Clave = sClave
-            Activo = "1"
-            Bloqueo = "0"
-            Save()
-            Return True
-        End If
+
+        Try
+            If sIdUser.Length > 0 Then
+                AddNew()
+                IdUser = sIdUser
+                If personal.obtPersonal(sIdPersona) Then
+                    IdPersonal = personal.pIdPersonal
+                End If
+                IdPersona = CType(sIdPersona, Integer)
+                FecProR = CType(dFecProR, Date)
+                FechaIni = CType(dFechaIni, Date)
+                FechaFin = CType(dFechaFin, Date)
+                HoraR = HoraR
+                IdUser = sIdUser
+                Clave = sClave
+                Activo = "1"
+                Bloqueo = "0"
+                Save()
+                Return True
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        
     End Function
     Public Function EC_cargaUsuario(ByVal sIdPersona As String) As Boolean
         'If Where.IdPersona.Value IsNot Nothing Then
